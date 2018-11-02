@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google-signin-client_id" content="851397391825-cn5ns9qd64qmq0brh675gg794f244hcc.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <title>monsite</title>
+  </head>
+  <body>
+    <div id="app"></div>
+<script type="text/javascript">
+  function onSignIn(googleUser) {
+    const auth2 = gapi.auth2.init();
+
+    if (auth2.isSignedIn.get()) {
+      const profile = auth2.currentUser.get().getBasicProfile();
+
+      console.log(profile.getName());
+      console.log(googleUser.getAuthResponse().id_token);
+      console.log(googleUser.getAuthResponse().uid);
+      console.log(auth2.currentUser.get().getId());
+    }
+  }
+</script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
