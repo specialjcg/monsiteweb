@@ -1,12 +1,18 @@
 <template>
   <div id="imgdeux" class="blockparallaxgeneral2 " @scroll="handleScroll()">
     <div class="createur-de-site-internet disposition" >
-      <h3><em>Développeur Web Freelance</em></h3>
-      <h4>Pourquoi un <em>site web </em>sur-mesure</h4>
+      <h3>Pourquoi un <em>site web </em>sur-mesure</h3>
+      <ul>
+      <li>Renforcer votre crédibilité</li>
+      <li>Souplesse et adaptabilité</li>
+      <li>Rapide et référencer</li>
+</ul>
     </div>
      <div class="createur-de-site-internet fond fondtext" >
        <div v-if=!this.img1>
-         <div class="avant scale-down-right"  > <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title=""/> </div>
+         <div class="avant scale-down-right"  > 
+           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title=""/> 
+           </div>
           <div class="titre-premiertexte  disposition-text slide-in-blurred-right " >
 
         <ul>
@@ -20,18 +26,9 @@
       </div>
       </div>
       <div v-else >
-         <div class="avant scale-up-right2" @mouseover="big1()"><img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="" />></div>
-      <div class="titre-premiertexte  disposition-text slide-out-blurred-right ">
-
-        <ul>
-        <li><span>La maîtrise:</span> Parce que je programme mes sources , aisées à utiliser et à améliorer
-        <br> Au contraire des briques de code ou des structures tout-en-un grappillés sur différentes plateformes.</li>
-        <li>La Performance:Un site Web plus léger et rapide à la navigation et au chargement parce qu’il n’utilise pas de framework, ajuster pour être facile à améliorer et à faire évoluer</li>
-        <li>La Pérennité:Un site WEB utilisant les standards assure une structure solide dans le temps, contrairement à l’obsolescence de certaines technologies, et un code fait maison garantit une mise à jour rapide.</li>
-      </ul>
-      <p>Je suis votre <em>développeur Web Freelance</em>,adepte des projets fait mains, basé en Rhone Alpes au coeur
-        du Beaujolais ,je suis disponible pour vos projets dans l’hexagone et au-delà.</p>
-      </div>
+         <div class="avant scale-up-right2" @mouseover="big1()">
+           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="" /></div>
+    
 </div>
    </div>
 
@@ -180,21 +177,21 @@ this.img1=true;
     line-height: 1.45;
     flex: auto;
     height: 19vw;
-
+border:1px solid;
   }
 
 
 
   .createur-de-site-internet {
     text-align: right;
-
+color:black;
     /* poussé de la moitié de hauteur du référent */
 
 font-family: 'Courgette', cursive;
   }
 
   .création-site-web {
-
+color:black;
     text-align: left;
 font-family: 'Courgette', cursive;
 
@@ -203,7 +200,7 @@ font-family: 'Courgette', cursive;
   .créer-un-site-web {
     text-align: right;
 font-family: 'Courgette', cursive;
-
+color:black;
 
   }
 
@@ -234,6 +231,7 @@ span{
   .titre-troisiemetexte {}
 
  ul {
+
 font-family: 'Courgette', cursive;
 font-size: 1em;
 list-style-type: none;

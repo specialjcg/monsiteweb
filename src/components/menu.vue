@@ -1,11 +1,20 @@
 <template>
 
-  <div class="header">
+  <div class="heade">
      <div class="logo"></div>
      <div class="nom">jcgwebdeveloper</div>
-     <a href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" ><img src="./in.png" alt="création de site internet sur mesure linkedin"/></a>
+     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
+
+     <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin"/>
+
+     </a>
+     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
      <img src="./insta.png" alt="création de site internet sur mesure instagram"/>
+     </a>
+     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
+
      <img src="./facebook.png" alt="création de site internet sur mesure facebook"/>
+     </a>
 <button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
       <ul v-if=this.visible>
         <li><router-link to="/">Acceuil</router-link></li>
@@ -24,7 +33,7 @@
 
 
 export default {
- name: 'menu',
+ name: 'menu1',
     data() {
       return {
 
@@ -32,18 +41,14 @@ export default {
 
     }},
 
-    mounted: {
 
-
-
-    },
     computed: {
 
     },
 
     methods: {
 
-      menu() {
+      menu1() {
 
         this.visible = !this.visible;
 
@@ -57,7 +62,7 @@ export default {
 </script>
 <style scoped>
 @import "./font.css";
- .header {
+ .heade {
     position: fixed;
 display: flex;
 text-align: center;
@@ -174,6 +179,14 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
  transform-origin: 0% 50%;
   transform: rotateY(4deg)  rotateZ(1deg);
 
+}
+.expanderSocial{
+transition: all 0.5s ease;
+
+}
+.expanderSocial:hover{
+ transform-origin: 10% 50%;
+  transform: scale(1.2);
 }
 
 </style>

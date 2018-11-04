@@ -70,7 +70,7 @@ this.choixy=0;
 
 },
 changey(){
-  for (i=0;i<5;i++){
+  for (var i=0;i<5;i++){
 this.positionCarroussel.y[i]=this.positionCarroussel.y[i]+Number(this.choixy);}
 for (var i = 0; i < this.positionCarroussel.x.length - 1; i++) {
         this.computed2_class(i)

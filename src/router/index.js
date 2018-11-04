@@ -7,26 +7,25 @@ import contacts from '/home/specialjcg/site web/monsite/src/components/contact.v
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'miss',
-      component: mission
-    },
-    {
-      path: '/blog',
-      name: 'blog',
-      component: blogue
-    },
-    {
-      path: '/portfolio',
-      name: 'portfolio',
-      component: portfolios
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: contacts
-    }
+  routes: [{
+    path: '/',
+    name: 'miss',
+    component: mission
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: blogue
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: portfolios
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: contacts
+  }
   ]
 })

@@ -6,12 +6,13 @@
 <img class="kenburns-top" src="./contact.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title=""/></div>
 <div>
   <div class=" img2">
+    <boutongoogle class="Name" @done="onUserLoggedIn"></boutongoogle>
 <div class="Name">
-					<input id="idname" type="text" placeholder="Nom"    required />
+					<input v-model="name" id="idname" type="text" placeholder="Nom"    required />
 
 				</div>
 <div class="email">
-					<input  type="text" placeholder="email" required />
+					<input  v-model="email" type="text" placeholder="email" required />
 
 
 				</div>
@@ -27,30 +28,45 @@
 				</div>
 
 
- <a href="#" @click="signOut()">Sign out</a>
+
 </div>
- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
   </div></div>
 </template>
 
 <script>
 
-
+import boutongoogle from "./boutongoogle.vue";
   export default {
 data() {
     return {
-      user: null
+auth2:null,
+      name:'',
+      email:'',
+      message:''
     };
   },
+ components: {
 
+    boutongoogle
+  },
+mounted() {
+
+
+  },
   methods: {
+onUserLoggedIn(user){
 
- signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
+  const profile = user.getBasicProfile()
+     /* console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.*/
+  this.name=profile.getName();
+
+  this.email=profile.getEmail(); // This is null if the 'email' scope is not present.} // This is null if the 'email' scope is not present.
+    }
+
+
+
 
 
   }}
@@ -87,6 +103,7 @@ height: 4.236vw;
 
 
 }
+
 .message{
 
 
@@ -205,7 +222,7 @@ input{
 width:13vw;
 height: 4.236vw;
 
-    color: white;
+    color:  #007100;
 
 padding-left: 1vw;
 font-size: 1vw;
