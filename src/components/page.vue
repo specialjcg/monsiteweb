@@ -2,27 +2,28 @@
 <div>
   <div >
 
- <div id="cercle" @mouseover.self="big1()"></div>
+ <div id="cercle"  @mouseover="handleScroll()"></div>
 <div class="img1" >
 <img src="./oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title=""/></div>
-  <div id="imgune" class="blockparallaxgeneral" @scroll.prevent="handleScroll()" >
+  <div id="imgune" class="blockparallaxgeneral" @scroll.prevent="handleScroll()"  >
+<transition  name="slideinblurredleft" >
 
-<div id="titre1" class="titre color-primary-1" :class="[!this.img1 ? classA:'',this.img1 ? classB:'']" >
+<div id="titre1" class="titre color-primary-1" v-show="img1" >
       <div v-if=this.img2  class="text-focus-in"  >
       <h3>Créons votre site internet <em>sur-mesure</em></h3>
 
     </div>
-    <div v-else class="text-focus-in2">
+    <div v-else class="text-focus-in2" >
       <h3>Donnons de la valeur à <em>votre site Web</em></h3>
 </div>
-    <div class="découvrir_avantage_site_web">
+    <div class="découvrir_avantage_site_web" >
      <p class="color-primary-2"> Je vous propose des solutions sur mesure pour répondre au mieux à vos besoins ! </p>
-       <button  @click.prevent="big3()">Découvrir</button>
+       <button  @click.prevent="img3=!img3">Découvrir</button>
 </div>
-</div>
-
-
-    <div v-if=this.img3 class="color-primary-1 argumentaire" :class="[!this.img3 ? classA:'',this.img3 ? classB:'']">
+</div></transition>
+<div id="line" class="line1" v-show="img1"></div>
+<transition name="slideinblurredleft">
+    <div  class="color-primary-1 argumentaire" v-if="img3">
       <ul>
         <li>Un site sur mesure retient l’attention de vos <em>futurs clients et prospects</em></li>
         <li>Un site sur mesure contribue au <em>développement de votre notoriété</em> et de votre marque</li>
@@ -33,8 +34,8 @@
 
 
       </ul>
-    </div>
-    <div id="line" class="line1"></div>
+    </div></transition>
+
   </div>
 
   </div></div>
@@ -46,36 +47,42 @@
       return {
 
 intervalid1:'',
-        img1: true,
+intervalid2:'',
+        img1: false,
         img2:true,
         img3: false,
         test:true,
-essai:"line1",
-classA:'slide-in-blurred-left2',
-classB:'slide-in-blurred-left',
+essai:false,
+classA:'slide2',
+classB:'slide1',
 postitre1:'',
 poscircle:''
       }
     },
 
     created: function() {
-      window.addEventListener('scroll', this.handleScroll);
 
+      window.addEventListener('scroll', this.handleScroll);
+this.todo2();
     },
     destroyed: function() {
       window.removeEventListener('scroll', this.handleScroll);
     },
    mounted() {
+this.img1=true;
 this.todo();
- this.inittrait();
+this.todo2();
+
+
     },
      beforeDestroy () {
 
-       clearInterval(this.intervalid1)
+       clearInterval(this.intervalid1);
+        clearInterval(this.intervalid2);
     },
 computed(){
 
- this.inittrait();
+
 
 },
     methods: {
@@ -84,27 +91,15 @@ computed(){
                 this.img2=!this.img2;
             }, 4000);},
 
+todo2 (){
 
-inittrait(){
-
-this.postitre1=document.getElementById("titre1").getBoundingClientRect();
- this.poscircle=document.getElementById("cercle").getBoundingClientRect();
-var posititre1top=document.getElementById("titre1").offsetTop;
-
-var postitre1right=document.getElementById("titre1").offsetLeft+document.getElementById("titre1").offsetWidth;
-
-var angle=Math.atan2(this.poscircle.bottom-posititre1top-this.poscircle.height/2, (this.poscircle.left-postitre1right)) * 180 / Math.PI;
-var long=Math.abs(this.poscircle.bottom-posititre1top-this.poscircle.height/2)/Math.sin(Math.atan2(this.poscircle.bottom-posititre1top-this.poscircle.height/2, (this.poscircle.left-postitre1right)))
-
-document.getElementById("line").style.left=postitre1right+"px";
-document.getElementById("line").style.top=posititre1top+"px";
-document.getElementById("line").style.right=this.poscircle.left+"px";
-document.getElementById("line").style.width=Math.abs(long)+"px";
-document.getElementById("line").style.transform="rotateZ("+(angle)+"deg)";
+        this.intervalid2 = setInterval(() => {
+                this.handleScroll();
+            }, 10);
 
 
+            },
 
-},
 
       big1: function() {
         this.img1 = !this.img1;
@@ -127,34 +122,45 @@ document.getElementById("line").style.opacity=0;
 
           document.getElementById("imgune").style.transition = "all 1s ease-in-out";
 
-         this.img1 =true;
-          this.img3 = false;
-this.test=false;
+
 
 
         } else if((window.scrollY > (hauteurImage-150 ))){
 
 document.getElementById("cercle").style.opacity=0;
 document.getElementById("line").style.opacity=0;
+this.img1 =false;
+if (this.test){
+ clearInterval(this.intervalid1);
+        clearInterval(this.intervalid2);this.test=false;}
 
 
         }else if((window.scrollY < (hauteurImage+250 ))){
+this.img1 =true;
+
 
          document.getElementById("imgune").style="";
 document.getElementById("cercle").style.opacity=1;
+
 this.postitre1=document.getElementById("titre1").getBoundingClientRect();
 this.poscircle=document.getElementById("cercle").getBoundingClientRect();
 
 var angle=Math.atan2(this.poscircle.bottom-this.postitre1.top-this.poscircle.height/2, (this.poscircle.left-this.postitre1.right)) * 180 / Math.PI;
 var long=Math.abs(this.poscircle.bottom-this.postitre1.top-this.poscircle.height/2)/Math.sin(Math.atan2(this.poscircle.bottom-this.postitre1.top-this.poscircle.height/2, (this.poscircle.left-this.postitre1.right)))
-
+document.getElementById("line").style.left=this.postitre1.right+"px";
+document.getElementById("line").style.top=this.postitre1.top+"px";
+document.getElementById("line").style.right=this.poscircle.left+"px";
 document.getElementById("line").style.width=Math.abs(long)+"px";
 document.getElementById("line").style.transform="rotateZ("+(angle)+"deg)";
-if (!this.test){this.big1();this.test=true;}
+
+if (!this.test) {
+this.todo2();
+this.todo();this.test=true;}
+
+
+
 
 document.getElementById("line").style.opacity=1;
-
-
 
 
         }
@@ -200,9 +206,10 @@ left:60vw;
     background:  rgba(245, 245, 245,0.5);
     z-index: 1;
 }
+
 .line1{
 
-  position:absolute;
+  position:fixed;
   /*top:20.1vw;*/
 /*left:44.9vw;*/
 
@@ -364,13 +371,28 @@ li>em{
 	-webkit-animation: text-focus-in2 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	        animation: text-focus-in2 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
-  .slide-in-blurred-left {
-    -webkit-animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.slideinblurredleft-enter-active{
+  -webkit-animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 
-  .slide-in-blurred-left2 {
-    -webkit-animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+.slideinblurredleft-leave-active{
+  -webkit-animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
+  }
+
+
+
+
+ .slideinblurredleft2-enter-active{
+  -webkit-animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+
+.slideinblurredleft2-leave-active{
+  -webkit-animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 

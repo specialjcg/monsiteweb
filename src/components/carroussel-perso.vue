@@ -3,7 +3,10 @@
   <div class="fondfroid">
    <div class="parametre">
 <input type="number" name="position en y" id="posy" step="10" @click="changey()" v-model="choixy">
-<label for="number">position en y</label>
+<label for="number"><p>position en y</p> </label>
+
+<input type="number" name="position index" id="posy"  @click="changex()" v-model="choixx">
+<label for="number"><p>position en x</p> </label>
    </div>
     <div class="maMission" v-for="(task,num) in tasks" :key="num" @mouseenter.prevent="rotationCarroussel()" :style="computed2_class(num)">
       <div class="maMission2">
@@ -22,7 +25,8 @@ export default {
   data () {
     return {
       index: 0,
-
+choixy:'',
+choixx:'',
       mission: 'nos missions',
       positionCarroussel: {
         x: [0, 0, 0, 0, 0, 0],
@@ -47,7 +51,7 @@ export default {
         mission: '« Un voyage de mille lieues commence toujours par un premier pas. » Lao Tseu'
       },
       {
-        mission: '« J’ai des questions à toutes vos réponses »  Woody Allen -'
+        mission: '« J’ai des questions à toutes vos réponses »  Woody Allen '
       },
       {
         mission: '« Les autres parlent, moi je travaille »picasso'
@@ -57,29 +61,35 @@ export default {
   },
 
   mounted() {
-this.init();
+this.init(0);
   },
   computed() {
 
   },
 
   methods: {
-init(){
-this.choixy=0;
+init(i){
 
+this.choixy=this.positionCarroussel.y[i];
+this.choixx=i;
 
 },
 changey(){
-  for (var i=0;i<5;i++){
-this.positionCarroussel.y[i]=this.positionCarroussel.y[i]+Number(this.choixy);}
-for (var i = 0; i < this.positionCarroussel.x.length - 1; i++) {
-        this.computed2_class(i)
-      }
+
+this.positionCarroussel.y[0]=Number(this.choixy);
+this.init(0);
+
 },
+changex(){
+
+this.init(Number(this.choixx));
+
+},
+
     computed2_class (num) {
-      this.index = Number(num)
-      var tran = ''
-this.init();
+      this.index = Number(num);
+      var tran = '';
+
       tran =
         'translate3d(' +
         this.positionCarroussel.x[this.index] +
@@ -114,9 +124,11 @@ this.init();
       this.positionCarroussel.sc = this.rotationLignecarroussel(this.positionCarroussel.sc)
       this.positionCarroussel.opa = this.rotationLignecarroussel(this.positionCarroussel.opa)
       this.positionCarroussel.zindex = this.rotationLignecarroussel(this.positionCarroussel.zindex)
-      for (var i = 0; i < this.positionCarroussel.x.length - 1; i++) {
+      for (var i = 0; i < this.positionCarroussel.x.length -1; i++) {
         this.computed2_class(i)
+
       }
+
     }
   }
 
@@ -128,11 +140,14 @@ this.init();
 .parametre{
 display:flex;
   position: absolute;
-top:15vw;
+top:10vw;
+padding-left: 1vw;
+padding-right: 1vw;
+flex-direction: column;
 
 }
 .fondfroid{
-position: fixed;
+position: absolute;
 
 
     left: 0;
@@ -195,5 +210,13 @@ background: #e8f6a4;
      line-height: 1.2;
     margin: 1.414em 0 0.5em;
   }
-
+label{
+  padding-left: 2vw;
+}
+#posy{
+  font-size: 1.6em;
+color: #445200;
+width: 5vw;
+  padding-left: 1vw;
+}
 </style>

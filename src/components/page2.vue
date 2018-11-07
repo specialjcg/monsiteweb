@@ -1,17 +1,20 @@
 <template>
   <div id="imgdeux" class="blockparallaxgeneral2 " @scroll="handleScroll()">
-    <div class="createur-de-site-internet disposition" >
-      <h3>Pourquoi un <em>site web </em>sur-mesure</h3>
-      <ul>
-      <li>Renforcer votre crédibilité</li>
-      <li>Souplesse et adaptabilité</li>
-      <li>Rapide et référencer</li>
+    <div class="createur-de-site-internet disposition" :class="[!this.img1 ? 'essaiBordure':'']">
+      <h3>Pourquoi un <em>site web </em>sur-mesure <span>?</span></h3>
+      <ul >
+      <li class="résumé">Il renforce votre crédibilité</li>
+      <li class="résumé">Il est souple et adaptable</li>
+      <li class="résumé">il est rapide et référencé</li>
+
 </ul>
+ <button v-if=!this.img1 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+<button v-if=this.img1 @click.prevent="big1()">En Savoir plus</button>
     </div>
      <div class="createur-de-site-internet fond fondtext" >
        <div v-if=!this.img1>
-         <div class="avant scale-down-right"  > 
-           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title=""/> 
+         <div class="avant scale-down-right"  >
+           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title=""/>
            </div>
           <div class="titre-premiertexte  disposition-text slide-in-blurred-right " >
 
@@ -23,12 +26,14 @@
       </ul>
       <p>Je suis votre <em>développeur Web Freelance</em>,adepte des projets fait mains, basé en Rhone Alpes au coeur
         du Beaujolais ,je suis disponible pour vos projets dans l’hexagone et au-delà.</p>
+
       </div>
+
       </div>
       <div v-else >
-         <div class="avant scale-up-right2" @mouseover="big1()">
+         <div class="avant scale-up-right2" >
            <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="" /></div>
-    
+
 </div>
    </div>
 
@@ -38,26 +43,35 @@
 
       </div>
          <div class="titre-deuxiémetexte disposition-text slide-in-blurred-right ">
-        <h4>un site sur mesure </h4>
-        <p>fait main,fidèle à vos besoins </p>
+         <p>Travaillons ensemble à la <em>création de votre site internet </em> et assurons son <em>référencement</em>
+        afin qu’il
+        se trouve en bonne place sur google, définissons vos besoins et améliorons vos objectifs, afin de vous
+        présenter la solution la plus parfaite.</p>
+        <p>Un <em>site sur mesure </em>sera codé de A à Z (« fait maison ») adapter à vos besoins et fonctionnalités, un <em>design</em> personnalisé peut offrir toutes les
+          innovations pour attirer de nouveau client,le sur mesure est plus efficace ,plus maniable et plus rapide, car il est pensé en amont
+          pour un meilleur <em>référencement</em></p>
       </div>
       </div>
       <div v-else >
         <div class="après scale-up-right2" @mouseover.self="big2()"></div>
         <div class="titre-deuxiémetexte disposition-text slide-out-blurred-right ">
-        <h4>un site sur mesure </h4>
-        <p>fait main,fidèle à vos besoins </p>
+
       </div>
 
 </div>
 
 
     </div>
-    <div class="création-site-web disposition">
-      <h4>Travaillons ensemble à la <em>création de votre site internet </em> et assurons son <em>référencement</em>
-        afin qu’il
-        se trouve en bonne place sur google, définissons vos besoins et améliorons vos objectifs, afin de vous
-        présenter la solution la plus parfaite.</h4>
+    <div class="création-site-web disposition" :class="[!this.img2 ? 'essaiBordure2':'']">
+      <h3>Comment vous apporter plus de <em>prospect</em> <span>?</span></h3>
+      <ul >
+      <li >Il renforce votre crédibilité</li>
+      <li >Il est souple et adaptable</li>
+      <li >il est rapide et référencé</li>
+
+</ul>
+<button v-if=!this.img1 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+<button v-if=this.img1 @click.prevent="big1()">En Savoir plus</button>
     </div>
 
     <div class="créer-un-site-web disposition">
@@ -177,9 +191,22 @@ this.img1=true;
     line-height: 1.45;
     flex: auto;
     height: 19vw;
-border:1px solid;
-  }
 
+  }
+  .essaiBordure{
+border-right: 4px solid #FBC831;
+
+
+  }
+  .essaiBordure2{
+border-left: 4px solid #FBC831;
+
+
+  }
+.résumé{
+  text-align: right;
+
+}
 
 
   .createur-de-site-internet {
@@ -188,13 +215,14 @@ color:black;
     /* poussé de la moitié de hauteur du référent */
 
 font-family: 'Courgette', cursive;
+padding-right: 1vw;
   }
 
   .création-site-web {
 color:black;
     text-align: left;
 font-family: 'Courgette', cursive;
-
+padding-left: 1vw;
   }
 
   .créer-un-site-web {
@@ -209,6 +237,8 @@ color:black;
     color:#5373A5 ;
     z-index: 0;
     width: 61vw;
+
+
   }
 
   .titre-premiertexte {
@@ -218,7 +248,18 @@ max-width: 60vw;
 
   }
 
-  .titre-deuxiémetexte {}
+  .titre-deuxiémetexte {
+
+ text-align: right;
+
+    font-weight: inherit;
+    font-family: 'Courgette', cursive;
+     font-size: 1em;
+line-height:1.5
+
+
+
+  }
 span{
   color:indianred;
 }
@@ -243,7 +284,7 @@ list-style-type: none;
 
 
   p,li {
-text-align: left;
+
     font-weight: inherit;
     font-family: 'Courgette', cursive;
      font-size: 1em;
@@ -291,7 +332,7 @@ img{
 }
   .avant {
 position: absolute;
-
+border-right:1px solid;
     width: 61vw;
 
     height: 19vw;
@@ -364,7 +405,37 @@ top:0;
     animation: scale-up-right2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 
+ button {
+    color:#FBC831;
+font-family: 'Bitter', serif;
+ text-shadow: 3px 3px 3px #D17B0F;
+   background: #007100;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border-radius: 5px;
+    text-decoration: none;
+height:2.618vw;
+    font-size: 1.618vw;
+    font-weight: 800;
+    text-align: center;
 
+    margin-left: 5vw;
+    margin-top:2.618vw;
+width:auto;
+
+z-index: 2;
+transition: all 0.5s ease
+  }
+button:hover{
+/*background:#4BA62A;*/
+background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #4ba62a);
+ transform-origin: 0% 50%;
+  transform: rotateY(4deg)  rotateZ(1deg);
+
+}
 
   @-webkit-keyframes scale-down-right {
     0% {
