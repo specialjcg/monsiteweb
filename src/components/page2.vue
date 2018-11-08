@@ -8,21 +8,21 @@
       <li class="résumé">il est rapide et référencé</li>
 
 </ul>
- <button v-if=!this.img1 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+ <button v-if=!this.img1 @click.prevent="devis()">Obtenir votre devis</button>
 <button v-if=this.img1 @click.prevent="big1()">En Savoir plus</button>
     </div>
      <div class="createur-de-site-internet fond fondtext" >
        <div v-if=!this.img1>
          <div class="avant scale-down-right"  >
-           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title=""/>
+           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="Photo by Jose Ramirez on Unsplash.png"/>
            </div>
           <div class="titre-premiertexte  disposition-text slide-in-blurred-right " >
 
         <ul>
-        <li><span>La maîtrise:</span> je programme mes sources , aisées à utiliser et à améliorer,
+        <li><span>La maîtrise: </span> <em>Un site Web</em> programmé  et créé avec des sources internes, facile à utiliser et à améliorer,
         au contraire des briques de code ou des structures tout-en-un grappillés sur différentes plateformes.</li><br>
-        <li><span>La Performance:</span><em>Un site Web</em> plus léger et rapide à la navigation et au chargement parce qu’il n’utilise pas de framework, ajuster pour être facile à améliorer et à faire évoluer</li><br>
-        <li><span>La Pérennité:</span><em>Un site Web</em> utilisant les standards assure une structure solide dans le temps, contrairement à l’obsolescence de certaines technologies, et un code fait maison garantit une mise à jour rapide.</li>
+        <li><span>La Performance: </span><em>Un site Web</em> plus léger et rapide à la navigation et au chargement parce qu’il n’utilise pas de framework, ajusté pour être facile à améliorer et à faire évoluer</li><br>
+        <li><span>La Pérennité: </span><em>Un site Web</em> utilisant les standards assure une structure solide dans le temps, contrairement à l’obsolescence de certaines technologies, de plus un code fait maison garantit une mise à jour rapide.</li>
       </ul>
       <p>Je suis votre <em>développeur Web Freelance</em>,adepte des projets fait mains, basé en Rhone Alpes au coeur
         du Beaujolais ,je suis disponible pour vos projets dans l’hexagone et au-delà.</p>
@@ -32,14 +32,14 @@
       </div>
       <div v-else >
          <div class="avant scale-up-right2" >
-           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="" /></div>
+           <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash" title="Photo by Jose Ramirez on Unsplash.png" /></div>
 
 </div>
    </div>
 
     <div class="création-site-web fond fondtext">
       <div v-if=!this.img2>
-        <div class="après scale-down-right" @mouseover.self="big2()">
+        <div class="après scale-down-right" >
 
       </div>
          <div class="titre-deuxiémetexte disposition-text slide-in-blurred-right ">
@@ -50,10 +50,14 @@
         <p>Un <em>site sur mesure </em>sera codé de A à Z (« fait maison ») adapter à vos besoins et fonctionnalités, un <em>design</em> personnalisé peut offrir toutes les
           innovations pour attirer de nouveau client,le sur mesure est plus efficace ,plus maniable et plus rapide, car il est pensé en amont
           pour un meilleur <em>référencement</em></p>
+        <p>Proposer des contenus pertinents, c’est bien, mais disposer d'un site sur mesure où il est <em>agréable de naviguer</em>, c’est indispensable.
+        Il s’agit de l’un des éléments déterminants  montrant  pourquoi vos prospects poursuivront leur navigation sur votre <em>site Web </em>et pas sur un autre.</p>
+<p><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées , installons vos prospects au centre de votre <em>site Web </em></p>
+
       </div>
       </div>
       <div v-else >
-        <div class="après scale-up-right2" @mouseover.self="big2()"></div>
+        <div class="après scale-up-right2"></div>
         <div class="titre-deuxiémetexte disposition-text slide-out-blurred-right ">
 
       </div>
@@ -63,40 +67,55 @@
 
     </div>
     <div class="création-site-web disposition" :class="[!this.img2 ? 'essaiBordure2':'']">
-      <h3>Comment vous apporter plus de <em>prospect</em> <span>?</span></h3>
+      <h3>Vous Voulez <span class="special">+</span> de <em>prospect</em> <span>?</span></h3>
+
       <ul >
-      <li >Il renforce votre crédibilité</li>
-      <li >Il est souple et adaptable</li>
-      <li >il est rapide et référencé</li>
+      <li >Faites passer vos clients à l'action</li>
+      <li >Soigner votre proposition de valeur, Penser au design </li>
+            <li >Améliorer l'expérience utilisateur de vos futurs clients</li>
 
 </ul>
-<button v-if=!this.img1 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
-<button v-if=this.img1 @click.prevent="big1()">En Savoir plus</button>
+<button v-if=!this.img2 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+<button v-if=this.img2 class="devis" @click.prevent="big2()">En Savoir plus</button>
     </div>
+  <div class="créer-un-site-web  disposition" :class="[!this.img3 ? 'essaiBordure':'']">
+     <h3>Vous voulez que l'on s'occupe de tout <span>?</span></h3>
+      <ul >
+      <li class="résumé">Améliorer vos contenus</li>
+      <li class="résumé">Proche de vous en toute sécurité</li>
+      <li class="résumé">Fabriqué en France</li>
 
-    <div class="créer-un-site-web disposition">
-      <h4>Je suis votre intervenant particulier pour la <em>création de votre site Web</em>, tout au long du processus
+</ul>
+ <button v-if=!this.img3 @click.prevent="devis()">Obtenir votre devis</button>
+<button v-if=this.img3 @click.prevent="big3()">En Savoir plus</button>
+    </div>
+     <div class="créer-un-site-web fond fondtext" >
+       <div v-if=!this.img3>
+         <div class="avant scale-down-right"  >
+           <img src="./IMG_20180927_191002_535.jpg" alt="createur-de-site-internet sur mesure " title=""/>
+           </div>
+           <div class="titre-troisiemetexte  disposition-text slide-in-blurred-right " >
+
+      <p><span>Proximité: </span>Je suis votre intervenant particulier pour la <em>création de votre site Web</em>, tout au long du processus
         jusqu’à
-        la mise en ligne, et aussi pour son maintien. Local, proche de vous, joignable. </h4>
-    </div>
+        la mise en ligne, et aussi pour son maintien. Local, proche de vous, joignable. </p>
+<p><span>Sécurité :</span> utiliser un certificat SSL est un bon moyen de se prémunir contre les attaques et de rassurer vos visiteurs sur la sécurité de votre site web.</p>
 
-
-    <div class="fond2 fondtext">
-      <div v-if=!this.img3 class="titre-troisiemetexte disposition-text slide-in-blurred-right ">
-        <h4>un site sur mesure </h4>
-        <p>fait main,fidèle à vos besoins </p>
-      </div>
-      <div v-else class="titre-troisiemetexte disposition-text slide-out-blurred-right ">
-        <h4>un site sur mesure </h4>
-        <p>fait main,fidèle à vos besoins </p>
-      </div>
-      <div v-if=this.img3 class="pendant scale-up-right2" @mouseover.self="big3()"></div>
-
-      <div v-else class="pendant scale-down-right" @mouseover.self="big3()">
+        <p><span>Besoins:</span><i>"Votre site web n'est pas le centre de votre univers. Votre page Facebook n'est pas le centre de votre univers.
+          Votre application mobile n'est pas le centre de votre univers. Le client est le centre de votre univers"</i>. "Bruce Ernst, LeadID " </p>
+<p>"Qui réagit uniquement à ce que le client dit vouloir, risque fort de ne pas lui offrir ce qu'il attend vraiment."<br>
+<em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,<em> à l'écoute de vos besoins</em> </p>
 
       </div>
 
-    </div>
+      </div>
+      <div v-else >
+         <div class="avant scale-up-right2" >
+           <img src="./IMG_20180927_191002_535.jpg" alt="createur-de-site-internet sur mesure" title="" /></div>
+
+</div>
+   </div>
+
   </div>
 </template>
 
@@ -130,21 +149,28 @@
 
       big1: function () {
         this.img1 = !this.img1;
+this.img2 = true;
+this.img3 = true;
 
       },
       big2: function () {
+        this.img3 = true;
         this.img2 = !this.img2;
+        this.img1 = true;
       },
       big3: function () {
         this.img3 = !this.img3;
-
+this.img2 = true;
+this.img1 = true;
       },
       handleScroll() {
 
 var hauteurImage=document.getElementById("imgtrois").offsetHeight*2-180;
 
  if ((window.scrollY <200)){
-   this.img1=true;
+  this.img1=true;
+this.img2=true;
+this.img3=true;
  }
         if ((window.scrollY > hauteurImage) && (window.scrollY < hauteurImage + 150)) {
 
@@ -154,6 +180,9 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*2-180;
           document.getElementById("imgdeux").style.opacity = inter + 0.5;
           document.getElementById("imgdeux").style.transition = "all 0.5s ease-in-out";
 this.img1=true;
+this.img2=true;
+this.img3=true;
+
         } else {
           document.getElementById("imgdeux").style.filter = "blur(0)";
           document.getElementById("imgdeux").style.opacity = 1;
@@ -190,7 +219,7 @@ this.img1=true;
 
     line-height: 1.45;
     flex: auto;
-    height: 19vw;
+    height: 18vw;
 
   }
   .essaiBordure{
@@ -211,7 +240,7 @@ border-left: 4px solid #FBC831;
 
   .createur-de-site-internet {
     text-align: right;
-color:black;
+color: #49788C;
     /* poussé de la moitié de hauteur du référent */
 
 font-family: 'Courgette', cursive;
@@ -219,7 +248,9 @@ padding-right: 1vw;
   }
 
   .création-site-web {
-color:black;
+
+color: #51225C ;
+
     text-align: left;
 font-family: 'Courgette', cursive;
 padding-left: 1vw;
@@ -228,13 +259,13 @@ padding-left: 1vw;
   .créer-un-site-web {
     text-align: right;
 font-family: 'Courgette', cursive;
-color:black;
-
+color: #170F63;
+padding-right: 1vw;
   }
 
   .disposition-text {
 
-    color:#5373A5 ;
+
     z-index: 0;
     width: 61vw;
 
@@ -263,13 +294,22 @@ line-height:1.5
 span{
   color:indianred;
 }
+.special{
+font-size: 1.414em;
+font-weight: 800;
+}
   em {
 
 
     font-weight: 800;
   }
 
-  .titre-troisiemetexte {}
+  .titre-troisiemetexte {
+
+max-width: 60vw;
+ text-align: left;
+
+  }
 
  ul {
 
@@ -404,7 +444,9 @@ top:0;
     -webkit-animation: scale-up-right2 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-up-right2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
-
+.devis{
+margin-left: 0vw;
+}
  button {
     color:#FBC831;
 font-family: 'Bitter', serif;

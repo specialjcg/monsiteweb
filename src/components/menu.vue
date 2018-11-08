@@ -114,7 +114,7 @@ margin-left: 1vw;
 
 
 ul {
-  margin-left: 3vw;
+  margin-left: 1vw;
 position: relative;
    /* padding: 25px 0;*/
 
@@ -169,7 +169,7 @@ height: auto;
     text-align: center;
 width: 22vw;
 margin-left:5vw;
-margin-right: 8vw;
+margin-right: 7vw;
 z-index: 1;
 transition: all 0.5s ease
   }
