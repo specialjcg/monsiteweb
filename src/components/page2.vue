@@ -285,7 +285,7 @@ max-width: 60vw;
 
     font-weight: inherit;
     font-family: 'Courgette', cursive;
-     font-size: 1em;
+     font-size: 1vw;
 line-height:1.5
 
 
@@ -295,7 +295,7 @@ span{
   color:indianred;
 }
 .special{
-font-size: 1.414em;
+font-size: 1.414vw;
 font-weight: 800;
 }
   em {
@@ -314,7 +314,7 @@ max-width: 60vw;
  ul {
 
 font-family: 'Courgette', cursive;
-font-size: 1em;
+font-size: 1vw;
 list-style-type: none;
     margin: 0;
     padding: 0;
@@ -327,7 +327,7 @@ list-style-type: none;
 
     font-weight: inherit;
     font-family: 'Courgette', cursive;
-     font-size: 1em;
+     font-size: 1vw;
 line-height:1.5
   }
 
@@ -335,7 +335,7 @@ line-height:1.5
   h2,
   h3,
   h4 {
-    margin: 1.414em 0 0.5em;
+    margin: 1.414vw 0 0.5vw;
     font-family: 'Courgette', cursive;
     font-weight: inherit;
     line-height: 1.2;
@@ -343,25 +343,25 @@ line-height:1.5
 
   h1 {
     margin-top: 0;
-    font-size: 3.998em;
+    font-size: 3.998vw;
   }
 
   h2 {
-    font-size: 2.827em;
+    font-size: 2.827vw;
   }
 
   h3 {
-    font-size: 1.999em;
+    font-size: 1.999vw;
   }
 
   h4 {
 
-    font-size: 1.414em;
+    font-size: 1.414vw;
   }
 
   small,
   .font_small {
-    font-size: 0.707em;
+    font-size: 0.707vw;
   }
 img{
  width: 61vw;

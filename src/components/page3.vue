@@ -1,8 +1,15 @@
 <template>
 
+<div>
+<div class="img2" >
+  <picture  @mouseover="big1()" >
+  <source srcset="./fondvelo.webp" type="image/webp" @mouseover="big1()">
+  <img src="./fondvelo.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
+</picture>
+</div>
+    <div id="imgtrois" class="blockparallaxgeneral"  @scroll.prevent="handleScroll()">
 
-    <div id="imgtrois" class="blockparallaxgeneral img2" @mouseover.self="big1()" @scroll="handleScroll()">
-      <div v-if=this.img1 class="titre rgba-complement-0 slide-in-blurred-left">
+ <div v-if=this.img1 class="titre rgba-complement-0 slide-in-blurred-left">
         <h1>Nous veillons a ce que la première impression soit la bonne soyez visible</h1>
 
       </div>
@@ -12,10 +19,9 @@
       </div>
 
 
-
     </div>
 
-
+</div>
 </template>
 
 <script>
@@ -64,9 +70,7 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
           document.getElementById("imgtrois").style.transition = "all 0.5s ease-in-out";
 
         } else {
-          document.getElementById("imgtrois").style.filter = "blur(0)";
-          document.getElementById("imgtrois").style.opacity = 1;
-          document.getElementById("imgtrois").style.transition = "all 0.5s ease-in-out";
+          document.getElementById("imgtrois").style="";
         }
 
 
@@ -86,24 +90,31 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
     color: rgba( 87, 24, 165, 1);
     backdrop-filter: contrast(2) blur(20px);
     background-color: rgba(103, 229, 252, 0.3);
+    z-index: 3;
   }
 
 
 
   .titre {
     max-width: 500px;
-    position: relative;
+    position: absolute;
     height: auto;
-    right: 30%;
+    right:60%;
     justify-content: left;
     align-items: left;
-    z-index: 2;
+    z-index: 3;
   }
 
 
   .img2 {
-    background-image: url("fondvelo.png");
-    z-index: 3;
+ position: absolute;
+ height:50vw;
+    width:100vw;
+
+
+
+
+    z-index: 0;
     opacity: 1;
   }
 
@@ -155,6 +166,9 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
       -webkit-filter: blur(0);
       filter: blur(0);
       opacity: 1;
+ background: rgba(103, 229, 252, 0.3);
+   -webkit-backdrop-filter: contrast(2) blur(5px);
+    backdrop-filter: contrast(2) blur(20px);
     }
   }
 
@@ -176,9 +190,11 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
       -webkit-filter: blur(0);
       filter: blur(0);
       opacity: 1;
+ background: rgba(103, 229, 252, 0.3);
+   -webkit-backdrop-filter: contrast(2) blur(5px);
+    backdrop-filter: contrast(2) blur(20px);
     }
   }
-
 
 
 

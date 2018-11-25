@@ -1,8 +1,13 @@
 <template>
 
-
-
-    <div id="imgquatre" class="blockparallaxgeneral img3" @mouseover.self="big1()">
+<div>
+<div class="img3" >
+  <picture  @mouseover="big1()" >
+  <source srcset="./maison.webp" type="image/webp" @mouseover="big1()">
+  <img src="./maison.jpg" alt="createur-de-site-internet sur mesure beaujolais oingt">
+</picture>
+</div>
+    <div id="imgquatre" class="blockparallaxgeneral" >
       <div v-if=this.img1 class="titre rgba-complement-2 slide-in-blurred-left">
         <h1>nous vous promettons des designs inspirés et des services créatifs ayant du style</h1>
 
@@ -15,7 +20,7 @@
       </div>
 
 
-
+ </div>
   </div>
 </template>
 
@@ -59,6 +64,7 @@
     color: rgba( 80, 105, 131, 1);
     backdrop-filter: contrast(2) blur(20px);
     background-color: rgba(255, 239, 216, 0.3);
+     z-index: 3;
   }
 
 
@@ -66,19 +72,22 @@
     max-width: 500px;
     position: relative;
     height: auto;
-    right: 30%;
+    right: 60%;
     justify-content: left;
     align-items: left;
-    z-index: 2;
+    z-index: 3;
   }
 
 
 
 
   .img3 {
-    background-position: top;
-    background-image: url("maison.jpg");
-    z-index: 3;
+     position: relative;
+ height:50vw;
+    width:100vw;
+
+
+    z-index: 0;
     opacity: 1;
   }
 

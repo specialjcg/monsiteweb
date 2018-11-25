@@ -18,19 +18,18 @@
 
 <script>
 
-  import page1 from "./page.vue";
+  /*import page1 from "./page.vue";
   import slide2 from "./page2.vue";
   import slide3 from "./page3.vue";
-  import slide4 from "./page4.vue";
-
+  import slide4 from "./page4.vue";*/
   export default {
 name: 'miss',
     components: {
 
-     page1,
-       slide2,
-      slide3,
-      slide4
+     page1:() => import ("./page.vue"),
+       slide2:()=> import("./page2.vue"),
+      slide3:()=> import("./page3.vue"),
+      slide4:()=> import("./page4.vue")
   }
 
   };

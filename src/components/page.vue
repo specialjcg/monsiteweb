@@ -4,12 +4,17 @@
 
  <div id="cercle"  @mouseover="handleScroll()"></div>
 <div class="img1" >
-<img src="./oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title=""/></div>
+  <picture>
+  <source srcset="../assets/oingt2.webp" type="image/webp" >
+  <img src="../assets/oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
+</picture>
+
+</div>
   <div id="imgune" class="blockparallaxgeneral" @scroll.prevent="handleScroll()"  >
 <transition  name="slideinblurredleft" >
 
 <div id="titre1" class="titre color-primary-1" v-show="img1" >
-      <div v-if=this.img2  class="text-focus-in"  >
+      <div v-if="img2"  class="text-focus-in"  >
       <h3>Créons votre site internet <em>sur-mesure</em></h3>
 
     </div>
@@ -42,10 +47,17 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
 
+
+
+  export default {
+/*<img src="../assets/oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title=""/>*/
+
+    data() {
+
+
+      return {
+imgoingt: "../assets/oingt.png",
 intervalid1:'',
 intervalid2:'',
         img1: false,
@@ -174,6 +186,7 @@ document.getElementById("line").style.opacity=1;
 </script>
 
 <style scoped>
+
 @import "/home/specialjcg/site web/mission-vision2/src/components/blocImage.css";
 
   @import "./font.css";
@@ -297,7 +310,7 @@ background: rgb(164, 225, 214,0.8);
     position: fixed;
    top: 0;
    left:0;
-    background-repeat: no-repeat;
+   background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
     opacity: 1;
