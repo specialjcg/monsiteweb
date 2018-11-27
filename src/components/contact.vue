@@ -52,7 +52,15 @@ auth2:null,
     boutongoogle
   },
 mounted() {
-
+ var config = {
+    apiKey: "AIzaSyBigm08IvDSf4ocKa01HlUIytMHv5YQyVY",
+    authDomain: "jcgwebdeveloper.firebaseapp.com",
+    databaseURL: "https://jcgwebdeveloper.firebaseio.com",
+    projectId: "jcgwebdeveloper",
+    storageBucket: "jcgwebdeveloper.appspot.com",
+    messagingSenderId: '769951896037'
+  };
+firebase.initializeApp(config)
 
   },
   methods: {

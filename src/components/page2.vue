@@ -370,6 +370,7 @@ img{
 
 
 }
+
   .avant {
 position: absolute;
 border-right:1px solid;
@@ -397,7 +398,7 @@ border-right:1px solid;
 
   .pendant {
     display: inline-block;
-    width: 100%;
+    width: 61vw;
     background-image: url("IMG_20180927_191002_535.jpg");
     height: 19vw;
     background-position: center;
@@ -478,7 +479,18 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
   transform: rotateY(4deg)  rotateZ(1deg);
 
 }
+ #imgdeux {
+    height:60vw;
+    width:100vw;
 
+
+
+
+   background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 1;
+  }
   @-webkit-keyframes scale-down-right {
     0% {
       -webkit-transform: scale(1);

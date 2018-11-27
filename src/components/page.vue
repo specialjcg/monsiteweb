@@ -53,11 +53,12 @@
   export default {
 /*<img src="../assets/oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title=""/>*/
 
+
     data() {
 
 
       return {
-imgoingt: "../assets/oingt.png",
+
 intervalid1:'',
 intervalid2:'',
         img1: false,

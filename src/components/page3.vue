@@ -1,13 +1,13 @@
 <template>
 
-<div>
+<div class="blockparallaxgeneral2 ">
 <div class="img2" >
   <picture  @mouseover="big1()" >
   <source srcset="./fondvelo.webp" type="image/webp" @mouseover="big1()">
   <img src="./fondvelo.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
 </picture>
 </div>
-    <div id="imgtrois" class="blockparallaxgeneral"  @scroll.prevent="handleScroll()">
+    <div id="imgtrois"   @scroll.prevent="handleScroll()">
 
  <div v-if=this.img1 class="titre rgba-complement-0 slide-in-blurred-left">
         <h1>Nous veillons a ce que la première impression soit la bonne soyez visible</h1>
@@ -96,10 +96,11 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
 
 
   .titre {
-    max-width: 500px;
+    max-width: 25vw;
     position: absolute;
     height: auto;
-    right:60%;
+    top:10vw;
+    right:60vw;
     justify-content: left;
     align-items: left;
     z-index: 3;
@@ -108,8 +109,10 @@ var hauteurImage=document.getElementById("imgtrois").offsetHeight*3-180;
 
   .img2 {
  position: absolute;
- height:50vw;
+ height:60vw;
     width:100vw;
+ background-repeat: no-repeat;
+    background-size: cover;
 
 
 

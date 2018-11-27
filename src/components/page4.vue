@@ -1,13 +1,13 @@
 <template>
 
-<div>
+<div class="blockparallaxgeneral2" >
 <div class="img3" >
   <picture  @mouseover="big1()" >
   <source srcset="./maison.webp" type="image/webp" @mouseover="big1()">
   <img src="./maison.jpg" alt="createur-de-site-internet sur mesure beaujolais oingt">
 </picture>
 </div>
-    <div id="imgquatre" class="blockparallaxgeneral" >
+    <div id="imgquatre"  >
       <div v-if=this.img1 class="titre rgba-complement-2 slide-in-blurred-left">
         <h1>nous vous promettons des designs inspirés et des services créatifs ayant du style</h1>
 
@@ -69,10 +69,10 @@
 
 
   .titre {
-    max-width: 500px;
-    position: relative;
+    max-width: 25vw;
+    position: absolute;
     height: auto;
-    right: 60%;
+    right: 30vw;
     justify-content: left;
     align-items: left;
     z-index: 3;

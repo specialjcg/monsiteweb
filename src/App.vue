@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
 <menue></menue>
     <router-view/>
@@ -8,6 +9,7 @@
 <script>
 import menue from "/home/specialjcg/site web/monsite/src/components/menu.vue";
 export default {
+
   name: 'App',
    components: {
       menue}

@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1);
-
+overflow: hidden;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,11 +22,16 @@ filter: drop-shadow(16px 16px 10px black);
    width: 100vw;
    height: 60vw;
    display: flex;
-
+overflow: hidden;
    justify-content: space-between;
    align-items: flex-start;
    margin: 0;
    padding: 0;
    flex-flow: row wrap;
    align-content: flex-start;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 1;
+
  }

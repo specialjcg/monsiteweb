@@ -63,8 +63,8 @@ name: 'miss',
     position: relative;
     bottom: 0;
     right: 0;
-    height: 127px;
-    width: 100%;
+    height: 10vw;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background: #000000;
