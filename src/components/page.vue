@@ -23,19 +23,20 @@
 </div>
     <div class="découvrir_avantage_site_web" >
      <p class="color-primary-2"> Je vous propose des solutions sur mesure pour répondre au mieux à vos besoins ! </p>
-       <button  @click.prevent="img3=!img3">Découvrir</button>
+       <button  @click.prevent="manscrolly()">Découvrir</button>
 </div>
 </div></transition>
 <div id="line" class="line1" v-show="img1"></div>
 <transition name="slideinblurredleft">
     <div  class="color-primary-1 argumentaire" v-if="img3">
       <ul>
-        <li>Un site sur mesure retient l’attention de vos <em>futurs clients et prospects</em></li>
-        <li>Un site sur mesure contribue au <em>développement de votre notoriété</em> et de votre marque</li>
-        <li>Un site sur mesure autorise l’optimisation par <em>référencement naturel</em></li>
-        <li>un site sur mesure répond à tous <em>vos besoins</em> </li>
-        <li>Un site sur mesure est <em>totalement personnalisable, et évolutifs</em></li>
-        <li>Un site sur mesure apporte des <em>fonctionnalités</em> innovantes à vos clients</li>
+        <h3><em>Un site sur mesure :</em></h3>
+        <li>retient l’attention de vos <em>futurs clients et prospects</em></li>
+        <li> <em>développe votre notoriété</em> et votre marque</li>
+        <li>autorise l’optimisation par <em>référencement naturel</em></li>
+        <li>répond à tous <em>vos besoins</em> </li>
+        <li>est <em>totalement personnalisable, et évolutifs</em></li>
+        <li>apporte des <em>fonctionnalités</em> innovantes à vos clients</li>
       </ul>
     </div></transition>
 
@@ -90,6 +91,10 @@ export default {
      this.intervalid1 = setInterval(() => {
        this.img2 = !this.img2;
      }, 4000);
+   },
+   manscrolly(){
+this.img3 = !this.img3;
+if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.scrollBy({left:0,top:-200,behavior: 'smooth'})}
    },
    todo2() {
      this.intervalid2 = setInterval(() => {
@@ -158,6 +163,8 @@ export default {
 
 .découvrir_avantage_site_web {
   display: flex;
+justify-content:space-between;
+align-content: flex-start;
   z-index: 0;
 }
 
@@ -183,7 +190,11 @@ export default {
   background: rgba(245, 245, 245, 0.5);
   z-index: 1;
 }
+#titre1{
+  position:absolute;
+  top:18vw;
 
+}
 .line1 {
 
   position: fixed;
@@ -202,10 +213,12 @@ export default {
 }
 
 .titre {
+
   max-width: 33vw;
   position: absolute;
   height: auto;
-  left: 10vw;
+width: 29.3vw;
+  left: 6.8vw;
   justify-content: left;
   align-items: left;
   text-align: left;
@@ -232,9 +245,11 @@ button {
   font-size: 1.618vw;
   font-weight: 800;
   text-align: center;
+align-self: flex-end;
+  flex: 0 1 auto;
 
-  margin-left: 5vw;
-  margin-top: 2.618vw;
+
+  margin-top: 4.2vw;
   width: auto;
 
   z-index: 2;
@@ -250,22 +265,24 @@ button:hover {
 }
 
 .argumentaire {
-  max-width: 500px;
+  max-width: 42vw;
   position: absolute;
-  height: auto;
-  left: 65vw;
+  height: 26vw;
+  top:35vw;
+  left: 52vw;
   justify-content: left;
   align-items: left;
   text-align: left;
   margin: 0;
   padding: 0;
   z-index: 2;
-  width: auto;
-  color: whitesmoke;
+  width: 42vw;
+
 
 }
 
 #imgune {
+
   background: rgb(164, 225, 214, 0.8);
   z-index: 0;
 }
@@ -292,21 +309,22 @@ li>em {
 
 li {
   margin-bottom: 1.3vw;
-  font-size: 1vw;
+  font-size: 1.618vw;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
-
+color: whitesmoke;
 }
 
 p {
   margin-bottom: 1.3vw;
-  max-width: 50%;
-  font-size: 1vw;
+  max-width: 60%;
+  font-size: 1.618vw;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
-
+align-self: auto;
+  flex: 0 1 auto;
 }
 
 p::first-letter {

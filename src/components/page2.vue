@@ -12,12 +12,18 @@
       <button v-if=this.img1 @click.prevent="big1()"> En Savoir plus</button>
     </div>
     <div class="createur-de-site-internet fond fondtext">
-      <div v-if=!this.img1>
-        <div class="avant scale-down-right">
-          <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash"
-            title="Photo by Jose Ramirez on Unsplash.png" />
-        </div>
-        <div class="titre-premiertexte  disposition-text slide-in-blurred-right ">
+
+<transition  name="scale-down-right" >
+
+           <picture class="avant" v-show="img1">
+  <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
+  <img src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
+</picture>
+
+
+        </transition>
+
+        <div v-if=!this.img1 class="titre-premiertexte  disposition-text slide-in-blurred-right ">
 
           <ul>
             <li><span>La maîtrise: </span> <em>Un site Web</em> programmé et créé avec des sources internes, facile à
@@ -35,20 +41,23 @@
 
         </div>
 
-      </div>
-      <div v-else>
-        <div class="avant scale-up-right2">
-          <img src="./Photo by Jose Ramirez on Unsplash.png" alt="createur-de-site-internet sur mesure Photo by Jose Ramirez on Unsplash"
-            title="Photo by Jose Ramirez on Unsplash.png" /></div>
 
-      </div>
+
     </div>
 
-    <div class="création-site-web fond fondtext">
-      <div v-if=!this.img2>
-        <div class="après scale-down-right">
+<div class="création-site-web fond fondtext">
+      <transition  name="scale-down-left" >
+        <div class="après" v-show="img2">
+           <picture>
+  <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
+  <img src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
+</picture>
 
         </div>
+        </transition>
+
+      <div v-if=!this.img2>
+
         <div class="titre-deuxiémetexte disposition-text slide-in-blurred-right ">
           <p>Travaillons ensemble à la <em>création de votre site internet </em> et assurons son <em>référencement</em>
             afin qu’il
@@ -68,13 +77,7 @@
 
         </div>
       </div>
-      <div v-else>
-        <div class="après scale-up-right2"></div>
-        <div class="titre-deuxiémetexte disposition-text slide-out-blurred-right ">
 
-        </div>
-
-      </div>
     </div>
     <div class="création-site-web disposition" :class="[!this.img2 ? 'essaiBordure2':'']">
       <h3>Vous Voulez <span class="special">+</span> de <em>prospect</em> <span>?</span></h3>
@@ -88,7 +91,8 @@
       <button v-if=!this.img2 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
       <button v-if=this.img2 class="devis" @click.prevent="big2()"> En Savoir plus</button>
     </div>
-    <div class="créer-un-site-web  disposition" :class="[!this.img3 ? 'essaiBordure':'']">
+
+    <div class="créer-un-site-web  disposition1" :class="[!this.img3 ? 'essaiBordure':'']">
       <h3>Vous voulez que l'on s'occupe de tout <span>?</span></h3>
       <ul>
         <li class="résumé">Améliorer vos contenus</li>
@@ -99,11 +103,19 @@
       <button v-if=!this.img3 @click.prevent="devis()">Obtenir votre devis</button>
       <button v-if=this.img3 @click.prevent="big3()"> En Savoir plus</button>
     </div>
-    <div class="créer-un-site-web fond fondtext">
-      <div v-if=!this.img3>
-        <div class="avant scale-down-right">
-          <img src="./IMG_20180927_191002_535.jpg" alt="createur-de-site-internet sur mesure " title="" />
-        </div>
+    <div class="créer-un-site-web fond fondtext1">
+
+
+         <transition  name="scale-down-right" >
+
+           <picture class="pendant" v-show="img3">
+  <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
+  <img class="imgage1" src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
+</picture>
+
+
+        </transition>
+          <div v-if=!this.img3>
         <div class="titre-troisiemetexte  disposition-text slide-in-blurred-right ">
 
           <p><span>Proximité: </span>Je suis votre intervenant particulier pour la <em>création de votre site Web</em>,
@@ -125,11 +137,7 @@
         </div>
 
       </div>
-      <div v-else>
-        <div class="avant scale-up-right2">
-          <img src="./IMG_20180927_191002_535.jpg" alt="createur-de-site-internet sur mesure" title="" /></div>
 
-      </div>
     </div>
 
   </div>
@@ -198,9 +206,7 @@ export default {
         this.img3 = true;
 
       } else {
-        document.getElementById("imgdeux").style.filter = "blur(0)";
-        document.getElementById("imgdeux").style.opacity = 1;
-        document.getElementById("imgdeux").style.transition = "all 0.5s ease-in-out";
+        document.getElementById('imgtrois').style = '';
       }
 
 
@@ -228,15 +234,26 @@ export default {
 
 
   .disposition {
-    width: 33vw;
-    margin: 1vw;
 
+    margin: 1vw;
+max-width: 41vw;
 
     line-height: 1.45;
     flex: auto;
     height: 18vw;
 
   }
+ .disposition1 {
+
+    margin: 1vw;
+max-width: 48vw;
+
+    line-height: 1.45;
+    flex: auto;
+    height: 18vw;
+
+  }
+
   .essaiBordure{
 border-right: 4px solid #FBC831;
 
@@ -279,23 +296,33 @@ padding-right: 1vw;
   }
 
   .disposition-text {
+ margin: 1vw;
+max-width: 48vw;
 
-
-    z-index: 0;
-    width: 61vw;
+    line-height: 1.45;
+    flex: auto;
+    height: 18vw;
 
 
   }
 
   .titre-premiertexte {
-max-width: 60vw;
+max-width: 50vw;
  text-align: left;
 
-
   }
+.titre-premiertexte>ul>li{
+font-size: inherit;
+ font-size: 1vw;
 
+}
+.titre-premiertexte>p{
+font-size: inherit;
+ font-size: 1vw;
+
+}
   .titre-deuxiémetexte {
-
+max-width: 60vw;
  text-align: right;
 
     font-weight: inherit;
@@ -306,6 +333,13 @@ line-height:1.5
 
 
   }
+
+
+.titre-deuxiémetexte>p{
+font-size: inherit;
+ font-size: 1vw;
+
+}
 span{
   color:indianred;
 }
@@ -321,11 +355,15 @@ font-weight: 800;
 
   .titre-troisiemetexte {
 
-max-width: 60vw;
+max-width: 61vw;
  text-align: left;
 
   }
+.titre-troisiemetexte>p{
+font-size: inherit;
+ font-size: 1vw;
 
+}
  ul {
 
 font-family: 'Courgette', cursive;
@@ -342,7 +380,7 @@ list-style-type: none;
 
     font-weight: inherit;
     font-family: 'Courgette', cursive;
-     font-size: 1vw;
+     font-size: 1.618vw;
 line-height:1.5
   }
 
@@ -356,86 +394,89 @@ line-height:1.5
     line-height: 1.2;
   }
 
-  h1 {
-    margin-top: 0;
-    font-size: 3.998vw;
-  }
 
-  h2 {
-    font-size: 2.827vw;
-  }
+h1 {
+  margin-top: 0;
+  font-size: 6.854vw;
+}
 
-  h3 {
-    font-size: 1.999vw;
-  }
+h2 {
+  font-size: 4.236vw;
+}
 
-  h4 {
+h3 {
+  font-size: 2.618vw;
+}
 
-    font-size: 1.414vw;
-  }
+h4 {
+  font-size: 1.618vw;
+}
 
-  small,
-  .font_small {
-    font-size: 0.707vw;
-  }
+small,
+.font_small {
+  font-size: 0.618vw;
+}
 img{
- width: 61vw;
+ width: 55vw;
 
     height: 19vw;
 
 
 }
-
-  .avant {
-position: absolute;
-border-right:1px solid;
-    width: 61vw;
+.imgage1{
+width: 46vw;
 
     height: 19vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+  .avant {
+position: absolute;
+
+
+
+    height: 19vw;
+
     opacity: 1;
     z-index: 5;
   }
 
   .après {
     position: absolute;
- width: 61vw;
-    background-image: url("country-house-540796_1920.jpg");
+max-width: 60vw;
     height: 19vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
     opacity: 1;
     z-index: 3;
   }
 
   .pendant {
-    display: inline-block;
-    width: 61vw;
-    background-image: url("IMG_20180927_191002_535.jpg");
+    position: absolute;
+max-width: 60vw;
     height: 19vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
     opacity: 1;
     z-index: 3;
   }
 
   .fondtext {
     background:transparent;
-    width: 61vw;
+width: 55vw;
     margin: auto;
     height: 19vw;
     opacity: 1;
 
   }
+.fondtext1 {
+    background:transparent;
+width: 47vw;
 
+    height: 19vw;
+    opacity: 1;
+
+  }
   .fond {
 display: inherit;
 
-  float: left;
+
 top:0;
     z-index: 3;
   }
@@ -451,10 +492,24 @@ top:0;
     z-index: 1;
   }
 
-  .scale-down-right {
+  .scale-down-right-enter-active {
+    -webkit-animation: scale-down-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-down-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
+  }
+.scale-down-right-leave-active {
     -webkit-animation: scale-down-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-down-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+.scale-down-left-enter-active {
+    -webkit-animation: scale-down-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-down-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
+  }
+.scale-down-left-leave-active {
+    -webkit-animation: scale-down-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-down-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
 
   .scale-up-right2 {
     -webkit-animation: scale-up-right2 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -539,51 +594,38 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
     }
   }
 
-
-  /* ----------------------------------------------
-       * Generated by Animista on 2018-10-10 20:55:59
-       * w: http://animista.net, t: @cssanimista
-       * ---------------------------------------------- */
-
-
-  /**
-       * ----------------------------------------
-       * animation scale-up-right
-       * ----------------------------------------
-       */
-
-  @-webkit-keyframes scale-up-right2 {
+@-webkit-keyframes scale-down-left {
     0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      /*  -webkit-transform-origin: 100% 50%;
+                  transform-origin: 100% 50%;*/
+    }
+
+    100% {
       -webkit-transform: scale(0.5);
       transform: scale(0.5);
-      -webkit-transform-origin: 100% 50%;
-      transform-origin: 100% 50%;
+      /*  -webkit-transform-origin: 100% 50%;
+                  transform-origin: 100% 50%;*/
     }
+  }
 
-    100% {
+  @keyframes scale-down-left {
+    0% {
       -webkit-transform: scale(1);
       transform: scale(1);
       -webkit-transform-origin: 100% 50%;
       transform-origin: 100% 50%;
     }
-  }
 
-  @keyframes scale-up-right2 {
-    0% {
+    100% {
       -webkit-transform: scale(0.7);
       transform: scale(0);
-      -webkit-transform-origin: 130% 50%;
-      transform-origin: 130% 50%;
-    }
-
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-transform-origin: 100% 50%;
-      transform-origin: 100% 50%;
+      -webkit-transform-origin: -130% 50%;
+      transform-origin: -130% 50%;
+      z-index: 0;
     }
   }
-
 
 
 
@@ -649,10 +691,7 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
     }
   }
 
-  .slide-out-blurred-right {
-    -webkit-animation: slide-out-blurred-right 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-    animation: slide-out-blurred-right 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-  }
+
 
 
   /* ----------------------------------------------
@@ -667,47 +706,5 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
        * ----------------------------------------
        */
 
-  @-webkit-keyframes slide-out-blurred-right {
-    0% {
-      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-      transform: translateX(0) scaleY(1) scaleX(1);
-      -webkit-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
-      -webkit-filter: blur(0);
-      filter: blur(0);
-      opacity: 1;
-    }
 
-    100% {
-      -webkit-transform: translateX(1000px) scaleX(2) scaleY(0.2);
-      transform: translateX(1000px) scaleX(2) scaleY(0.2);
-      -webkit-transform-origin: 0% 50%;
-      transform-origin: 0% 50%;
-      -webkit-filter: blur(40px);
-      filter: blur(40px);
-      opacity: 0;
-    }
-  }
-
-  @keyframes slide-out-blurred-right {
-    0% {
-      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-      transform: translateX(0) scaleY(1) scaleX(1);
-      -webkit-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
-      -webkit-filter: blur(0);
-      filter: blur(0);
-      opacity: 1;
-    }
-
-    100% {
-      -webkit-transform: translateX(200px) scaleX(2) scaleY(0.2);
-      transform: translateX(200px) scaleX(2) scaleY(0.2);
-      -webkit-transform-origin: 0% 50%;
-      transform-origin: 0% 50%;
-      -webkit-filter: blur(40px);
-      filter: blur(40px);
-      opacity: 0;
-    }
-  }
 </style>
