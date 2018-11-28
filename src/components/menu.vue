@@ -1,63 +1,78 @@
 <template>
 
   <div class="heade">
-     <div class="logo"></div>
-     <div class="nom">jcgwebdeveloper</div>
-     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
+    <div class="logo"></div>
+    <div class="nom">jcgwebdeveloper</div>
+    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
 
-     <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin"/>
+      <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
 
-     </a>
-     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
-     <img src="./insta.png" alt="création de site internet sur mesure instagram"/>
-     </a>
-     <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" >
+    </a>
+    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
+      <img src="./insta.png" alt="création de site internet sur mesure instagram" />
+    </a>
+    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
 
-     <img src="./facebook.png" alt="création de site internet sur mesure facebook"/>
-     </a>
-<button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
-      <ul v-if=this.visible>
-        <li><router-link to="/">Acceuil</router-link></li>
-        <li><a href="index.html">A propos</a></li>
-        <li><router-link to="/blog">Article</router-link></li>
-        <li><router-link to="/portfolio">portfolio</router-link></li>
-        <li><router-link to="/contact">contact</router-link></li>
-      </ul>
-
-
-    </div>
+      <img src="./facebook.png" alt="création de site internet sur mesure facebook" />
+    </a>
+    <button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+    <ul v-if=this.visible>
+      <li>
+        <router-link to="/">Acceuil</router-link>
+      </li>
+      <li><a href="index.html">A propos</a></li>
+      <li>
+        <router-link to="/blog">Article</router-link>
+      </li>
+      <li>
+        <router-link to="/portfolio">portfolio</router-link>
+      </li>
+      <li>
+        <router-link to="/contact">contact</router-link>
+      </li>
+    </ul>
+  </div>
 
 </template>
 <script>
-
+/* eslint-disable padded-blocks */
+/* eslint-disable comma-dangle */
+/* eslint-disable space-before-function-paren */
+/* eslint-disable no-multiple-empty-lines */
+/* eslint-disable semi */
+/* eslint-disable indent */
+/* eslint-disable space-in-parens */
+/* jshint esversion: 6 */
 
 
 export default {
- name: 'menu1',
-    data() {
-      return {
+  name: 'menue',
+  data() {
+    return {
 
-        visible: true,
+      visible: true,
 
-    }},
-
-
-    computed: {
-
-    },
-
-    methods: {
-
-      menu1() {
-
-        this.visible = !this.visible;
+    }
+  },
 
 
-      }
+  computed: {
+
+  },
+
+  methods: {
+
+    menu1() {
+
+      this.visible = !this.visible;
+
+
+    }
 
 
 
-  }}
+  }
+}
 
 </script>
 <style scoped>

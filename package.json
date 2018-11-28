@@ -11,7 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "firebase": "^4.5.2",
+    "dns": "^0.2.2",
+    "email-check": "^1.1.0",
+    "email-existence": "^0.1.6",
+    "firebase": "^4.13.1",
     "grpc": "^1.16.1",
     "imagemin": "^6.0.0",
     "imagemin-webp": "^4.1.0",
@@ -19,6 +22,8 @@
     "intersection-observer": "^0.5.1",
     "intersection-observer-polyfill": "^0.1.0",
     "lozad": "^1.7.0",
+    "net": "^1.0.2",
+    "node": "^11.2.0",
     "v-lazy-image": "^1.2.2",
     "vue": "^2.5.2",
     "vue-clazy-load": "^0.4.2",

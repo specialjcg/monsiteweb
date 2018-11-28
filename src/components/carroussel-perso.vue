@@ -8,7 +8,7 @@
 <input type="number" name="position index" id="posy"  @click="changex()" v-model="choixx">
 <label for="number"><p>position en x</p> </label>
    </div>
-    <div class="maMission" v-for="(task,num) in tasks" :key="num" @mouseenter.prevent="rotationCarroussel()" :style="computed2_class(num)">
+    <div class="maMission" v-for="(task,num) in tasks" :key="num" @mouseenter.self="rotationCarroussel()" :style="computed2_class(num)">
       <div class="maMission2">
         <div class="transition-maison">
           <h1><span>{{task.mission}}</span></h1>
@@ -21,12 +21,17 @@
 </template>
 
 <script>
+/* eslint-disable padded-blocks */
+/* eslint-disable no-multiple-empty-lines */
+/* eslint-disable semi */
+/* eslint-disable space-before-function-paren */
+/* eslint-disable indent */
 export default {
-  data () {
+  data() {
     return {
       index: 0,
-choixy:'',
-choixx:'',
+      choixy: '',
+      choixx: '',
       mission: 'nos missions',
       positionCarroussel: {
         x: [0, 0, 0, 0, 0, 0],
@@ -39,54 +44,52 @@ choixx:'',
       },
 
       tasks: [{
-        mission: 'On a deux vies. La deuxième commence quand on réalise qu’on n’en a qu’une. Confucius'
-      },
-      {
-        mission: '« Si vous pouvez le rêver, vous pouvez le faire. » Walt Disney'
-      },
-      {
-        mission: 'Si vous pensez que l’aventure est dangereuse, essayez la routine, elle est mortelle. » Paulo Coelho'
-      },
-      {
-        mission: '« Un voyage de mille lieues commence toujours par un premier pas. » Lao Tseu'
-      },
-      {
-        mission: '« J’ai des questions à toutes vos réponses »  Woody Allen '
-      },
-      {
-        mission: '« Les autres parlent, moi je travaille »picasso'
-      }
+          mission: 'On a deux vies. La deuxième commence quand on réalise qu’on n’en a qu’une. Confucius'
+        },
+        {
+          mission: '« Si vous pouvez le rêver, vous pouvez le faire. » Walt Disney'
+        },
+        {
+          mission: 'Si vous pensez que l’aventure est dangereuse, essayez la routine, elle est mortelle. » Paulo Coelho'
+        },
+        {
+          mission: '« Un voyage de mille lieues commence toujours par un premier pas. » Lao Tseu'
+        },
+        {
+          mission: '« J’ai des questions à toutes vos réponses »  Woody Allen '
+        },
+        {
+          mission: '« Les autres parlent, moi je travaille »picasso'
+        }
       ]
     }
   },
 
   mounted() {
-this.init(0);
+    this.init(0);
   },
-  computed() {
 
-  },
 
   methods: {
-init(i){
+    init(i) {
 
-this.choixy=this.positionCarroussel.y[i];
-this.choixx=i;
+      this.choixy = this.positionCarroussel.y[i];
+      this.choixx = i;
 
-},
-changey(){
+    },
+    changey() {
 
-this.positionCarroussel.y[0]=Number(this.choixy);
-this.init(0);
+      this.positionCarroussel.y[0] = Number(this.choixy);
+      this.init(0);
 
-},
-changex(){
+    },
+    changex() {
 
-this.init(Number(this.choixx));
+      this.init(Number(this.choixx));
 
-},
+    },
 
-    computed2_class (num) {
+    computed2_class(num) {
       this.index = Number(num);
       var tran = '';
 
@@ -107,7 +110,7 @@ this.init(Number(this.choixx));
       }
     },
 
-    rotationLignecarroussel (positionCarrousselinter) {
+    rotationLignecarroussel(positionCarrousselinter) {
       var interCarroussel = 0
       interCarroussel = positionCarrousselinter[0]
       for (var i = 0; i < positionCarrousselinter.length - 1; i++) {
@@ -116,7 +119,7 @@ this.init(Number(this.choixx));
       positionCarrousselinter[positionCarrousselinter.length - 1] = interCarroussel
       return (positionCarrousselinter)
     },
-    rotationCarroussel () {
+    rotationCarroussel() {
       this.positionCarroussel.x = this.rotationLignecarroussel(this.positionCarroussel.x)
       this.positionCarroussel.y = this.rotationLignecarroussel(this.positionCarroussel.y)
       this.positionCarroussel.z = this.rotationLignecarroussel(this.positionCarroussel.z)
@@ -124,7 +127,7 @@ this.init(Number(this.choixx));
       this.positionCarroussel.sc = this.rotationLignecarroussel(this.positionCarroussel.sc)
       this.positionCarroussel.opa = this.rotationLignecarroussel(this.positionCarroussel.opa)
       this.positionCarroussel.zindex = this.rotationLignecarroussel(this.positionCarroussel.zindex)
-      for (var i = 0; i < this.positionCarroussel.x.length -1; i++) {
+      for (var i = 0; i < this.positionCarroussel.x.length - 1; i++) {
         this.computed2_class(i)
 
       }

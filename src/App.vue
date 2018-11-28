@@ -7,12 +7,16 @@
 </template>
 
 <script>
-import menue from "/home/specialjcg/site web/monsite/src/components/menu.vue";
+/* eslint-disable spaced-comment */
+/* eslint-disable semi */
+/* eslint-disable eol-last */
+import menue from '/home/specialjcg/site web/monsite/src/components/menu.vue';
 export default {
 
-  name: 'App',
-   components: {
-      menue}
+  /*name: 'App',*/
+  components: {
+    menue
+  }
 }
 </script>
 

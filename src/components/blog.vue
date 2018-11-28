@@ -1,6 +1,5 @@
 <template>
   <div>
-     <menue></menue>
 
   <div id="content" class="clearfix">
       <section id="left-sidebar">
@@ -20,9 +19,9 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-  }
+}
 </script>
 
 <style scoped>
