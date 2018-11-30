@@ -33,6 +33,7 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
@@ -98,7 +99,7 @@ module.exports = {
     // that does not make sense for the client
     dgram: 'empty',
     fs: 'empty',
-    net: 'empty',
+    net: 'mock',
     tls: 'empty',
     child_process: 'empty'
   }

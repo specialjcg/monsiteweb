@@ -27,11 +27,8 @@ import firebase from 'firebase/app'
 
 import 'firebase/firestore'
 
-/* import emailExistence from 'email-existence'; */
+
 import boutongoogle from './boutongoogle.vue'
-const settings = {
-  timestampsInSnapshots: true
-}
 
 /* eslint-disable eol-last */
 /* eslint-disable spaced-comment */
@@ -68,23 +65,25 @@ export default {
       messagingSenderId: '769951896037'
     };
     this.db = firebase.initializeApp(config);
-
+const firestore = firebase.firestore();
+const settings = {
+  timestampsInSnapshots: true
+}
+firestore.settings(settings);
   },
   methods: {
+    validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+},
     updateExistingPage() {
-      emailExistence.check(this.email, function (error, response) {
-        if (response === 250) {
-
-          this.db.firestore().collection('adresse').add({
+      if (this.validateEmail(this.email)){
+        this.db.firestore().collection('adresse').add({
             adressmail: this.email,
             nom: this.name,
-            message: this.message
+            message: this.message})}
+      else{alerts('probleme with mail');};
 
-          })
-        } else {
-          alerts('probleme with mail');
-        }
-      });
       this.email = '';
       this.name = '';
       this.message = '';
@@ -283,7 +282,7 @@ input {
 
 textarea {
   width: 41vw;
-  color: white;
+  color: #007100;
   outline: none;
   padding-left: 1vw;
   font-size: 1vw;
