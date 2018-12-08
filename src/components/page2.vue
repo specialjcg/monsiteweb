@@ -8,12 +8,13 @@
         <li class="résumé">il est rapide et référencé</li>
 
       </ul>
-      <button v-if=!this.img1 @click.prevent="devis()">Obtenir votre devis</button>
+      <button v-if=!this.img1 @click.prevent="devis1()">Obtenir votre devis</button>
       <button v-if=this.img1 @click.prevent="big1()"> En Savoir plus</button>
     </div>
+
     <div class="createur-de-site-internet fond fondtext">
 
-<transition  name="scale-down-right" >
+<transition  name="scale-down-right" mode="out-in" >
 
            <picture class="avant" v-show="img1">
   <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
@@ -22,26 +23,29 @@
 
 
         </transition>
-
-        <div v-if=!this.img1 class="titre-premiertexte  disposition-text slide-in-blurred-right ">
+<transition  name="slide-in-blurred-right" mode="out-in" key="!img1">
+        <div v-show="!img1">
+          <div class="titre-premiertexte  disposition-text ">
 
           <ul>
-            <li><span>La maîtrise: </span> <em>Un site Web</em> programmé et créé avec des sources internes, facile à
-              utiliser et à améliorer,
-              au contraire des briques de code ou des structures tout-en-un grappillés sur différentes plateformes.</li><br>
-            <li><span>La Performance: </span><em>Un site Web</em> plus léger et rapide à la navigation et au chargement
-              parce qu’il n’utilise pas de framework, ajusté pour être facile à améliorer et à faire évoluer</li><br>
-            <li><span>La Pérennité: </span><em>Un site Web</em> utilisant les standards assure une structure solide
-              dans le temps, contrairement à l’obsolescence de certaines technologies, de plus un code fait maison
-              garantit une mise à jour rapide.</li>
-          </ul>
-          <p>Je suis votre <em>développeur Web Freelance</em>,adepte des projets fait mains, basé en Rhone Alpes au
-            coeur
-            du Beaujolais ,je suis disponible pour vos projets dans l’hexagone et au-delà.</p>
+            <li v-if= "this.text1===1" ><span>Pour la maîtrise: </span><br> <em>Un site Web</em> programmé et créé avec des sources internes est facile à
+              utiliser et à améliorer. Pas de briques de codes ou des structures tout-en-un grappillés sur différentes plateformes.</li>
 
+            <li v-if= "this.text1===2"><span>Pour la Performance: </span><br> <em>Un site Web</em> léger, rapide à la navigation
+              n’utilise pas de framework, il est facile à améliorer et à faire évoluer</li>
+            <li v-if= "this.text1===3"><span>Pour la Pérennité: </span> <br><em>Un site Web</em> utilisant les standards assure une structure solide
+              dans le temps. Un code fait maison garantit une mise à jour rapide. Nous portons attention à l’obsolescence de certaines technologies</li>
+
+          <li v-if= "this.text1===4"><br>Je suis votre <em>développeur Web Freelance</em>, adepte des projets fait mains, basé en Rhone Alpes au
+            coeur
+            du Beaujolais, je suis disponible pour vos projets dans l’hexagone et au-delà.</li></ul>
+
+</div>
+<button class="petitbouton"  @click="bigtext()">{{this.suite}}</button>
         </div>
 
 
+</transition>
 
     </div>
 
@@ -49,46 +53,47 @@
       <transition  name="scale-down-left" >
         <div class="après" v-show="img2">
            <picture>
-  <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
-  <img src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
+  <source srcset="./aaron-kato-61462-unsplash.webp" type="image/webp" >
+  <img src="./aaron-kato-61462-unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Aaron Kato on Unsplash">
 </picture>
 
         </div>
         </transition>
+<transition  name="slide-in-blurred-right2" mode="out-in" key=!this.img2>
+      <div v-show=!this.img2>
 
-      <div v-if=!this.img2>
-
-        <div class="titre-deuxiémetexte disposition-text slide-in-blurred-right ">
-          <p>Travaillons ensemble à la <em>création de votre site internet </em> et assurons son <em>référencement</em>
-            afin qu’il
-            se trouve en bonne place sur google, définissons vos besoins et améliorons vos objectifs, afin de vous
+        <div class="titre-deuxiémetexte disposition-text ">
+          <p v-if= "this.text1===1">Travaillons ensemble à la <em>création de votre site internet </em> et assurons sa place sur <em>Google</em>. Définissons vos besoins et améliorons vos objectifs, afin de vous
             présenter la solution la plus parfaite.</p>
-          <p>Un <em>site sur mesure </em>sera codé de A à Z («fait maison») adapter à vos besoins et fonctionnalités,
-            un <em>design</em> personnalisé peut offrir toutes les
-            innovations pour attirer de nouveau client,le sur mesure est plus efficace ,plus maniable et plus rapide,
-            car il est pensé en amont
+          <p v-if= "this.text1===2">Un <em>site sur mesure </em>codé de A à Z «maison» adapté à vos besoins et fonctionnalités.
+            Un <em>design</em> personnalisé offre toutes les
+            innovations et attire de nouveaux clients,le sur mesure est efficace , maniable et rapide,
+            pensé en amont
             pour un meilleur <em>référencement</em></p>
-          <p>Proposer des contenus pertinents, c’est bien, mais disposer d'un site sur mesure où il est <em>agréable de
+          <p v-if= "this.text1===3">Proposer des contenus pertinents, c’est bien, mais disposer d'un site sur mesure où il est <em>agréable de
               naviguer</em>, c’est indispensable.
-            Il s’agit de l’un des éléments déterminants montrant pourquoi vos prospects poursuivront leur navigation
+            Il s’agit d'un des éléments déterminants pour que vos prospects poursuivent leur navigation
             sur votre <em>site Web </em>et pas sur un autre.</p>
-          <p><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,
-            installons vos prospects au centre de votre <em>site Web </em></p>
+          <p v-if= "this.text1===4"><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierres Dorées ,
+             votre <em>site Web</em> convertira vos prospects</p>
 
         </div>
+        <button  class="petitbouton2" @click="bigtext2()">{{this.suite}}</button>
       </div>
 
+  </transition>
     </div>
+
     <div class="création-site-web disposition" :class="[!this.img2 ? 'essaiBordure2':'']">
       <h3>Vous Voulez <span class="special">+</span> de <em>prospect</em> <span>?</span></h3>
 
       <ul>
         <li>Faites passer vos clients à l'action</li>
-        <li>Soigner votre proposition de valeur, Penser au design </li>
+        <li>Soigner votre proposition de valeur -> penser au design </li>
         <li>Améliorer l'expérience utilisateur de vos futurs clients</li>
 
       </ul>
-      <button v-if=!this.img2 class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+      <button v-if=!this.img2 class="devis" @click.prevent="devis2()">Obtenir votre devis</button>
       <button v-if=this.img2 class="devis" @click.prevent="big2()"> En Savoir plus</button>
     </div>
 
@@ -100,7 +105,7 @@
         <li class="résumé">Fabriqué en France</li>
 
       </ul>
-      <button v-if=!this.img3 @click.prevent="devis()">Obtenir votre devis</button>
+      <button v-if=!this.img3 @click.prevent="devis3()">Obtenir votre devis</button>
       <button v-if=this.img3 @click.prevent="big3()"> En Savoir plus</button>
     </div>
     <div class="créer-un-site-web fond fondtext1">
@@ -109,35 +114,33 @@
          <transition  name="scale-down-right" >
 
            <picture class="pendant" v-show="img3">
-  <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
-  <img class="imgage1" src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
+  <source srcset="./noproblem.webp" type="image/webp" >
+  <img class="imgage1" src="./noproblem.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="noproblem.png">
 </picture>
 
 
         </transition>
-          <div v-if=!this.img3>
+        <transition  name="slide-in-blurred-right" mode="out-in" key=!this.img3>
+          <div v-show=!this.img3>
         <div class="titre-troisiemetexte  disposition-text slide-in-blurred-right ">
 
-          <p><span>Proximité: </span>Je suis votre intervenant particulier pour la <em>création de votre site Web</em>,
+          <p v-if= "this.text1===1"><span>Proximité: </span><br>Je suis votre intervenant particulier pour la <em>création de votre site Web</em>,
             tout au long du processus
             jusqu’à
             la mise en ligne, et aussi pour son maintien. Local, proche de vous, joignable. </p>
-          <p><span>Sécurité:</span> utiliser un certificat SSL est un bon moyen de se prémunir contre les attaques et
+          <p v-if= "this.text1===2"><span>Sécurité:</span> utiliser un certificat SSL est un bon moyen de se prémunir contre les attaques et
             de rassurer vos visiteurs sur la sécurité de votre site web.</p>
 
-          <p><span>Besoins:</span><i>"Votre site web n'est pas le centre de votre univers. Votre page Facebook n'est
-              pas le centre de votre univers.
-              Votre application mobile n'est pas le centre de votre univers. Le client est le centre de votre univers"</i>.
-            "Bruce Ernst, LeadID " </p>
-          <p>"Qui réagit uniquement à ce que le client dit vouloir, risque fort de ne pas lui offrir ce qu'il attend
-            vraiment."<br>
-            <em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,<em> à
+          <p v-if= "this.text1===3" ><span>Besoins:</span><i>"Qui réagit uniquement à ce que le client dit vouloir, risque fort de ne pas lui offrir ce qu'il attend
+            vraiment."</i></p>
+
+            <p v-if= "this.text1===4"><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,<em> <br>à
               l'écoute de vos besoins</em> </p>
 
         </div>
-
+<button  class="petitbouton3" @click="bigtext3()">{{this.suite}}</button>
       </div>
-
+ </transition>
     </div>
 
   </div>
@@ -156,6 +159,9 @@ export default {
       img1: true,
       img2: true,
       img3: true,
+      text1: 1,
+
+      suite:"->la performance",
       backgroundpercent: 1
     }
   },
@@ -173,31 +179,73 @@ export default {
       this.img1 = !this.img1;
       this.img2 = true;
       this.img3 = true;
+this.suite="->La performance";
+this.text1=1;
+    },
+     bigtext: function () {
+       if (this.text1===4){ this.text1=1}else {      this.text1++;}
+if (this.text1===1){this.suite="->La performance"}
+if (this.text1===2){this.suite="->La Pérennité"}
+if (this.text1===3){this.suite="->Mon développeur"}
+if (this.text1===4){this.suite="->La maîtrise"}
+
+    },
+    bigtext2: function () {
+       if (this.text1===4){ this.text1=1}else {      this.text1++;}
+if (this.text1===1){this.suite="->Un site sur mesure"}
+if (this.text1===2){this.suite="->Pertinents"}
+if (this.text1===3){this.suite="->Mon développeur"}
+if (this.text1===4){this.suite="->Travaillons ensemble"}
+
+    },
+     bigtext3: function () {
+       if (this.text1===4){ this.text1=1}else {      this.text1++;}
+if (this.text1===1){this.suite="->sécurité"}
+if (this.text1===2){this.suite="->Besoins"}
+if (this.text1===3){this.suite="->Mon développeur"}
+if (this.text1===4){this.suite="->Proximité"}
 
     },
     big2: function () {
       this.img3 = true;
       this.img2 = !this.img2;
       this.img1 = true;
+      this.suite="->Un site sur mesure"
+      this.tex1===1;
     },
-    big3: function () {
+     big3: function () {
       this.img3 = !this.img3;
-      this.img2 = true;
+      this.img2 =true;
       this.img1 = true;
+      this.suite="->sécurité"
+      this.text1===1;
     },
-    handleScroll() {
+    devis1: function () {
+      this.img1 = !this.img1;
 
-      var hauteurImage = document.getElementById("imgtrois").offsetHeight * 2 - 180;
+    },
+    devis2: function () {
+      this.img2 = !this.img2;
+
+    },
+    devis3: function () {
+      this.img3 = !this.img3;
+
+    },
+
+    handleScroll() {
+ var viewporthaut = (window.innerHeight/window.innerWidth)*250;
+      var hauteurImage = document.getElementById("imgtrois").offsetHeight * 2  - viewporthaut;
 
       if ((window.scrollY < 200)) {
         this.img1 = true;
         this.img2 = true;
         this.img3 = true;
       }
-      if ((window.scrollY > hauteurImage) && (window.scrollY < hauteurImage + 150)) {
+      if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut-viewporthaut/3))) {
 
 
-        var inter = (hauteurImage - window.scrollY) / 150;
+        var inter = (hauteurImage - window.scrollY) / (hauteurImage + viewporthaut-viewporthaut/3);
         document.getElementById("imgdeux").style.filter = "blur(" + (1 - inter) * 10 + "px)";
         document.getElementById("imgdeux").style.opacity = inter + 0.5;
         document.getElementById("imgdeux").style.transition = "all 0.5s ease-in-out";
@@ -240,19 +288,20 @@ max-width: 41vw;
 
     line-height: 1.45;
     flex: auto;
-    height: 18vw;
+    height: 33vh;
 
   }
- .disposition1 {
+.disposition1 {
 
     margin: 1vw;
-max-width: 48vw;
+max-width: 41vw;
 
     line-height: 1.45;
     flex: auto;
-    height: 18vw;
+    height: 33vh;
 
   }
+
 
   .essaiBordure{
 border-right: 4px solid #FBC831;
@@ -280,7 +329,7 @@ padding-right: 1vw;
   }
 
   .création-site-web {
-
+margin-top: -1vh;
 color: #51225C ;
 
     text-align: left;
@@ -296,12 +345,12 @@ padding-right: 1vw;
   }
 
   .disposition-text {
- margin: 1vw;
+ margin: 1.414vw;
 max-width: 48vw;
 
     line-height: 1.45;
     flex: auto;
-    height: 18vw;
+    height: 33vh;
 
 
   }
@@ -313,22 +362,21 @@ max-width: 50vw;
   }
 .titre-premiertexte>ul>li{
 font-size: inherit;
- font-size: 1vw;
+ font-size: 1.618vw;
 
 }
 .titre-premiertexte>p{
 font-size: inherit;
- font-size: 1vw;
+ font-size: 1.618vw;
 
 }
   .titre-deuxiémetexte {
 max-width: 60vw;
  text-align: right;
 
-    font-weight: inherit;
-    font-family: 'Courgette', cursive;
-     font-size: 1vw;
-line-height:1.5
+
+
+
 
 
 
@@ -336,15 +384,16 @@ line-height:1.5
 
 
 .titre-deuxiémetexte>p{
+
 font-size: inherit;
- font-size: 1vw;
+ font-size: 1.618vw;
 
 }
 span{
   color:indianred;
 }
 .special{
-font-size: 1.414vw;
+font-size: 2.618vw;
 font-weight: 800;
 }
   em {
@@ -361,13 +410,13 @@ max-width: 61vw;
   }
 .titre-troisiemetexte>p{
 font-size: inherit;
- font-size: 1vw;
+ font-size: 1.618vw;
 
 }
  ul {
 
 font-family: 'Courgette', cursive;
-font-size: 1vw;
+font-size: 1.618vw;
 list-style-type: none;
     margin: 0;
     padding: 0;
@@ -388,7 +437,7 @@ line-height:1.5
   h2,
   h3,
   h4 {
-    margin: 1.414vw 0 0.5vw;
+    margin: 1vw 0 0.5vw;
     font-family: 'Courgette', cursive;
     font-weight: inherit;
     line-height: 1.2;
@@ -405,7 +454,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.618vw;
+  font-size: 2.1618vw;
 }
 
 h4 {
@@ -419,21 +468,21 @@ small,
 img{
  width: 55vw;
 
-    height: 19vw;
-
-
+    height: 33vh;
+ border-radius: 5px;
+ filter: drop-shadow(5px 5px 5px black);
 }
 .imgage1{
-width: 46vw;
+width: 54vw;
 
-    height: 19vw;
+    height: 33vh;
 }
   .avant {
 position: absolute;
 
 
 
-    height: 19vw;
+    height: 33vh;
 
     opacity: 1;
     z-index: 5;
@@ -442,7 +491,7 @@ position: absolute;
   .après {
     position: absolute;
 max-width: 60vw;
-    height: 19vw;
+    height: 33vh;
 
     opacity: 1;
     z-index: 3;
@@ -451,8 +500,8 @@ max-width: 60vw;
   .pendant {
     position: absolute;
 max-width: 60vw;
-    height: 19vw;
-
+    height: 33vh;
+margin: 1vw;
     opacity: 1;
     z-index: 3;
   }
@@ -461,15 +510,15 @@ max-width: 60vw;
     background:transparent;
 width: 55vw;
     margin: auto;
-    height: 19vw;
+    height: 33vh;
     opacity: 1;
 
   }
 .fondtext1 {
     background:transparent;
-width: 47vw;
+width: 55vw;
 
-    height: 19vw;
+    height: 33vh;
     opacity: 1;
 
   }
@@ -493,13 +542,32 @@ top:0;
   }
 
   .scale-down-right-enter-active {
-    -webkit-animation: scale-down-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-animation: scale-down-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
     animation: scale-down-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
   }
 .scale-down-right-leave-active {
     -webkit-animation: scale-down-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-down-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+
+  .slide-in-blurred-right-enter-active {
+    -webkit-animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  }
+  .slide-in-blurred-right-leave-active {
+    -webkit-animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse;
+    animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse;
+  }
+ .slide-in-blurred-right2-enter-active {
+    -webkit-animation: slide-in-blurred-right2 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-blurred-right2 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  }
+  .slide-in-blurred-right2-leave-active {
+    -webkit-animation: slide-in-blurred-right2 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse;
+    animation: slide-in-blurred-right2 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse;
+  }
+
 
 .scale-down-left-enter-active {
     -webkit-animation: scale-down-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -517,6 +585,28 @@ top:0;
   }
 .devis{
 margin-left: 0vw;
+}
+.petitbouton{
+
+position: relative;
+float: left;
+top:-16.2vh;
+left: -5vw;
+}
+.petitbouton2{
+
+position: relative;
+top:-17vh;
+left: 0vw;
+float:right;
+}
+.petitbouton3{
+
+position: relative;
+float: left;
+top:-15vh;
+left: -5vw;
+
 }
  button {
     color:#FBC831;
@@ -550,8 +640,9 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
 
 }
  #imgdeux {
-    height:60vw;
+    height:112vh;
     width:100vw;
+    position:relative;
 
 
 
@@ -629,10 +720,7 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
 
 
 
-  .slide-in-blurred-right {
-    -webkit-animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-    animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  }
+
 
 
   /* ----------------------------------------------
@@ -649,8 +737,8 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
 
   @-webkit-keyframes slide-in-blurred-right {
     0% {
-      -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-      transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+      -webkit-transform: translateX(200px) scaleX(2.5) scaleY(0.2);
+      transform: translateX(200px) scaleX(2.5) scaleY(0.2);
       -webkit-transform-origin: 0% 50%;
       transform-origin: 0% 50%;
       -webkit-filter: blur(40px);
@@ -690,6 +778,52 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
       opacity: 1;
     }
   }
+@-webkit-keyframes slide-in-blurred-right2 {
+    0% {
+      -webkit-transform: translateX(-200px) scaleX(2.5) scaleY(0.2);
+      transform: translateX(-200px) scaleX(2.5) scaleY(0.2);
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-filter: blur(40px);
+      filter: blur(40px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+      transform: translateX(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-blurred-right2 {
+    0% {
+      -webkit-transform: translateX(-200px) scaleX(2.5) scaleY(0.2);
+      transform: translateX(-200px) scaleX(2.5) scaleY(0.2);
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-filter: blur(40px);
+      filter: blur(40px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+      transform: translateX(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+
+
 
 
 

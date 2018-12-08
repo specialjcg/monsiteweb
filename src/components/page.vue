@@ -3,14 +3,14 @@
   <div >
 
  <div id="cercle"  @mouseover.self="handleScroll()"></div>
-<div class="img1" >
+<div>
   <picture>
   <source srcset="../assets/oingt2.webp" type="image/webp" >
-  <img src="../assets/oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
+  <img class="blockparallaxgeneral" src="../assets/oingt.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
 </picture>
 
 </div>
-  <div id="imgune" class="blockparallaxgeneral" @scroll.self="handleScroll()"  >
+  <div  id="imgune" @scroll.self="handleScroll()"  >
 <transition  name="slideinblurredleft" >
 
 <div id="titre1" class="titre color-primary-1" v-show="img1" >
@@ -109,23 +109,28 @@ if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.
    },
    handleScroll() {
      if (document.getElementById('imgune') != null) {
-       var hauteurImage = document.getElementById('imgune').offsetHeight - 200;
-       if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + 150))) {
+       var viewporthaut = (window.innerHeight/window.innerWidth)*250;
+       var hauteurImage = document.getElementById('imgune').offsetHeight - viewporthaut;
+       if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut-viewporthaut/3))) {
          document.getElementById('cercle').style.opacity = 0;
          document.getElementById('line').style.opacity = 0;
-         var inter = ((hauteurImage + 150) - window.scrollY) / 150;
+         var inter = ((hauteurImage + (viewporthaut-viewporthaut/4)) - window.scrollY) / ( viewporthaut-viewporthaut/3);
          document.getElementById('imgune').style.filter = 'blur(' + (1 - inter) * 10 + 'px)';
-         document.getElementById('imgune').style.transition = 'all 1s ease-in-out';
-       } else if ((window.scrollY > (hauteurImage - 150))) {
+         document.getElementById('imgune').style.transition = 'all 1s infinite';
+
+
+       } else if ((window.scrollY > (hauteurImage - ( viewporthaut-viewporthaut/6)))) {
+          if (this.test) {
          document.getElementById('cercle').style.opacity = 0;
          document.getElementById('line').style.opacity = 0;
+
          this.img1 = false;
-         if (this.test) {
+
            clearInterval(this.intervalid1);
            clearInterval(this.intervalid2);
            this.test = false;
          }
-       } else if ((window.scrollY < (hauteurImage + 250))) {
+       } else if ((window.scrollY < (hauteurImage + ( viewporthaut-viewporthaut/3)))) {
          this.img1 = true;
          document.getElementById('imgune').style = '';
          document.getElementById('cercle').style.opacity = 1;
@@ -153,7 +158,7 @@ if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.
 </script>
 
 <style scoped>
-@import "/home/specialjcg/site web/mission-vision2/src/components/blocImage.css";
+@import "./blocImage.css";
 
 @import "./font.css";
 
@@ -172,17 +177,17 @@ align-content: flex-start;
 
   color: #FBC831;
   background: rgba(103, 229, 252, 0.3);
-  -webkit-backdrop-filter: contrast(2) blur(5px);
+  -webkit-backdrop-filter: contrast(2) blur(20px);
   backdrop-filter: contrast(2) blur(20px);
   z-index: 3;
 }
 
 #cercle {
   position: fixed;
-  top: 18vw;
+  top: 36vh;
   left: 60vw;
-  width: 6px;
-  height: 6px;
+  width: 2px;
+  height: 2px;
   border-radius: 50%;
 
   box-shadow: inset 0 0 2px 2px rgba(245, 245, 245, 0.5);
@@ -192,7 +197,7 @@ align-content: flex-start;
 }
 #titre1{
   position:absolute;
-  top:18vw;
+  top:23vh;
 
 }
 .line1 {
@@ -241,7 +246,7 @@ button {
   outline: none;
   border-radius: 5px;
   text-decoration: none;
-  height: 2.618vw;
+  height: 4.236vh;
   font-size: 1.618vw;
   font-weight: 800;
   text-align: center;
@@ -249,7 +254,7 @@ align-self: flex-end;
   flex: 0 1 auto;
 
 
-  margin-top: 4.2vw;
+  margin-top: 4.2vh;
   width: auto;
 
   z-index: 2;
@@ -267,8 +272,8 @@ button:hover {
 .argumentaire {
   max-width: 42vw;
   position: absolute;
-  height: 26vw;
-  top:35vw;
+  height: auto;
+  top:48vh;
   left: 52vw;
   justify-content: left;
   align-items: left;
@@ -282,13 +287,16 @@ button:hover {
 }
 
 #imgune {
+ height: 100vh;
+  width: 100vw;
+
 
   background: rgb(164, 225, 214, 0.8);
   z-index: 0;
 }
 
 img {
-  height: 50vw;
+  height: 100vh;
   width: 100vw;
 
 
@@ -308,8 +316,8 @@ li>em {
 }
 
 li {
-  margin-bottom: 1.3vw;
-  font-size: 1.618vw;
+  margin-bottom: 1.3vh;
+  font-size:  1.618vw;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -317,9 +325,9 @@ color: whitesmoke;
 }
 
 p {
-  margin-bottom: 1.3vw;
+  margin-bottom: 1.3vh;
   max-width: 60%;
-  font-size: 1.618vw;
+  font-size:  1.618vw;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -433,7 +441,7 @@ small,
     filter: blur(0);
     opacity: 1;
     background: rgba(103, 229, 252, 0.3);
-    -webkit-backdrop-filter: contrast(2) blur(5px);
+    -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }
 }
@@ -458,7 +466,7 @@ small,
     filter: blur(0);
     opacity: 1;
     background: rgba(103, 229, 252, 0.3);
-    -webkit-backdrop-filter: contrast(2) blur(5px);
+    -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }
 }

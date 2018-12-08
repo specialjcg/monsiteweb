@@ -37,7 +37,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  @import "/home/specialjcg/site web/mission-vision2/src/components/blocImage.css";
+  @import "./blocImage.css";
   .rgba-complement-2 {
     color: rgba( 80, 105, 131, 1);
     backdrop-filter: contrast(2) blur(20px);

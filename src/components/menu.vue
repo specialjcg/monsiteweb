@@ -1,38 +1,36 @@
 <template>
+<div class="heade">
+  <div class="logo"></div>
+  <div class="nom">Valorisetonweb</div>
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
 
-  <div class="heade">
-    <div class="logo"></div>
-    <div class="nom">jcgwebdeveloper</div>
-    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
+    <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
 
-      <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
+  </a>
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
+    <img src="./insta.png" alt="création de site internet sur mesure instagram" />
+  </a>
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
 
-    </a>
-    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
-      <img src="./insta.png" alt="création de site internet sur mesure instagram" />
-    </a>
-    <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
-
-      <img src="./facebook.png" alt="création de site internet sur mesure facebook" />
-    </a>
-    <button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
-    <ul v-if=this.visible>
-      <li>
-        <router-link to="/">Acceuil</router-link>
-      </li>
-      <li><a href="index.html">A propos</a></li>
-      <li>
-        <router-link to="/blog">Article</router-link>
-      </li>
-      <li>
-        <router-link to="/portfolio">portfolio</router-link>
-      </li>
-      <li>
-        <router-link to="/contact">contact</router-link>
-      </li>
-    </ul>
-  </div>
-
+    <img src="./facebook.png" alt="création de site internet sur mesure facebook" />
+  </a>
+  <button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+  <ul v-if=this.visible>
+    <li>
+      <router-link to="/">Accueil</router-link>
+    </li>
+    <li><a href="index.html">A propos</a></li>
+    <li>
+      <a href="https://monaventureentrepreneurialperso.blogspot.com/" >Article</a>
+    </li>
+    <li>
+      <router-link to="/portfolio">portfolio</router-link>
+    </li>
+    <li>
+      <router-link to="/contact">contact</router-link>
+    </li>
+  </ul>
+</div>
 </template>
 <script>
 /* eslint-disable padded-blocks */
@@ -56,9 +54,7 @@ export default {
   },
 
 
-  computed: {
 
-  },
 
   methods: {
 
@@ -77,6 +73,7 @@ export default {
 </script>
 <style scoped>
 @import "./font.css";
+
  .heade {
     position: fixed;
 display: flex;
@@ -114,22 +111,22 @@ margin-left: 1vw;
     padding-right: 1vw;
     padding-left: 1vw;
 
-
   }
 
   ul li a {
+
     text-decoration: none;
     display: inline-block;
     font-size: 1vw;
     text-align: center;
-    transition: 1s;
+    transition: 0.5s;
     font-family: 'Courgette', cursive;
     color: aliceblue;
   }
 
 
 ul {
-  margin-left: 1vw;
+padding-right: 2vw;
 position: relative;
    /* padding: 25px 0;*/
 
@@ -138,8 +135,8 @@ position: relative;
     list-style-type: none;
  }
   ul li a:hover {
-    transform: translateX(20px);
-    color: white;
+    transform: translate3d(20px,0,0);
+    color: red;
     text-align: center;
     font-family: 'Courgette', cursive;
   }
@@ -151,12 +148,12 @@ width: 2vw;
    margin-left: 1vw;
  background-repeat: no-repeat;
     background-size: cover;
-
+vertical-align:middle;
 }
 .logo {
 
 
-
+vertical-align:middle;
 
     background-image: url('logo.png');
     width: 4vw;
@@ -186,15 +183,36 @@ width: 22vw;
 margin-left:5vw;
 margin-right: 7vw;
 z-index: 1;
-transition: all 0.5s ease
+
   }
 button:hover{
+  transition: all 0.5s ease;
 /*background:#4BA62A;*/
 background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #4ba62a);
  transform-origin: 0% 50%;
   transform: rotateY(4deg)  rotateZ(1deg);
 
 }
+button:active{
+/*background:#4BA62A;*/
+transition: all 0.1s ease;
+background: black;
+
+
+}
+@media screen and (max-width:500px){
+
+button{width:25vw;margin-right: 2vw}
+ul{margin-left: -7vw;}
+
+li{margin-top:-2vw;}
+
+
+}
+
+
+
+
 .expanderSocial{
 transition: all 0.5s ease;
 

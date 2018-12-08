@@ -1,12 +1,12 @@
 <template>
 
-<div class="blockparallaxgeneral2 ">
-  <div class="img2">
-    <picture @mouseover="big1()">
-      <source srcset="./fondvelo.webp" type="image/webp" @mouseover="big1()">
-      <img src="./fondvelo.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
+<div class="blockparallaxgeneral2">
+  <div class="fond fondtext">
+    <picture  @mouseover="big1()">
+      <source srcset="./fondvelo.webp" type="image/webp" >
+      <img  src="./fondvelo.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
     </picture>
-  </div>
+</div>
   <div id="imgtrois" @scroll.prevent="handleScroll()">
 
     <div v-if=this.img1 class="titre rgba-complement-0 slide-in-blurred-left">
@@ -59,8 +59,31 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
- @import "/home/specialjcg/site web/mission-vision2/src/components/blocImage.css";
+@import "./blocImage.css";
+.fondtext {
+    background:transparent;
 
+    margin: 0;
+
+    opacity: 1;
+
+  }
+  img{
+ width: 100%;
+
+    height: 100vh;
+ border-radius: 5px;
+ filter: drop-shadow(5px 5px 5px black);
+}
+
+
+  .fond {
+display: inherit;
+
+
+top:0;
+    z-index: 3;
+  }
  .rgba-complement-0 {
    color: rgba(87, 24, 165, 1);
    backdrop-filter: contrast(2) blur(20px);
@@ -72,7 +95,7 @@ export default {
    max-width: 25vw;
    position: absolute;
    height: auto;
-   top: 10vw;
+   top: 10vh;
    right: 60vw;
    justify-content: left;
    align-items: left;
@@ -80,11 +103,18 @@ export default {
  }
 
  .img2 {
-   position: absolute;
-   height: 60vw;
-   width: 100vw;
-   background-repeat: no-repeat;
-   background-size: cover;
+display: inherit;
+position: absolute;
+top:0;
+left:0;
+
+ width: 100%;
+
+    height: auto;
+  max-width: 100vw;
+
+
+
 
    z-index: 0;
    opacity: 1;

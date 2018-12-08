@@ -5,6 +5,8 @@
 
 <slide2></slide2>
 <slide3></slide3>
+<slide3inter></slide3inter>
+
 <slide4></slide4>
 
     <div class="footer">
@@ -28,6 +30,7 @@
     page1: () => import('./page.vue'),
     slide2: () => import('./page2.vue'),
     slide3: () => import('./page3.vue'),
+    slide3inter: () => import('./pageinter.vue'),
     slide4: () => import('./page4.vue')
   }
 
