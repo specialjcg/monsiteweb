@@ -21,7 +21,7 @@
     </li>
     <li><a href="index.html">A propos</a></li>
     <li>
-      <router-link to="/blogue">blog</router-link>
+      <router-link to="/blog/">blog</router-link>
     </li>
     <li>
       <router-link to="/portfolio">portfolio</router-link>

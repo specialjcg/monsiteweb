@@ -20,9 +20,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" >
+
+
+
+@import "/home/specialjcg/site web/monsite/src/components/font.css";
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Courgette', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

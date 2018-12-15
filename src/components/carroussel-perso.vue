@@ -164,8 +164,7 @@ position: absolute;
 
 
 
-  padding: 0;
-  margin:0;
+
 background: #e8f6a4;
 
 }

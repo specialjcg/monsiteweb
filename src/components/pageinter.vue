@@ -66,7 +66,7 @@ var profondeur=(14-index1)/14;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 @import "./blocImage.css";
 .fondarbre{
     background:transparent;
