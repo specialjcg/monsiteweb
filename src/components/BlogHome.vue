@@ -171,9 +171,10 @@ position: absolute;
 
 .titre1{
  position: absolute;
-  top:10vh;
+  top:8vh;
  z-index: 1;
  font-family: 'Courgette', cursive;
+  font-size: 1.618em;
 }
 .card-info{
   width: 100%;
@@ -184,8 +185,8 @@ position: absolute;
   padding: 0 50px;
   color: $txt-color;
  font-family: 'Courgette', cursive;
-  font-size: 1vw;
-  line-height: 24px;
+  font-size: 1em;
+  line-height: 1.2em;
   z-index: 2;
 
 opacity: 0;
@@ -249,34 +250,34 @@ h1,
 h2,
 h3,
 h4,p {
-  margin: 1.414vw 0 0.5vw;
+  margin: 1em 0 0.5em;
   font-family: 'Courgette', cursive;
   font-weight: inherit;
-  line-height: 1.2;
+  line-height: 1.2em;
 }
 
 h1 {
   margin-top: 0;
-  font-size: 6.854vw;
+  font-size: 6.854em;
 }
 
 h2 {
-  font-size: 4.236vw;
+  font-size: 4.236em;
 }
 
 h3 {
-  font-size: 2.618vw;
+  font-size: 2.618em;
 }
 
 h4,p {
-  font-size: 1vw;
+  font-size: 1em;
    font-weight: 800;
   letter-spacing: 2px;
   color: $h-color;
 
   margin-bottom: 0;
     text-align: center;
-  margin: 1vw 0 0 0;
+  margin: 1em 0 0 0;
   position: relative;
   z-index: 20;
   width: 100%;

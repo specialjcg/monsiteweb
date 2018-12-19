@@ -12,6 +12,7 @@ const contacts = () => import( /* webpackChunkName: "group-foo" */ '/home/specia
 Vue.use(Router);
 
 export default new Router({
+   mode: 'history',
   routes: [{
       path: '/',
       name: 'miss',

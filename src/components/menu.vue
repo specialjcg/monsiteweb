@@ -1,6 +1,7 @@
 <template>
 <div class="heade">
-  <div class="logo"></div>
+   <img src="./logo.png" class="logo">
+
   <div class="nom">Valorisetonweb</div>
   <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
 
@@ -82,7 +83,7 @@ text-align: center;
     align-items: center;
     left: 0;
     right: 0;
-    height: 4.236vw;
+    height: 6.85vh;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -100,7 +101,7 @@ top: 0;
     list-style-type: none;
  text-decoration: none;
 margin-left: 1vw;
-    font-size: 1.618vw;
+    font-size: 2.618em;
     text-align: left;
 
   }
@@ -117,7 +118,7 @@ margin-left: 1vw;
 
     text-decoration: none;
     display: inline-block;
-    font-size: 1vw;
+    font-size: 1em;
     text-align: center;
     transition: 0.5s;
     font-family: 'Courgette', cursive;
@@ -126,13 +127,14 @@ margin-left: 1vw;
 
 
 ul {
-padding-right: 2vw;
+padding-right: 1vw;
 position: relative;
    /* padding: 25px 0;*/
 
     /* on centre les liens */
     text-align: left;
     list-style-type: none;
+    margin-top: 2.5vh;
  }
   ul li a:hover {
     transform: translate3d(20px,0,0);
@@ -142,8 +144,8 @@ position: relative;
   }
 
 img{
-width: 2vw;
-    height: 2vw;
+width: 3vw;
+    height: 5vh;
     margin-top: 0;
    margin-left: 1vw;
  background-repeat: no-repeat;
@@ -153,15 +155,15 @@ vertical-align:middle;
 .logo {
 
 
-vertical-align:middle;
 
-    background-image: url('logo.png');
-    width: 4vw;
-    height: 4vw;
-    margin-top: 0;
-   margin-left: 1vw;
+
+
+  width: 2vw;
+    height: 6vh;
+
  background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+vertical-align:middle;
   }
   button {
    color:#FBC831;
@@ -176,12 +178,12 @@ font-family: 'Bitter', serif;
     border-radius: 5px;
     text-decoration: none;
 height: auto;
-    font-size: 2vw;
+    font-size: 2em;
     font-weight: 800;
     text-align: center;
 width: 22vw;
-margin-left:5vw;
-margin-right: 7vw;
+margin-left:7vw;
+margin-right: 5vw;
 z-index: 1;
 
   }
@@ -200,12 +202,304 @@ background: black;
 
 
 }
-@media screen and (max-width:500px){
+@media only screen and (max-width: 600px) {
+.heade {
 
-button{width:25vw;margin-right: 2vw}
-ul{margin-left: -7vw;}
+   height: 11.08vh;
+flex-flow: row wrap;
 
-li{margin-top:-2vw;}
+  }
+  img{
+margin:1vw;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+ .nom{
+flex: 1 0 auto;
+
+margin-left: 4vw;
+    font-size: 1.2em;
+    text-align: left;
+vertical-align:top;
+  }
+  .logo{
+
+margin:0;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+button{
+  margin:1vw;
+  margin-right: 5vw;
+padding: 1vw;
+ font-size: 1.418em;
+flex: 1 0 auto;
+width:40vw;
+
+ }
+
+
+ul {
+padding-right: 1vw;
+position: relative;
+   /* padding: 25px 0;*/
+flex: 1 0 auto;
+    /* on centre les liens */
+    text-align: left;
+    list-style-type: none;
+    margin-top: 0vh;
+    margin-left: 7vw;
+ }
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+.heade {
+
+   height: 11.08vh;
+flex-flow: row wrap;
+
+  }
+  img{
+margin:1vw;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+ .nom{
+flex: 1 0 auto;
+
+margin-left: 4vw;
+    font-size: 1.2em;
+    text-align: left;
+vertical-align:top;
+  }
+  .logo{
+
+margin:0;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+button{
+  margin:1vw;
+  margin-right: 5vw;
+padding: 1vw;
+ font-size: 1.618em;
+flex: 1 0 auto;
+width:40vw;
+ }
+
+
+ul {
+padding-right: 1vw;
+position: relative;
+   /* padding: 25px 0;*/
+flex: 1 0 auto;
+    /* on centre les liens */
+    text-align: left;
+    list-style-type: none;
+    margin-top: 0vh;
+   margin-left: 15vw;
+ }
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+.heade{
+
+  height: 11.08vh;
+}
+ img{
+margin:1vw;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+ .nom{
+flex: 1 0 auto;
+
+margin-left: 5vw;
+    font-size: 1.2em;
+    text-align: left;
+vertical-align:top;
+  }
+  .logo{
+
+margin:0;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+button{
+
+  margin-right: 5vw;
+
+ font-size: 1.618em;
+flex: 1 0 auto;
+width:40vw;
+ }
+ul {
+padding-right: 1vw;
+position: relative;
+   /* padding: 25px 0;*/
+flex: 0 1 auto;
+    /* on centre les liens */
+    text-align: left;
+    list-style-type: none;
+
+    margin-left: -5vw;
+ }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.heade{
+
+  height: 6.85vh;
+}
+ img{
+margin:1vw;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+ .nom{
+flex: 1 0 auto;
+margin:0;
+padding: 0;
+margin-left: 4vw;
+    font-size: 1.2em;
+    text-align: left;
+vertical-align:top;
+  }
+  .logo{
+
+margin:0;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+button{
+margin:0;
+padding: 0;
+
+
+ font-size: 1.618em;
+flex: 1 0 auto;
+width:20vw;
+ }
+ul {
+
+position: relative;
+   /* padding: 25px 0;*/
+flex: 0 1 auto;
+    /* on centre les liens */
+    text-align: left;
+    list-style-type: none;
+
+    margin-left: -5vw;
+ }
+}
+
+@media only screen and (min-width: 1100px) {
+
+
+
+ button{
+ font-size: 1.618em;
+
+width: 24vw;
+flex: 0 1 auto;
+
+ }
+.heade{
+
+  height: 6.85vh;
+}
+img{
+
+flex: 0 1 auto;
+
+}
+.logo{
+  flex: 0 1 auto;
+  margin-left: 2vw;
+}
+ul {
+padding-right: 1vw;
+position: relative;
+   /* padding: 25px 0;*/
+flex: 0 1 auto;
+    /* on centre les liens */
+    text-align: left;
+    list-style-type: none;
+    margin-top: 2.5vh;
+    margin-left: -5vw;
+ }
+
+ .nom{
+flex: 1 0 auto;
+margin:0;
+padding: 0;
+margin-left: 3vw;
+    font-size: 1.618em;
+    text-align: left;
+vertical-align:top;
+  }
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+ button{
+ font-size: 1.818em;
+
+width: 23vw;
+margin-left: 3vw;
+margin-right: 1vw;
+
+ }
+
+
+
+
+
+
+}
+@media only screen and (min-width: 1400px) {
+ button{
+ font-size: 2em;
+
+width: 22vw;
+margin-left: 2vw;
+margin-right: 5vw;
+
+ }
+
+.nom{
+flex: 1 0 auto;
+margin:0;
+padding: 0;
+margin-left: 5vw;
+    font-size: 1.618em;
+    text-align: left;
+vertical-align:top;
+  }
+.logo{
+  flex: 0 1 auto;
+  margin:0;
+padding: 0;
+margin-left: 2vw;
+}
+
 
 
 }

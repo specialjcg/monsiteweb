@@ -90,23 +90,24 @@ export default {
     },
 
     computed2_class(num) {
-      this.index = Number(num);
+      var myindex=Number(num)
+      this.index = myindex;
       var tran = '';
 
       tran =
         'translate3d(' +
-        this.positionCarroussel.x[this.index] +
+        this.positionCarroussel.x[myindex] +
         'px, ' +
-        this.positionCarroussel.y[this.index] +
+        this.positionCarroussel.y[myindex] +
         'px,' +
-        (this.positionCarroussel.z[this.index] + this.index * this.positionCarroussel.expand[this.index]) +
-        'px) scale(' + this.positionCarroussel.sc[this.index] + ')'
+        (this.positionCarroussel.z[myindex ] + this.index  * this.positionCarroussel.expand[myindex]) +
+        'px) scale(' + this.positionCarroussel.sc[myindex] + ')';
 
       return {
         transition: '3s ease',
         transform: tran,
-        'z-index': this.positionCarroussel.zindex[this.index],
-        opacity: this.positionCarroussel.opa[this.index]
+        'z-index': this.positionCarroussel.zindex[myindex],
+        opacity: this.positionCarroussel.opa[myindex]
       }
     },
 
@@ -127,7 +128,8 @@ export default {
       this.positionCarroussel.sc = this.rotationLignecarroussel(this.positionCarroussel.sc)
       this.positionCarroussel.opa = this.rotationLignecarroussel(this.positionCarroussel.opa)
       this.positionCarroussel.zindex = this.rotationLignecarroussel(this.positionCarroussel.zindex)
-      for (var i = 0; i < this.positionCarroussel.x.length - 1; i++) {
+      var longcarroussel=this.positionCarroussel.x.length;
+      for (var i = 0; i < longcarroussel - 1; i++) {
         this.computed2_class(i)
 
       }
@@ -184,7 +186,9 @@ background: #e8f6a4;
         bottom: 0;
         left: 50%;*/
     width: 50vw;
-    background-color: #445200;
+    background-image: url('trianglify.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 
@@ -195,7 +199,7 @@ background: #e8f6a4;
     left: 0;
     height: auto;
     width: 50vw;
-    color: #e8f6a4;
+    color:black;
     text-align: center;
 
     top: 50%;
@@ -217,7 +221,7 @@ label{
 }
 #posy{
   font-size: 1.6em;
-color: #445200;
+color: black;
 width: 5vw;
   padding-left: 1vw;
 }

@@ -247,7 +247,7 @@ button {
   border-radius: 5px;
   text-decoration: none;
   height: 4.236vh;
-  font-size: 1.618vw;
+  font-size: 1.618em;
   font-weight: 800;
   text-align: center;
 align-self: flex-end;
@@ -317,7 +317,7 @@ li>em {
 
 li {
   margin-bottom: 1.3vh;
-  font-size:  1.618vw;
+  font-size:  1.618em;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -327,7 +327,7 @@ color: whitesmoke;
 p {
   margin-bottom: 1.3vh;
   max-width: 60%;
-  font-size:  1.618vw;
+  font-size:  1.618em;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -353,24 +353,24 @@ h4 {
 
 h1 {
   margin-top: 0;
-  font-size: 6.854vw;
+  font-size: 6.854em;
 }
 
 h2 {
-  font-size: 4.236vw;
+  font-size: 4.236em;
 }
 
 h3 {
-  font-size: 2.618vw;
+  font-size: 2.618em;
 }
 
 h4 {
-  font-size: 1.618vw;
+  font-size: 1.618em;
 }
 
 small,
 .font_small {
-  font-size: 0.618vw;
+  font-size: 0.618em;
 }
 
 .text-focus-in {

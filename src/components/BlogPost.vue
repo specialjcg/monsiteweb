@@ -3,7 +3,7 @@
   <div v-if="post" id="blog-post">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <div class="texto">
-    <h3>{{ post.data.title }}</h3>
+    <h3>{{ post.data.title }}</h3><br>
 
     <h4>{{ post.data.author.first_name }} {{ post.data.author.last_name }} <i class="fa fa-comment-o"></i>  <i class="fa fa-calendar">  </i>{{mydatepost(post.data.published)}}</h4>
 
@@ -72,49 +72,39 @@ $card-width:  17.94vw;
 $card-height: 46.97vh;
 $h-color:    white;
 $yellow:      #FBC831;
-$txt-color:   white;
+$txt-color:   rgb(95, 95, 95);
 
-
+* { margin: 0; padding: 0; }
 
 #blog-post {
-
+position:absolute;
   width:95vw;
   text-align: left;
   display: block;
   clear: both;
-  margin-top: 5vw;
+  margin-top: 10vw;
   margin-bottom: 5vw;
   min-height: 500px;
 
 
-padding-top: 1vw;
+
 
 }
-.blogtext{
 
-margin-top: -5vw;
-
-}
 h1,
 h2,
 
 h4 ,p,.texto{
-max-width:  700px;
+max-width:  600px;
 
   font-family: 'Courgette', cursive;
   font-weight: inherit;
-  line-height: 2.618em;
+
   margin-left: auto;
   margin-right: auto;
 
 }
-p{
-	display: inline-block;
 
-margin-block-start: 0.618em;
-
-
-}
 h1{
   margin-top: 0;
   font-size: 6.854em;
@@ -124,25 +114,32 @@ h2 {
   font-size: 4.236em;
 }
 
-h3 {
-   line-height: 1.2;
-  font-size: 2.618em;
+.blogtext /deep/ h3 {
+   line-height: 1em;
+  font-size: 1.618em;
   color: $yellow;
 }
 
-h4,p ,.texto{
+h4,p,.texto{
 
+line-height: 2em;
   font-size: 1em;
-color: black;
+color:$txt-color;
 
 
 
 
 }
+h3 {
 
-@media only screen and (max-width:800px){
+color: inherit;
+margin-top: -1vh;
+font-size: 2.618em;
+ color: $yellow;
+ }
+@media only screen and (max-width:600px){
 
-#blog-post{width:95vw;}
+#blog-post{ width:95vw;}
 
 }
 </style>
