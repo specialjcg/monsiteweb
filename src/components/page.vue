@@ -345,7 +345,7 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 1.414vw 0 0.5vw;
+  margin: 1.414em 0 0.5em;
   font-family: 'Courgette', cursive;
   font-weight: inherit;
   line-height: 1.2;
@@ -544,6 +544,65 @@ small,
     opacity: 1;
   }
 }
+@media only screen and (max-width: 640px) {
+h3 {
+  font-size: 1.618em;
+}
+p {
+
+  font-size:  1em;
+
+}
+button {
+
+  font-size: 1em;
+
+}
+.titre {
+
+  max-width: 50vw;
+  position: absolute;
+  height: auto;
+width: 49.3vw;
+
+}
+
+#titre1{
+  position:absolute;
+  top:50vh;
+
+}
+
+}
+@media only screen and (max-width: 1100px) {
+h3 {
+  font-size: 1.618em;
+}
+p {
+
+  font-size:  1.218em;
+
+}
+button {
+
+  font-size: 1.218em;
+
+}
+.titre {
+
+  max-width: 50vw;
+  position: absolute;
+  height: auto;
+width: 49.3vw;
+
+}
+
+#titre1{
+  position:absolute;
+  top:50vh;
+
+}
 
 
+}
 </style>

@@ -44,23 +44,40 @@ export default {
     background-color: rgba(255, 239, 216, 0.3);
     z-index: 3;
   }
+img{
+ width: 100%;
 
+    height: 100vh;
+ border-radius: 5px;
+ filter: drop-shadow(5px 5px 5px black);
+}
   .titre {
     max-width: 25vw;
     position: absolute;
     height: auto;
-    right: 30vw;
+   top: 10vh;
+   right: 60vw;
     justify-content: left;
     align-items: left;
     z-index: 3;
   }
 
   .img3 {
-    position: relative;
-    height: 50vw;
-    width: 100vw;
-    z-index: 0;
-    opacity: 1;
+   display: inherit;
+position: absolute;
+top:0;
+left:0;
+
+ width: 100%;
+
+    height: auto;
+  max-width: 100vw;
+
+
+
+
+   z-index: 0;
+   opacity: 1;
   }
 
   h1 {

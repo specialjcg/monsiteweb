@@ -171,7 +171,7 @@ left:0;
      opacity: 1;
      background: rgba(103, 229, 252, 0.3);
      -webkit-backdrop-filter: contrast(2) blur(5px);
-     backdrop-filter: contrast(2) blur(20px);
+
    }
  }
 
@@ -196,7 +196,7 @@ left:0;
      opacity: 1;
      background: rgba(103, 229, 252, 0.3);
      -webkit-backdrop-filter: contrast(2) blur(5px);
-     backdrop-filter: contrast(2) blur(20px);
+
    }
  }
 

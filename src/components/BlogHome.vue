@@ -4,6 +4,11 @@
 
   <div class="container" >
 <h3 class="titre1">Crée son site web sur mesure</h3>
+ <header class="buttercms"><a  href="https://buttercms.com" target="_blank">
+
+    <img  class="img2" src="./butter-y.png" alt="création de site internet sur mesure butter cms" title="blog butter cms" />
+
+  </a></header>
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
       <div class="blog-home"
         v-for="(post,index) in posts"
@@ -119,7 +124,7 @@ document.getElementById("imginfo"+index).style.opacity =1;
 @import "./font.css";
 
 
-$card-width:  17.94vw;
+$card-width:  250px;
 $card-height: 46.97vh;
 $h-color:    white;
 $yellow:      #FBC831;
@@ -239,7 +244,7 @@ hr{
   margin: 20px auto;
   border: 0;
   background: $yellow;
-
+z-index:1;
 }
 
 a:link
@@ -267,6 +272,7 @@ h2 {
 
 h3 {
   font-size: 2.618em;
+
 }
 
 h4,p {
@@ -284,8 +290,112 @@ h4,p {
   top: 0;
   left: 0;
 }
+.img2{
+  	position: absolute;
+	top: 11vh;
+  left:23vw;
+width: 5vw;
+    height: 5vh;
+    margin-top: 0;
+   margin-left: 1vw;
+  background-image:linear-gradient(to left,  #074270, #0E578F, #4482B2, #6DA2CA);
+  border-radius: 5px;
+ background-repeat: no-repeat;
+    background-size: cover;
+vertical-align:middle;
+}
+.buttercms{
+
+transition: all 0.5s ease;
+
+}
+.buttercms:hover{
+ transform-origin: 10% 5%;
+  transform: scale(1.05);
+
+}
+@media only screen and (min-width: 340px) {
+  .blog-home {
+top:28vh;
 
 
 
+  }
+.titre1{
+
+  top:15vh;
+
+}
+.img2{
+
+	top: 23vh;
+  left:20vw;
+width: 18vw;
+    height: 5vh;
+
+}
+
+
+}
+
+
+
+@media only screen and (min-width: 640px) {
+  .blog-home {
+top:23vh;
+
+
+
+  }
+.titre1{
+
+  top:11vh;
+
+}
+.img2{
+
+	top: 18vh;
+  left:25vw;
+width: 18vw;
+    height: 5vh;
+
+}
+
+
+}
+@media only screen and (min-width: 900px) {
+.titre1{
+
+  top:11vh;
+
+}
+.img2{
+
+	top: 13.5vh;
+  left:35vw;
+width: 15vw;
+    height: 5vh;
+
+}
+
+}
+@media only screen and (min-width: 1400px) {
+.titre1{
+
+  top:10vh;
+
+}
+.img2{
+
+	top: 13.5vh;
+  left:25vw;
+width: 15vw;
+    height: 5vh;
+
+}
+
+
+
+}
 
 </style>

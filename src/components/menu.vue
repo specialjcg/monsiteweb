@@ -7,7 +7,7 @@
 
     <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
 
-  </a>
+  </a></header>
   <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
     <img src="./insta.png" alt="création de site internet sur mesure instagram" />
   </a>
@@ -202,10 +202,11 @@ background: black;
 
 
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 640px) {
 .heade {
 
-   height: 11.08vh;
+   height: 16.08vh;
 flex-flow: row wrap;
 
   }
@@ -218,7 +219,7 @@ flex: 1 0 auto;
  .nom{
 flex: 1 0 auto;
 
-margin-left: 4vw;
+margin-left: 3vw;
     font-size: 1.2em;
     text-align: left;
 vertical-align:top;
@@ -234,9 +235,9 @@ button{
   margin:1vw;
   margin-right: 5vw;
 padding: 1vw;
- font-size: 1.418em;
+ font-size: 1.218em;
 flex: 1 0 auto;
-width:40vw;
+width:20vw;
 
  }
 
@@ -250,14 +251,14 @@ flex: 1 0 auto;
     text-align: left;
     list-style-type: none;
     margin-top: 0vh;
-    margin-left: 7vw;
+    margin-left: 4vw;
  }
 
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 640px) {
 .heade {
 
    height: 11.08vh;
@@ -395,17 +396,18 @@ padding: 0;
 
  font-size: 1.618em;
 flex: 1 0 auto;
-width:20vw;
+width:24vw;
  }
 ul {
 
+padding-right: 1vw;
 position: relative;
    /* padding: 25px 0;*/
 flex: 0 1 auto;
     /* on centre les liens */
     text-align: left;
     list-style-type: none;
-
+    margin-top: 2.5vh;
     margin-left: -5vw;
  }
 }
