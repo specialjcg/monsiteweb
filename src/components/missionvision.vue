@@ -61,21 +61,7 @@
 
 
 
-  .footer {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    height: 10vw;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background: #000000;
-    z-index: 7;
-  }
 
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-  }
+
+
 </style>

@@ -109,7 +109,7 @@ if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.
    },
    handleScroll() {
      if (document.getElementById('imgune') != null) {
-       var viewporthaut = (window.innerHeight/window.innerWidth)*250;
+       var viewporthaut = window.innerHeight/4;
        var hauteurImage = document.getElementById('imgune').offsetHeight - viewporthaut;
        if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut-viewporthaut/3))) {
          document.getElementById('cercle').style.opacity = 0;
@@ -197,6 +197,7 @@ align-content: flex-start;
 }
 #titre1{
   position:absolute;
+
   top:23vh;
 
 }
@@ -345,7 +346,7 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 1.414em 0 0.5em;
+  margin: 1.214em 0 0em;
   font-family: 'Courgette', cursive;
   font-weight: inherit;
   line-height: 1.2;
@@ -544,65 +545,103 @@ small,
     opacity: 1;
   }
 }
-@media only screen and (max-width: 640px) {
-h3 {
-  font-size: 1.618em;
-}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
 p {
 
   font-size:  1em;
+margin: 1em 0 0em;
 
 }
-button {
-
-  font-size: 1em;
-
+h3 {
+  font-size: 1.2em;
+  margin: 1em 0 0em;
 }
-.titre {
-
-  max-width: 50vw;
-  position: absolute;
-  height: auto;
-width: 49.3vw;
-
+button{
+   font-size:  1em;
+flex: 1 0 auto;
 }
-
 #titre1{
-  position:absolute;
+
   top:50vh;
 
 }
+.titre {
+display:none;
+display: block;
+  max-width: 80vw;
+
+  min-height: auto;
+width: 80vw;
 
 }
-@media only screen and (max-width: 1100px) {
+.argumentaire {
+  max-width: 75vw;
+  position: absolute;
+  height: auto;
+  top:75vh;
+  left: 20vw;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  width: 75vw;
+
+
+}
+
+
+li {
+  margin-bottom: 1.3vh;
+  font-size:  0.6em;
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  line-height: 1.45;
+color: whitesmoke;
+}
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 1100px) {
+p {
+
+  font-size:  1.2em;
+
+}
 h3 {
   font-size: 1.618em;
 }
-p {
-
-  font-size:  1.218em;
-
-}
-button {
-
-  font-size: 1.218em;
+button{
+   font-size:  1.2em;
 
 }
-.titre {
-
-  max-width: 50vw;
+.argumentaire {
+  max-width: 42vw;
   position: absolute;
   height: auto;
-width: 49.3vw;
+  top:48vh;
+  left: 52vw;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  width: 42vw;
+
 
 }
 
-#titre1{
-  position:absolute;
-  top:50vh;
 
+li {
+  margin-bottom: 1.3vh;
+  font-size:  1em;
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  line-height: 1.45;
+color: whitesmoke;
 }
-
-
 }
 </style>

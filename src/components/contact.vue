@@ -4,8 +4,8 @@
     <img class="kenburns-top" src="./contact.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="" /></div>
   <div>
     <div class="pageContact">
-      <boutongoogle class="Name" @done="onUserLoggedIn"></boutongoogle>
-      <div class="Name">
+      <boutongoogle  @done="onUserLoggedIn"></boutongoogle>
+      <div class="name">
         <input v-model="name" id="idname" type="text" placeholder="Nom" required />
       </div>
       <div class="email">
@@ -98,6 +98,7 @@ firestore.settings(settings);
       this.name = profile.getName();
 
       this.email = profile.getEmail(); // This is null if the 'email' scope is not present.} // This is null if the 'email' scope is not present.
+        this.updateExistingPage();
     }
 
 
@@ -110,34 +111,38 @@ firestore.settings(settings);
 
 <style scoped>
 @import "./font.css";
-
+* { margin: 0; padding: 0; }
 .fongradient {
   position: absolute;
   background-image: linear-gradient(135deg, #FDD819 10%, #E80505 100%);
-  width: 100vw;
-  height: 60vw;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
 
+  overflow: hidden;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 0;
 }
 
-.Name {
+.name {
 
-  margin-bottom: 2vw;
+  margin-bottom: 2vh;
 
   border-radius: 4px;
   min-width: 42vw;
   align-self: auto;
   flex: 0 1 auto;
-  height: 4.236vw;
+  height: 8vh;
 
   border: 0;
 
   background-color: #D6F49D;
 
   border-radius: 4px;
+ text-align: left;
 
 
 }
@@ -152,7 +157,7 @@ firestore.settings(settings);
   min-width: 41vw;
   align-self: auto;
   flex: 0 1 auto;
-  height: 17vw;
+  height: 25vh;
   border: 0;
 
 
@@ -163,24 +168,14 @@ firestore.settings(settings);
 
 }
 
-.bouton {
 
-
-  margin-bottom: 2vw;
-
-  border-radius: 4px;
-
-  align-self: auto;
-  flex: 1 1 auto;
-
-}
 
 .email {
-  margin-bottom: 2vw;
+  margin-bottom: 2vh;
 
-  height: 4.236vw;
+  height: 8vh;
   border: 0;
-  min-width: 14vw;
+  min-width: 13vw;
 
   background-color: #D6F49D;
 
@@ -191,18 +186,9 @@ firestore.settings(settings);
 
 }
 
-#idname {
-  position: relative;
-  align-self: flex-start;
-  flex: 0 1 auto;
-  width: 42vw;
-}
 
-.large {
 
-  height: 17vw;
 
-}
 
 .pageContact {
   position: relative;
@@ -212,19 +198,19 @@ firestore.settings(settings);
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  top: 9vw;
+  top: 15vh;
   left: 28vw;
   width: 42vw;
 }
 
 .clientContact {
   position: absolute;
-  top: 11vw;
+  top: 20vh;
   left: 16vw;
 
   background-repeat: no-repeat;
   background-size: cover;
-  height: 26vw;
+  height: 40vh;
   width: 68vw;
   z-index: 0;
   clip-path: inset(0vw 0vw);
@@ -241,16 +227,20 @@ button {
   background-repeat: no-repeat;
   border: 0;
   cursor: pointer;
-  overflow: hidden;
+
   outline: none;
   border-radius: 4px;
   text-decoration: none;
-  height: 4.236vw;
-  font-size: 2vw;
+  min-height: 8vh;
+  font-size: 1.618em;
   font-weight: 800;
   text-align: center;
-  width: 28vw;
+  width: 29vw;
+ margin-bottom: 2vh;
 
+
+  align-self: auto;
+  flex: 1 0 auto;
   z-index: 1;
   transition: all 0.5s ease
 }
@@ -264,13 +254,13 @@ button:hover {
 }
 
 input {
-  width: 13vw;
-  height: 4.236vw;
+  width: 11vw;
+  height: 4.236vh;
 
   color: #007100;
 
   padding-left: 1vw;
-  font-size: 1vw;
+  font-size: 1em;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -285,7 +275,7 @@ textarea {
   color: #007100;
   outline: none;
   padding-left: 1vw;
-  font-size: 1vw;
+  font-size: 1em;
   font-family: 'Courgette', cursive;
   font-weight: 400;
   line-height: 1.45;
@@ -359,5 +349,34 @@ textarea {
     filter: blur(1px);
   }
 }
+@media screen and (min-width: 200px) and (max-width: 640px) {
+ .fongradient {
 
+  top: 16vh;
+margin:0;
+
+}
+button {
+font-size: 1em;
+
+
+}
+
+
+}
+@media screen and (min-width: 640px) and (max-width: 980px) {
+ .fongradient {
+
+  top: 16vh;
+margin:0;
+
+}
+button {
+font-size: 1em;
+
+
+}
+
+
+}
 </style>

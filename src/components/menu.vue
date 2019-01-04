@@ -7,7 +7,7 @@
 
     <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
 
-  </a></header>
+  </a>
   <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
     <img src="./insta.png" alt="création de site internet sur mesure instagram" />
   </a>
@@ -15,7 +15,7 @@
 
     <img src="./facebook.png" alt="création de site internet sur mesure facebook" />
   </a>
-  <button class="devis" @click.prevent="devis()">Obtenir votre devis</button>
+  <router-link to="/contact"><button class="devis">Obtenir votre devis</button></router-link>
   <ul v-if=this.visible>
     <li>
       <router-link to="/">Accueil</router-link>
@@ -76,28 +76,35 @@ export default {
 @import "./font.css";
 
  .heade {
+
     position: fixed;
-display: flex;
+   top:0;
+ margin: 0;
+    padding: 0;
+ display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 text-align: center;
     justify-content: center;
     align-items: center;
     left: 0;
     right: 0;
-    height: 6.85vh;
+    min-height:auto;
+
     width: 100vw;
-    margin: 0;
-    padding: 0;
-    top: 0;
+flex-flow: row wrap;
+
     z-index: 7;
     background: #000000;
 
   }
   .nom{
-
+flex: 0 1 auto;
 color: aliceblue;
  font-family: 'Courgette', cursive;
-top: 0;
-
+display: inline-block;
+top:0;
     list-style-type: none;
  text-decoration: none;
 margin-left: 1vw;
@@ -127,6 +134,7 @@ margin-left: 1vw;
 
 
 ul {
+   flex: 0 1 auto;
 padding-right: 1vw;
 position: relative;
    /* padding: 25px 0;*/
@@ -134,7 +142,7 @@ position: relative;
     /* on centre les liens */
     text-align: left;
     list-style-type: none;
-    margin-top: 2.5vh;
+   /* margin-top: 2.5vh;*/
  }
   ul li a:hover {
     transform: translate3d(20px,0,0);
@@ -144,18 +152,24 @@ position: relative;
   }
 
 img{
+
 width: 3vw;
-    height: 5vh;
+min-height:5vh;
+
     margin-top: 0;
    margin-left: 1vw;
  background-repeat: no-repeat;
     background-size: cover;
+display:inline-block;
 vertical-align:middle;
+ flex: 0 1 auto;
+
+
 }
 .logo {
 
-
-
+display: inline-block;
+ flex: 0 1 auto;
 
 
   width: 2vw;
@@ -185,7 +199,7 @@ width: 22vw;
 margin-left:7vw;
 margin-right: 5vw;
 z-index: 1;
-
+ flex: 0 1 auto;
   }
 button:hover{
   transition: all 0.5s ease;
@@ -202,15 +216,19 @@ background: black;
 
 
 }
-
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 500px) {
 .heade {
+min-height:16.08vh;
 
-   height: 16.08vh;
 flex-flow: row wrap;
 
   }
   img{
+width: 5vw;
+min-height:5vh;
+
+
+
 margin:1vw;
 padding: 0;
 flex: 1 0 auto;
@@ -219,9 +237,76 @@ flex: 1 0 auto;
  .nom{
 flex: 1 0 auto;
 
-margin-left: 3vw;
+margin-left: 1vw;
     font-size: 1.2em;
+    text-align: center;
+vertical-align:top;
+  }
+  .logo{
+
+margin:0;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+button{
+  margin:1vw;
+  margin-right: 5vw;
+padding: 1vw;
+ font-size: 1em;
+flex: 1 0 auto;
+width:20vw;
+
+ }
+
+
+
+
+
+
+ul {
+position: relative;
+   /* padding: 25px 0;*/
+
+    /* on centre les liens */
     text-align: left;
+    list-style-type: none;
+
+    margin-left: -3vw;
+   margin-right: 4vw;
+ flex-shrink: 0;
+
+ }
+li {
+
+
+    padding-right:3vw;
+    padding-left: 3vw;
+
+  }
+}
+@media only screen and  (min-width: 500px) and (max-width: 640px) {
+.heade {
+min-height:16.08vh;
+
+flex-flow: row wrap;
+
+  }
+  img{
+width: 5vw;
+min-height:5vh;
+
+margin:1vw;
+padding: 0;
+flex: 1 0 auto;
+
+  }
+ .nom{
+flex: 1 0 auto;
+
+margin-left: 1vw;
+    font-size: 1.2em;
+    text-align: center;
 vertical-align:top;
   }
   .logo{
@@ -243,25 +328,28 @@ width:20vw;
 
 
 ul {
-padding-right: 1vw;
+
 position: relative;
    /* padding: 25px 0;*/
-flex: 1 0 auto;
+
     /* on centre les liens */
-    text-align: left;
+    text-align: center;
     list-style-type: none;
-    margin-top: 0vh;
-    margin-left: 4vw;
+    margin-left: 6vw;
+   margin-right: auto;
+ flex-shrink: 0;
+
  }
 
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
+
 @media only screen and (min-width: 640px) {
 .heade {
 
-   height: 11.08vh;
+  min-height:11.08vh;
 flex-flow: row wrap;
 
   }
@@ -276,7 +364,7 @@ flex: 1 0 auto;
 
 margin-left: 4vw;
     font-size: 1.2em;
-    text-align: left;
+     text-align: center;
 vertical-align:top;
   }
   .logo{
@@ -297,16 +385,22 @@ width:40vw;
 
 
 ul {
-padding-right: 1vw;
+
 position: relative;
    /* padding: 25px 0;*/
-flex: 1 0 auto;
+
     /* on centre les liens */
     text-align: left;
     list-style-type: none;
-    margin-top: 0vh;
-   margin-left: 15vw;
+  margin-left: auto;
+   margin-right: auto;
+ flex-shrink: 0;
+
  }
+li {
+ font-size: 1.618em;
+
+  }
 
 
 }
@@ -315,8 +409,8 @@ flex: 1 0 auto;
 @media only screen and (min-width: 768px) {
 
 .heade{
+min-height:11.08vh;
 
-  height: 11.08vh;
 }
  img{
 margin:1vw;
@@ -328,7 +422,7 @@ flex: 1 0 auto;
 flex: 1 0 auto;
 
 margin-left: 5vw;
-    font-size: 1.2em;
+     font-size: 1.618em;
     text-align: left;
 vertical-align:top;
   }
@@ -356,16 +450,21 @@ flex: 0 1 auto;
     text-align: left;
     list-style-type: none;
 
-    margin-left: -5vw;
+
  }
+li {
+ font-size: 1.618em;
+
+  }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
 .heade{
+min-height:5vh;
 
-  height: 6.85vh;
 }
  img{
 margin:1vw;
@@ -410,6 +509,10 @@ flex: 0 1 auto;
     margin-top: 2.5vh;
     margin-left: -5vw;
  }
+ li {
+ font-size: 1em;
+
+  }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -424,8 +527,8 @@ flex: 0 1 auto;
 
  }
 .heade{
-
-  height: 6.85vh;
+min-height:5vh;
+vertical-align:center;
 }
 img{
 
@@ -444,7 +547,7 @@ flex: 0 1 auto;
     /* on centre les liens */
     text-align: left;
     list-style-type: none;
-    margin-top: 2.5vh;
+    vertical-align:center;
     margin-left: -5vw;
  }
 
@@ -455,12 +558,13 @@ padding: 0;
 margin-left: 3vw;
     font-size: 1.618em;
     text-align: left;
-vertical-align:top;
+vertical-align:center;
   }
 
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+
  button{
  font-size: 1.818em;
 
@@ -477,6 +581,11 @@ margin-right: 1vw;
 
 }
 @media only screen and (min-width: 1400px) {
+.heade{
+min-height:5vh;
+vertical-align:center;
+}
+
  button{
  font-size: 2em;
 
@@ -494,6 +603,7 @@ margin-left: 5vw;
     font-size: 1.618em;
     text-align: left;
 vertical-align:top;
+
   }
 .logo{
   flex: 0 1 auto;

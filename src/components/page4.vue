@@ -45,7 +45,7 @@ export default {
     z-index: 3;
   }
 img{
- width: 100%;
+ width: 100vw;
 
     height: 100vh;
  border-radius: 5px;
@@ -68,10 +68,10 @@ position: absolute;
 top:0;
 left:0;
 
- width: 100%;
+
 
     height: auto;
-  max-width: 100vw;
+
 
 
 
