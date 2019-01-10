@@ -1,14 +1,14 @@
 <template>
   <div id="imgdeux" class="blockparallaxgeneral2 " @scroll="handleScroll()">
     <div class="createur-de-site-internet disposition" :class="[!this.img1 ? 'essaiBordure':'']">
-      <h3>Pourquoi un <em>site web </em>sur-mesure <span>?</span></h3>
+      <h1>Pourquoi un <em>site web </em>sur-mesure <span>?</span></h1>
       <ul>
         <li class="résumé">Il renforce votre crédibilité</li>
         <li class="résumé">Il est souple et adaptable</li>
         <li class="résumé">il est rapide et référencé</li>
 
       </ul>
-      <button v-if=!this.img1 @click.prevent="devis1()">Obtenir votre devis</button>
+      <router-link to="/contact" class="vers contact1"><button v-if=!this.img1 >Obtenir votre devis</button></router-link>
       <button v-if=this.img1 @click.prevent="big1()"> En Savoir plus</button>
     </div>
 
@@ -16,7 +16,7 @@
 
 <transition  name="scale-down-right" mode="out-in" >
 
-           <picture class="avant" v-show="img1">
+           <picture class="avant" v-show="img1" @click.prevent="big1()">
   <source srcset="./Photo-by-Jose-Ramirez-on-Unsplash.webp" type="image/webp" >
   <img src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
 </picture>
@@ -51,7 +51,7 @@
 
 <div class="création-site-web fond fondtext">
       <transition  name="scale-down-left" >
-        <div class="après" v-show="img2">
+        <div class="après" v-show="img2" @click.prevent="big2()">
            <picture>
   <source srcset="./aaron-kato-61462-unsplash.webp" type="image/webp" >
   <img src="./aaron-kato-61462-unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Aaron Kato on Unsplash">
@@ -85,7 +85,7 @@
     </div>
 
     <div class="création-site-web disposition" :class="[!this.img2 ? 'essaiBordure2':'']">
-      <h3>Vous Voulez <span class="special">+</span> de <em>prospect</em> <span>?</span></h3>
+      <h1>Vous Voulez <span class="special">+</span> de <em>prospect</em> <span>?</span></h1>
 
       <ul>
         <li>Faites passer vos clients à l'action</li>
@@ -93,19 +93,19 @@
         <li>Améliorer l'expérience utilisateur de vos futurs clients</li>
 
       </ul>
-      <button v-if=!this.img2 class="devis" @click.prevent="devis2()">Obtenir votre devis</button>
+       <router-link to="/contact" class="vers contact3"><button v-if=!this.img2 class="devis" >Obtenir votre devis</button></router-link>
       <button v-if=this.img2 class="devis" @click.prevent="big2()"> En Savoir plus</button>
     </div>
 
     <div class="créer-un-site-web  disposition1" :class="[!this.img3 ? 'essaiBordure':'']">
-      <h3>Vous voulez que l'on s'occupe de tout <span>?</span></h3>
+      <h1>Vous voulez que l'on s'occupe de tout <span>?</span></h1>
       <ul>
         <li class="résumé">Améliorer vos contenus</li>
         <li class="résumé">Proche de vous en toute sécurité</li>
         <li class="résumé">Fabriqué en France</li>
 
       </ul>
-      <button v-if=!this.img3 @click.prevent="devis3()">Obtenir votre devis</button>
+      <router-link to="/contact" class="vers contact4"><button v-if=!this.img3 >Obtenir votre devis</button></router-link>
       <button v-if=this.img3 @click.prevent="big3()"> En Savoir plus</button>
     </div>
     <div class="créer-un-site-web fond fondtext1">
@@ -113,7 +113,7 @@
 
          <transition  name="scale-down-right" >
 
-           <picture class="pendant" v-show="img3">
+           <picture class="pendant" v-show="img3" @click.prevent="big3()">
   <source srcset="./noproblem.webp" type="image/webp" >
   <img class="imgage1" src="./noproblem.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="noproblem.png">
 </picture>
@@ -365,22 +365,19 @@ max-width: 50vw;
   .titre-deuxiémetexte {
 max-width: 60vw;
  text-align: right;
-
-
-
-
-
-
-
   }
+.titre-deuxiémetexte>p{
 
+font-size: 1.618em;
+
+}
 
 
 span{
   color:indianred;
 }
 .special{
-font-size: 2.618vw;
+font-size: 1.618em;
 font-weight: 800;
 }
   em {
@@ -395,11 +392,15 @@ max-width: 61vw;
  text-align: left;
 
   }
+.titre-troisiemetexte>p{
 
+font-size: 1.618em;
+
+}
  ul {
 
 font-family: 'Courgette', cursive;
-font-size: 1.618vw;
+
 list-style-type: none;
     margin: 0;
     padding: 0;
@@ -412,10 +413,14 @@ list-style-type: none;
 
     font-weight: inherit;
     font-family: 'Courgette', cursive;
-     font-size: 1.618vw;
+     font-size: 1.2em;
 line-height:1.5
   }
+.titre-premiertexte>ul>li{
 
+font-size: 1.618em;
+
+}
   h1,
   h2,
   h3,
@@ -427,26 +432,26 @@ line-height:1.5
   }
 
 
-h1 {
+h3 {
   margin-top: 0;
-  font-size: 6.854vw;
+  font-size: 6.854em;
 }
 
 h2 {
-  font-size: 4.236vw;
+  font-size: 4.236em;
 }
 
-h3 {
-  font-size: 2.1618vw;
+h1 {
+  font-size: 2.218em;
 }
 
 h4 {
-  font-size: 1.618vw;
+  font-size: 1.618em;
 }
 
 small,
 .font_small {
-  font-size: 0.618vw;
+  font-size: 0.618em;
 }
 img{
  width: 55vw;
@@ -604,7 +609,7 @@ font-family: 'Bitter', serif;
     border-radius: 5px;
     text-decoration: none;
 height:auto;
-    font-size: 1.618vw;
+    font-size: 1.618em;
     font-weight: 800;
     text-align: center;
 
@@ -813,12 +818,12 @@ font-size:  0.618em;
   }
 li {
 
-  font-size:  1.618em;
+  font-size:  1.2em;
 
 
 }
-h3 {
-  font-size: 1.2em;
+h1 {
+  font-size: 1.618em;
 
 }
 button{
@@ -846,10 +851,10 @@ max-width: 38vw;
 @media screen and (min-width: 640px) and (max-width: 1100px) {
 li,p {
 
-  font-size:  1.618em;
+  font-size:  1em;
 
 }
-h3 {
+h1 {
   font-size: 1.618em;
 }
 button{

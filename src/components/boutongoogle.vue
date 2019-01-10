@@ -75,7 +75,10 @@ export default {
 }
 </script>
 
-<style type="text/css">
+ <style lang="scss">
+
+
+
     #customBtn {
       display: flex;
       text-align: center;

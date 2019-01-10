@@ -1,4 +1,4 @@
-<template >
+<template>
 <div class="fongradient blockparallaxgeneral2">
   <div class="clientContact">
     <img class="kenburns-top" src="./contact.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="" /></div>
@@ -17,12 +17,15 @@
       <div class="message">
         <textarea class="large" v-model="message" type="text" placeholder="message" required />
         </div>
+        <div v-if="loading" class="bouton2">
+        <button @click.prevent="unload()">{{this.jokes}}</button>
+      </div>
 </div>
   </div></div>
 </template>
 
 <script>
-
+import axios from 'axios';
 import firebase from 'firebase/app'
 
 import 'firebase/firestore'
@@ -48,6 +51,8 @@ export default {
       email: '',
       password: 'essai24',
       message: '',
+      jokes: [],
+      loading: false,
       db: ''
     };
   },
@@ -76,13 +81,54 @@ firestore.settings(settings);
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 },
+getJokes: function () {
+var data = JSON.stringify([
+  {
+    "email": "example@example.com",
+    "first_name": "",
+    "last_name": "User"
+  },
+  {
+    "email": "example2@example.com",
+    "first_name": "Example",
+    "last_name": "User"
+  }
+]);
+axios.defaults.headers.common['authorization'] ="Bearer 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";
+axios.defaults.headers.common['content-type']="application/json";
+
+
+
+      this.loading = true;
+      axios.post("https://api.mailerlite.com/api/v2",data)
+      .then((response)  =>  {
+
+        this.jokes = 'Vous êtes enregistré, Merci de vérifier votre validation par mail'
+      }, (error)  =>  {
+        this.jokes="Problême d'enregistrement"
+      })
+    },
+    unload(){
+ this.loading = false;
+
+    },
+
+
     updateExistingPage() {
       if (this.validateEmail(this.email)){
         this.db.firestore().collection('adresse').add({
             adressmail: this.email,
             nom: this.name,
-            message: this.message})}
-      else{alerts('probleme with mail');};
+            message: this.message})
+
+this.getJokes();
+
+
+
+
+
+            }
+      else{alert('probleme with mail');};
 
       this.email = '';
       this.name = '';
@@ -109,7 +155,7 @@ firestore.settings(settings);
 }
 </script>
 
-<style scoped>
+<style  lang="scss" scoped>
 @import "./font.css";
 * { margin: 0; padding: 0; }
 .fongradient {

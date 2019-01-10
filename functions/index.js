@@ -7,6 +7,9 @@ admin.initializeApp(functions.config().firebase);
 const SENDGRID_API_KEY = functions.config().sendgrid.key;
 
 const sgMail = require('@sendgrid/mail');
+
+
+
 sgMail.setApiKey(SENDGRID_API_KEY);
 
 exports.firestoreEmail = functions.firestore
@@ -32,6 +35,7 @@ exports.firestoreEmail = functions.firestore
         return sgMail.send(msg);
       })
       .then(() => console.log('email sent!'))
+
       .catch(err => console.log(err));
 
 

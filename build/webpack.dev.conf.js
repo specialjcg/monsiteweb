@@ -12,13 +12,16 @@ const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
   // cheap-module-eval-source-map is faster for development
-  devtool: config.dev.devtool,
+  devtool: 'cheap-module-source-map',
+
+
 
   // these devServer options should be customized in /config/index.js
   devServer: {
@@ -46,8 +49,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': require('../config/dev.env')
+      'process.env': require('../config/dev.env'),
+       'process.env.NODE_ENV': '"production"'
     }),
+
+
+
     new webpack.LoaderOptionsPlugin({
       options: {}
     }),

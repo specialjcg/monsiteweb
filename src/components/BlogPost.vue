@@ -132,7 +132,7 @@ color:$txt-color;
 }
 h3 {
 
-color: inherit;
+
 margin-top: -1vh;
 font-size: 2.618em;
  color: $yellow;

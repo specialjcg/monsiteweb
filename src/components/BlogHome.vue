@@ -4,7 +4,7 @@
 
   <div class="container" >
 <h3 class="titre1">Crée son site web sur mesure</h3>
- <header class="buttercms"><a  href="https://buttercms.com" target="_blank">
+ <header class="buttercms"><a  href="https://buttercms.com" target="_blank" rel="noopener noreferrer nofollow">
 
     <img  class="img2" src="./butter-y.png" alt="création de site internet sur mesure butter cms" title="blog butter cms" />
 
@@ -190,7 +190,7 @@ position: absolute;
   padding: 0 50px;
   color: $txt-color;
  font-family: 'Courgette', cursive;
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.2em;
   z-index: 2;
 
@@ -262,7 +262,7 @@ h4,p {
 }
 
 h1 {
-  margin-top: 0;
+
   font-size: 6.854em;
 }
 
@@ -281,7 +281,7 @@ h4,p {
   letter-spacing: 2px;
   color: $h-color;
 
-  margin-bottom: 0;
+
     text-align: center;
   margin: 1em 0 0 0;
   position: relative;

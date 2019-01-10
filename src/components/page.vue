@@ -15,11 +15,11 @@
 
 <div id="titre1" class="titre color-primary-1" v-show="img1" >
       <div v-if="img2"  class="text-focus-in"  >
-      <h3>Créons votre site internet <em>sur-mesure</em></h3>
+      <h1>Créons votre site internet <em>sur-mesure</em></h1>
 
     </div>
     <div v-else class="text-focus-in2" >
-      <h3>Donnons de la valeur à <em>votre site Web</em></h3>
+      <h1>Donnons de la valeur à <em>votre site Web</em></h1>
 </div>
     <div class="découvrir_avantage_site_web" >
      <p class="color-primary-2"> Je vous propose des solutions sur mesure pour répondre au mieux à vos besoins ! </p>
@@ -30,7 +30,7 @@
 <transition name="slideinblurredleft">
     <div  class="color-primary-1 argumentaire" v-if="img3">
       <ul>
-        <h3><em>Un site sur mesure :</em></h3>
+        <h1><em>Un site sur mesure :</em></h1>
         <li>retient l’attention de vos <em>futurs clients et prospects</em></li>
         <li> <em>développe votre notoriété</em> et votre marque</li>
         <li>autorise l’optimisation par <em>référencement naturel</em></li>
@@ -157,7 +157,8 @@ if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
 @import "./blocImage.css";
 
 @import "./font.css";
@@ -292,7 +293,7 @@ button:hover {
   width: 100vw;
 
 
-  background: rgb(164, 225, 214, 0.8);
+  background: rgba(164, 225, 214, 0.8);
   z-index: 0;
 }
 
@@ -353,8 +354,8 @@ h4 {
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 6.854em;
+
+  font-size: 2.618em;
 }
 
 h2 {
@@ -553,7 +554,7 @@ p {
 margin: 1em 0 0em;
 
 }
-h3 {
+h1 {
   font-size: 1.2em;
   margin: 1em 0 0em;
 }
@@ -567,7 +568,7 @@ flex: 1 0 auto;
 
 }
 .titre {
-display:none;
+
 display: block;
   max-width: 80vw;
 
@@ -610,7 +611,7 @@ p {
   font-size:  1.2em;
 
 }
-h3 {
+h1 {
   font-size: 1.618em;
 }
 button{

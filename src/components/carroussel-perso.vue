@@ -141,7 +141,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .parametre{
 display:flex;
   position: absolute;
@@ -195,7 +195,7 @@ background: #e8f6a4;
 
   .maMission2 {
     position: absolute;
-    top: 0;
+
     left: 0;
     height: auto;
     width: 50vw;

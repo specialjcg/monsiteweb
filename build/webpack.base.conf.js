@@ -2,9 +2,11 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
-const vueLoaderConfig = require('./vue-loader.conf')
+const webpack = require('webpack');
 
-
+var CompressionPlugin = require("compression-webpack-plugin");
+const zopfli = require('@gfx/zopfli');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -33,7 +35,18 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-
+plugins: [
+new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+new VueLoaderPlugin(),
+new CompressionPlugin({
+  compressionOptions: {
+    numiterations: 15
+  },
+  algorithm(input, compressionOptions, callback) {
+    return zopfli.gzip(input, compressionOptions, callback);
+  }
+})
+],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
@@ -44,18 +57,37 @@ module.exports = {
   module: {
 
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
-      },
+   ...(config.dev.useEslint ? [createLintingRule()] : []),
 
+
+
+{
+  test: /\.vue$/,
+  loader: 'vue-loader'
+}, {
+  test: /\.js$/,
+  loader: 'babel-loader',
+   include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+},
+// this will apply to both plain `.css` files
+// AND `<style>` blocks in `.vue` files
+{
+  test: /\.css$/,
+  use: [
+    'vue-style-loader',
+    'css-loader'
+  ]
+},
+
+     {
+       test: /\.scss$/,
+       use: [
+         'vue-style-loader',
+         'css-loader',
+         'sass-loader'
+       ]
+     },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
-      },{
       test: /\.(jpe?g|png|gif|svg)/i,
        loader: 'url-loader',
        options: {

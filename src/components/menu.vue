@@ -3,19 +3,19 @@
    <img src="./logo.png" class="logo">
 
   <div class="nom">Valorisetonweb</div>
-  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" rel="noopener noreferrer nofollow">
 
-    <img src="./in.png" alt="création de site internet sur mesure linkedin" title="mon site linkedin" />
+    <img src="./in.png" alt="création de site internet sur mesure" title="mon site linkedin" />
 
   </a>
-  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
-    <img src="./insta.png" alt="création de site internet sur mesure instagram" />
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" rel="noopener noreferrer nofollow">
+    <img src="./insta2.png" alt="création de site internet sur mesure" />
   </a>
-  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank">
+  <a class="expanderSocial" href="https://www.linkedin.com/in/gouleaujeancharles/" target="_blank" rel="noopener noreferrer nofollow">
 
-    <img src="./facebook.png" alt="création de site internet sur mesure facebook" />
+    <img src="./facebook.png" alt="création de site internet sur mesure" />
   </a>
-  <router-link to="/contact"><button class="devis">Obtenir votre devis</button></router-link>
+  <router-link to="/contact" class="vers contact"><button class="devis">Obtenir votre devis</button></router-link>
   <ul v-if=this.visible>
     <li>
       <router-link to="/">Accueil</router-link>
@@ -25,7 +25,7 @@
       <router-link to="/blog/">blog</router-link>
     </li>
     <li>
-      <router-link to="/portfolio">portfolio</router-link>
+      <a href="http://localhost:8081" target="_blank" rel="noopener noreferrer nofollow">portfolio</a>
     </li>
     <li>
       <router-link to="/contact">contact</router-link>
@@ -72,7 +72,8 @@ export default {
 }
 
 </script>
-<style scoped>
+ <style scoped>
+
 @import "./font.css";
 
  .heade {
@@ -121,7 +122,7 @@ margin-left: 1vw;
 
   }
 
-  ul li a {
+  li a {
 
     text-decoration: none;
     display: inline-block;
@@ -144,7 +145,7 @@ position: relative;
     list-style-type: none;
    /* margin-top: 2.5vh;*/
  }
-  ul li a:hover {
+  li a:hover {
     transform: translate3d(20px,0,0);
     color: red;
     text-align: center;
