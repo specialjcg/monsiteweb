@@ -186,7 +186,7 @@ background: #e8f6a4;
         bottom: 0;
         left: 50%;*/
     width: 50vw;
-    background-image: url('trianglify.svg');
+    background-image: url('../assets/trianglify.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }

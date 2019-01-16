@@ -2,7 +2,11 @@
 <div>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="container" >
+ <picture class="fondecran">
+  <source srcset="../assets/trianglify.svg" type="image/svg+xml" alt="createur-de-site-internet sur mesure beaujolais oingt">
+  <img class="img1" src="../assets/trianglify.png" alt="createur-de-site-internet sur mesure beaujolais oingt">
+</picture>
+<div class="container" >
 <h3 class="titre1">Crée son site web sur mesure</h3>
  <header class="buttercms"><a  href="https://buttercms.com" target="_blank" rel="noopener noreferrer nofollow">
 
@@ -134,6 +138,7 @@ $txt-color:   white;
 
 
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -148,6 +153,24 @@ top: 40vh;
 
 
 }
+.fondecran{
+
+
+position: fixed;
+
+
+    left: 0;
+    right: 0;
+  height: 100vh;
+    width: 100vw;
+
+
+    margin: 0;
+    padding: 0;
+    top: 0;
+    z-index: 0;
+}
+
 .container{
 display:flex;
     justify-content:flex-start;
@@ -155,16 +178,11 @@ display:flex;
     align-items:flex-start;
     flex-direction: row;
 flex-wrap:wrap;
-background-repeat: no-repeat;
-background-size: cover;
-background-image: url('trianglify.svg');
-position: absolute;
 
 
     left: 0;
     right: 0;
-    height: 100vh;
-    width: auto;
+
     margin: 0;
     padding: 0;
     top: 0;
@@ -217,7 +235,7 @@ flex: 0 1 auto;
 background: black;
 margin:1vw;
 transition: 0.4s ease-out;
-z-index:0;
+z-index:2;
 }
 
 .blog-home:hover {
@@ -234,7 +252,7 @@ width: 100%;
 		top: 0;
 		left: 0;
 transition: opacity .3s cubic-bezier(.33,.66,.66,1);
-z-index:1;
+z-index:0;
 }
 
 hr{
@@ -285,7 +303,7 @@ h4,p {
     text-align: center;
   margin: 1em 0 0 0;
   position: relative;
-  z-index: 20;
+  z-index: 2;
   width: 100%;
   top: 0;
   left: 0;

@@ -134,7 +134,7 @@
           <p v-if= "this.text1===3" ><span>Besoins:</span><i>"Qui réagit uniquement à ce que le client dit vouloir, risque fort de ne pas lui offrir ce qu'il attend
             vraiment."</i></p>
 
-            <p v-if= "this.text1===4"><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,<em> <br>à
+            <p v-if= "this.text1===4"><em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois d'oingt ,au coeur des Pierre Dorées ,<em> à
               l'écoute de vos besoins</em> </p>
 
         </div>
@@ -578,7 +578,7 @@ margin-left: 0vw;
 
 position: relative;
 float: left;
-top:-16.2vh;
+top:-13vh;
 left: -5vw;
 }
 .petitbouton2{
@@ -810,20 +810,32 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
     }
   }
 @media screen and (min-width: 200px) and (max-width: 640px) {
-  p{
-font-size:  0.618em;
+  .titre-troisiemetexte>p{
 
+font-size: 0.8em;
 
+}
+.titre-deuxiémetexte>p{
 
-  }
+font-size: 0.8em;
+
+}
 li {
 
-  font-size:  1.2em;
+  font-size:  0.618em;
 
 
 }
+
+.titre-premiertexte>ul>li{
+
+font-size: 0.818em;
+
+}
+
+
 h1 {
-  font-size: 1.618em;
+  font-size: 1em;
 
 }
 button{
@@ -852,6 +864,21 @@ max-width: 38vw;
 li,p {
 
   font-size:  1em;
+
+}
+ .titre-troisiemetexte>p{
+
+font-size: 1em;
+
+}
+.titre-deuxiémetexte>p{
+
+font-size: 1em;
+
+}
+.titre-premiertexte>ul>li{
+
+font-size: 0.818em;
 
 }
 h1 {

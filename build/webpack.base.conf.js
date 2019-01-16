@@ -4,8 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const webpack = require('webpack');
 
-var CompressionPlugin = require("compression-webpack-plugin");
-const zopfli = require('@gfx/zopfli');
+/*var CompressionPlugin = require("compression-webpack-plugin");
+const zopfli = require('@gfx/zopfli');*/
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -38,14 +38,14 @@ module.exports = {
 plugins: [
 new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 new VueLoaderPlugin(),
-new CompressionPlugin({
+/*new CompressionPlugin({
   compressionOptions: {
     numiterations: 15
   },
   algorithm(input, compressionOptions, callback) {
     return zopfli.gzip(input, compressionOptions, callback);
   }
-})
+})*/
 ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],

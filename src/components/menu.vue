@@ -20,12 +20,12 @@
     <li>
       <router-link to="/">Accueil</router-link>
     </li>
-    <li><a href="index.html">A propos</a></li>
+    <li> <router-link to="/">A propos</router-link></li>
     <li>
       <router-link to="/blog/">blog</router-link>
     </li>
     <li>
-      <a href="http://localhost:8081" target="_blank" rel="noopener noreferrer nofollow">portfolio</a>
+      <a href="https://valorisetonweb.fr/tourdehanoi" target="_blank" rel="noopener noreferrer nofollow">portfolio</a>
     </li>
     <li>
       <router-link to="/contact">contact</router-link>
