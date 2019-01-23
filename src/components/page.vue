@@ -46,113 +46,104 @@
 </template>
 
 <script>
-/* eslint-disable padded-blocks */
-/* eslint-disable space-before-function-paren */
-/* eslint-disable spaced-comment */
-/* eslint-disable no-multiple-empty-lines */
-/* eslint-disable semi */
-/* eslint-disable indent */
-/* eslint-disable space-in-parens */
-/* jshint esversion: 6 */
+
 export default {
- data() {
-   return {
-     intervalid1: '',
-     intervalid2: '',
-     img1: false,
-     img2: true,
-     img3: false,
-     test: true,
-     essai: false,
-     classA: 'slide2',
-     classB: 'slide1',
-     postitre1: '',
-     poscircle: ''
-   }
- },
- created: function () {
-   window.addEventListener('scroll', this.handleScroll);
-   this.todo2();
- },
- destroyed: function () {
-   window.removeEventListener('scroll', this.handleScroll);
- },
- mounted() {
-   this.img1 = true;
-   this.todo();
-   this.todo2();
- },
- beforeDestroy() {
-   clearInterval(this.intervalid1);
-   clearInterval(this.intervalid2);
- },
- methods: {
-   todo() {
-     this.intervalid1 = setInterval(() => {
-       this.img2 = !this.img2;
-     }, 4000);
-   },
-   manscrolly(){
-this.img3 = !this.img3;
-if (this.img3){window.scrollBy({left:0,top:200,behavior: 'smooth'})}else{window.scrollBy({left:0,top:-200,behavior: 'smooth'})}
-   },
-   todo2() {
-     this.intervalid2 = setInterval(() => {
-       this.handleScroll();
-     }, 10);
-   },
-   big1: function () {
-     this.img1 = !this.img1;
-   },
-   big3: function () {
-     this.img3 = !this.img3;
-   },
-   handleScroll() {
-     if (document.getElementById('imgune') != null) {
-       var viewporthaut = window.innerHeight/4;
-       var hauteurImage = document.getElementById('imgune').offsetHeight - viewporthaut;
-       if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut-viewporthaut/3))) {
-         document.getElementById('cercle').style.opacity = 0;
-         document.getElementById('line').style.opacity = 0;
-         var inter = ((hauteurImage + (viewporthaut-viewporthaut/4)) - window.scrollY) / ( viewporthaut-viewporthaut/3);
-         document.getElementById('imgune').style.filter = 'blur(' + (1 - inter) * 10 + 'px)';
-         document.getElementById('imgune').style.transition = 'all 1s infinite';
-
-
-       } else if ((window.scrollY > (hauteurImage - ( viewporthaut-viewporthaut/6)))) {
+  data () {
+    return {
+      intervalid1: '',
+      intervalid2: '',
+      img1: false,
+      img2: true,
+      img3: false,
+      test: true,
+      essai: false,
+      classA: 'slide2',
+      classB: 'slide1',
+      postitre1: '',
+      poscircle: ''
+    }
+  },
+  created: function () {
+    window.addEventListener('scroll', this.handleScroll)
+    this.todo2()
+  },
+  destroyed: function () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  mounted () {
+    this.img1 = true
+    this.todo()
+    this.todo2()
+  },
+  beforeDestroy () {
+    clearInterval(this.intervalid1)
+    clearInterval(this.intervalid2)
+  },
+  methods: {
+    todo () {
+      this.intervalid1 = setInterval(() => {
+        this.img2 = !this.img2
+      }, 4000)
+    },
+    manscrolly () {
+      this.img3 = !this.img3
+      if (this.img3) { window.scrollBy({left: 0, top: 200, behavior: 'smooth'}) } else { window.scrollBy({left: 0, top: -200, behavior: 'smooth'}) }
+    },
+    todo2 () {
+      this.intervalid2 = setInterval(() => {
+        this.handleScroll()
+      }, 10)
+    },
+    big1: function () {
+      this.img1 = !this.img1
+    },
+    big3: function () {
+      this.img3 = !this.img3
+    },
+    handleScroll () {
+      if (document.getElementById('imgune') != null) {
+        var viewporthaut = window.innerHeight / 4
+        var hauteurImage = document.getElementById('imgune').offsetHeight - viewporthaut
+        if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut - viewporthaut / 3))) {
+          document.getElementById('cercle').style.opacity = 0
+          document.getElementById('line').style.opacity = 0
+          var inter = ((hauteurImage + (viewporthaut - viewporthaut / 4)) - window.scrollY) / (viewporthaut - viewporthaut / 3)
+          document.getElementById('imgune').style.filter = 'blur(' + (1 - inter) * 10 + 'px)'
+          document.getElementById('imgune').style.transition = 'all 1s infinite'
+        } else if ((window.scrollY > (hauteurImage - (viewporthaut - viewporthaut / 6)))) {
           if (this.test) {
-         document.getElementById('cercle').style.opacity = 0;
-         document.getElementById('line').style.opacity = 0;
+            document.getElementById('cercle').style.opacity = 0
+            document.getElementById('line').style.opacity = 0
 
-         this.img1 = false;
+            this.img1 = false
 
-           clearInterval(this.intervalid1);
-           clearInterval(this.intervalid2);
-           this.test = false;
-         }
-       } else if ((window.scrollY < (hauteurImage + ( viewporthaut-viewporthaut/3)))) {
-         this.img1 = true;
-         document.getElementById('imgune').style = '';
-         document.getElementById('cercle').style.opacity = 1;
-         this.postitre1 = document.getElementById('titre1').getBoundingClientRect();
-         this.poscircle = document.getElementById('cercle').getBoundingClientRect();
-         var angle = Math.atan2(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2, (this.poscircle.left - this.postitre1.right)) * 180 / Math.PI;
-         var long = Math.abs(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2) / Math.sin(Math.atan2(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2, (this.poscircle.left - this.postitre1.right)))
-         document.getElementById('line').style.left = this.postitre1.right + 'px';
-         document.getElementById('line').style.top = this.postitre1.top + 'px';
-         document.getElementById('line').style.right = this.poscircle.left + 'px';
-         document.getElementById('line').style.width = Math.abs(long) + 'px';
-         document.getElementById('line').style.transform = 'rotateZ(' + (angle) + 'deg)';
-         if (!this.test) {
-           this.todo2();
-           this.todo();
-           this.test = true;
-         }
-         document.getElementById('line').style.opacity = 1;
-       }
-     }
-     }
- }
+            clearInterval(this.intervalid1)
+            clearInterval(this.intervalid2)
+            this.test = false
+          }
+        } else if ((window.scrollY < (hauteurImage + (viewporthaut - viewporthaut / 3)))) {
+          this.img1 = true
+          document.getElementById('imgune').style = ''
+          document.getElementById('cercle').style.opacity = 1
+          this.postitre1 = document.getElementById('titre1').getBoundingClientRect()
+          this.poscircle = document.getElementById('cercle').getBoundingClientRect()
+          var angle = Math.atan2(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2, (this.poscircle.left - this.postitre1.right)) * 180 / Math.PI
+          var long = Math.abs(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2) / Math.sin(Math.atan2(this.poscircle.bottom - this.postitre1.top - this.poscircle.height / 2, (this.poscircle.left - this.postitre1.right)))
+          document.getElementById('line').style.left = this.postitre1.right + 'px'
+          document.getElementById('line').style.top = this.postitre1.top + 'px'
+          document.getElementById('line').style.right = this.poscircle.left + 'px'
+          document.getElementById('line').style.width = Math.abs(long) + 'px'
+          document.getElementById('line').style.transform = 'rotateZ(' + (angle) + 'deg)'
+          if (!this.test) {
+            this.todo2()
+            this.todo()
+            this.test = true
+          }
+          document.getElementById('line').style.opacity = 1
+        }
+      }
+    }
+  }
 }
 
 </script>
@@ -235,7 +226,6 @@ width: 29.3vw;
   opacity: 1;
 }
 
-
 button {
   color: #FBC831;
   font-family: 'Bitter', serif;
@@ -254,7 +244,6 @@ button {
   text-align: center;
 align-self: flex-end;
   flex: 0 1 auto;
-
 
   margin-top: 4.2vh;
   width: auto;
@@ -285,13 +274,11 @@ button:hover {
   z-index: 2;
   width: 42vw;
 
-
 }
 
 #imgune {
  height: 100vh;
   width: 100vw;
-
 
   background: rgba(164, 225, 214, 0.8);
   z-index: 0;
@@ -300,7 +287,6 @@ button:hover {
 img {
   height: 100vh;
   width: 100vw;
-
 
   position: fixed;
   top: 0;
@@ -341,7 +327,6 @@ p::first-letter {
   color: #FBC831;
   font-size: 130%;
 }
-
 
 h1,
 h2,
@@ -390,32 +375,25 @@ small,
   animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-
 .slideinblurredleft-leave-active {
   -webkit-animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-blurred-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
 }
-
-
-
 
 .slideinblurredleft2-enter-active {
   -webkit-animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-
 .slideinblurredleft2-leave-active {
   -webkit-animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-blurred-left2 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-
 /* ----------------------------------------------
      * Generated by Animista on 2018-10-10 20:54:33
      * w: http://animista.net, t: @cssanimista
      * ---------------------------------------------- */
-
 
 /**
      * ----------------------------------------
@@ -590,9 +568,7 @@ width: 80vw;
   z-index: 2;
   width: 75vw;
 
-
 }
-
 
 li {
   margin-bottom: 1.3vh;
@@ -603,7 +579,6 @@ li {
 color: whitesmoke;
 }
 }
-
 
 @media screen and (min-width: 640px) and (max-width: 1100px) {
 p {
@@ -632,9 +607,7 @@ button{
   z-index: 2;
   width: 42vw;
 
-
 }
-
 
 li {
   margin-bottom: 1.3vh;
