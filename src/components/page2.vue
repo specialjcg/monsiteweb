@@ -21,7 +21,6 @@
   <img src="./Photo-by-Jose-Ramirez-on-Unsplash.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="Photo by Jose Ramirez on Unsplash.png">
 </picture>
 
-
         </transition>
 <transition  name="slide-in-blurred-right" mode="out-in" key="!img1">
         <div v-show="!img1">
@@ -43,7 +42,6 @@
 </div>
 <button class="petitbouton"  @click="bigtext()">{{this.suite}}</button>
         </div>
-
 
 </transition>
 
@@ -110,14 +108,12 @@
     </div>
     <div class="créer-un-site-web fond fondtext1">
 
-
          <transition  name="scale-down-right" >
 
            <picture class="pendant" v-show="img3" @click.prevent="big3()">
   <source srcset="./noproblem.webp" type="image/webp" >
   <img class="imgage1" src="./noproblem.png" alt="createur-de-site-internet sur mesure beaujolais oingt" title="noproblem.png">
 </picture>
-
 
         </transition>
         <transition  name="slide-in-blurred-right" mode="out-in" key=!this.img3>
@@ -147,13 +143,9 @@
 </template>
 
 <script>
-/* eslint-disable quotes */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-multiple-empty-lines */
-/* eslint-disable semi */
-/* eslint-disable space-before-function-paren */
+
 export default {
-  data() {
+  data () {
     return {
 
       img1: true,
@@ -161,111 +153,94 @@ export default {
       img3: true,
       text1: 1,
 
-      suite:"->la performance",
+      suite: '->la performance',
       backgroundpercent: 1
     }
   },
   created: function () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   destroyed: function () {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   },
-
 
   methods: {
 
     big1: function () {
-      this.img1 = !this.img1;
-      this.img2 = true;
-      this.img3 = true;
-this.suite="->La performance";
-this.text1=1;
+      this.img1 = !this.img1
+      this.img2 = true
+      this.img3 = true
+      this.suite = '->La performance'
+      this.text1 = 1
     },
-     bigtext: function () {
-       if (this.text1===4){ this.text1=1}else {      this.text1++;}
-if (this.text1===1){this.suite="->La performance"}
-if (this.text1===2){this.suite="->La Pérennité"}
-if (this.text1===3){this.suite="->Mon développeur"}
-if (this.text1===4){this.suite="->La maîtrise"}
-
+    bigtext: function () {
+      if (this.text1 === 4) { this.text1 = 1 } else { this.text1++ }
+      if (this.text1 === 1) { this.suite = '->La performance' }
+      if (this.text1 === 2) { this.suite = '->La Pérennité' }
+      if (this.text1 === 3) { this.suite = '->Mon développeur' }
+      if (this.text1 === 4) { this.suite = '->La maîtrise' }
     },
     bigtext2: function () {
-       if (this.text1===4){ this.text1=1}else {      this.text1++;}
-if (this.text1===1){this.suite="->Un site sur mesure"}
-if (this.text1===2){this.suite="->Pertinents"}
-if (this.text1===3){this.suite="->Mon développeur"}
-if (this.text1===4){this.suite="->Travaillons ensemble"}
-
+      if (this.text1 === 4) { this.text1 = 1 } else { this.text1++ }
+      if (this.text1 === 1) { this.suite = '->Un site sur mesure' }
+      if (this.text1 === 2) { this.suite = '->Pertinents' }
+      if (this.text1 === 3) { this.suite = '->Mon développeur' }
+      if (this.text1 === 4) { this.suite = '->Travaillons ensemble' }
     },
-     bigtext3: function () {
-       if (this.text1===4){ this.text1=1}else {      this.text1++;}
-if (this.text1===1){this.suite="->sécurité"}
-if (this.text1===2){this.suite="->Besoins"}
-if (this.text1===3){this.suite="->Mon développeur"}
-if (this.text1===4){this.suite="->Proximité"}
-
+    bigtext3: function () {
+      if (this.text1 === 4) { this.text1 = 1 } else { this.text1++ }
+      if (this.text1 === 1) { this.suite = '->sécurité' }
+      if (this.text1 === 2) { this.suite = '->Besoins' }
+      if (this.text1 === 3) { this.suite = '->Mon développeur' }
+      if (this.text1 === 4) { this.suite = '->Proximité' }
     },
     big2: function () {
-      this.img3 = true;
-      this.img2 = !this.img2;
-      this.img1 = true;
-      this.suite="->Un site sur mesure"
-      this.tex1===1;
+      this.img3 = true
+      this.img2 = !this.img2
+      this.img1 = true
+      this.suite = '->Un site sur mesure'
+      this.tex1 = 1
     },
-     big3: function () {
-      this.img3 = !this.img3;
-      this.img2 =true;
-      this.img1 = true;
-      this.suite="->sécurité"
-      this.text1===1;
+    big3: function () {
+      this.img3 = !this.img3
+      this.img2 = true
+      this.img1 = true
+      this.suite = '->sécurité'
+      this.text1 = 1
     },
     devis1: function () {
-      this.img1 = !this.img1;
-
+      this.img1 = !this.img1
     },
     devis2: function () {
-      this.img2 = !this.img2;
-
+      this.img2 = !this.img2
     },
     devis3: function () {
-      this.img3 = !this.img3;
-
+      this.img3 = !this.img3
     },
 
-    handleScroll() {
- var viewporthaut = (window.innerHeight/window.innerWidth)*250;
-      var hauteurImage = document.getElementById("imgtrois").offsetHeight * 2  - viewporthaut;
+    handleScroll () {
+      var viewporthaut = (window.innerHeight / window.innerWidth) * 250
+      var hauteurImage = document.getElementById('imgtrois').offsetHeight * 2 - viewporthaut
 
       if ((window.scrollY < 200)) {
-        this.img1 = true;
-        this.img2 = true;
-        this.img3 = true;
+        this.img1 = true
+        this.img2 = true
+        this.img3 = true
       }
-      if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut-viewporthaut/3))) {
-
-
-        var inter = (hauteurImage - window.scrollY) / (hauteurImage + viewporthaut-viewporthaut/3);
-        document.getElementById("imgdeux").style.filter = "blur(" + (1 - inter) * 10 + "px)";
-        document.getElementById("imgdeux").style.opacity = inter + 0.5;
-        document.getElementById("imgdeux").style.transition = "all 0.5s ease-in-out";
-        this.img1 = true;
-        this.img2 = true;
-        this.img3 = true;
-
+      if ((window.scrollY > hauteurImage) && (window.scrollY < (hauteurImage + viewporthaut - viewporthaut / 3))) {
+        var inter = (hauteurImage - window.scrollY) / (hauteurImage + viewporthaut - viewporthaut / 3)
+        document.getElementById('imgdeux').style.filter = 'blur(' + (1 - inter) * 10 + 'px)'
+        document.getElementById('imgdeux').style.opacity = inter + 0.5
+        document.getElementById('imgdeux').style.transition = 'all 0.5s ease-in-out'
+        this.img1 = true
+        this.img2 = true
+        this.img3 = true
       } else {
-        document.getElementById('imgtrois').style = '';
+        document.getElementById('imgtrois').style = ''
       }
-
-
-
-
-
     }
 
   }
-
-
 
 }
 
@@ -273,13 +248,8 @@ if (this.text1===4){this.suite="->Proximité"}
 
  <style lang="scss" scoped>
 
-
-
-
-
   @import "./blocImage.css";
   @import "./font.css";
-
 
   .disposition {
 
@@ -302,22 +272,18 @@ max-width: 40vw;
 
   }
 
-
   .essaiBordure{
 border-right: 4px solid #FBC831;
-
 
   }
   .essaiBordure2{
 border-left: 4px solid #FBC831;
-
 
   }
 .résumé{
   text-align: right;
 
 }
-
 
   .createur-de-site-internet {
     text-align: right;
@@ -352,7 +318,6 @@ max-width: 47vw;
     flex: auto;
     height: 33vh;
 
-
   }
 
   .titre-premiertexte {
@@ -360,7 +325,6 @@ max-width: 50vw;
  text-align: left;
 
   }
-
 
   .titre-deuxiémetexte {
 max-width: 60vw;
@@ -372,7 +336,6 @@ font-size: 1.618em;
 
 }
 
-
 span{
   color:indianred;
 }
@@ -381,7 +344,6 @@ font-size: 1.618em;
 font-weight: 800;
 }
   em {
-
 
     font-weight: 800;
   }
@@ -407,8 +369,6 @@ list-style-type: none;
 
   }
 
-
-
   p,li {
 
     font-weight: inherit;
@@ -430,7 +390,6 @@ font-size: 1.618em;
     font-weight: inherit;
     line-height: 1.2;
   }
-
 
 h3 {
   margin-top: 0;
@@ -467,8 +426,6 @@ width: 54vw;
 }
   .avant {
 position: absolute;
-
-
 
     height: 33vh;
 
@@ -513,13 +470,11 @@ width: 55vw;
   .fond {
 display: inherit;
 
-
 top:0;
     z-index: 3;
   }
 
   .fond1 {
-
 
     z-index: 2;
   }
@@ -538,7 +493,6 @@ top:0;
     animation: scale-down-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 
-
   .slide-in-blurred-right-enter-active {
     -webkit-animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
@@ -556,7 +510,6 @@ top:0;
     animation: slide-in-blurred-right2 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse;
   }
 
-
 .scale-down-left-enter-active {
     -webkit-animation: scale-down-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-down-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse;
@@ -565,7 +518,6 @@ top:0;
     -webkit-animation: scale-down-left 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-down-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
-
 
   .scale-up-right2 {
     -webkit-animation: scale-up-right2 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -631,9 +583,6 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
     height:112vh;
     width:100vw;
     position:relative;
-
-
-
 
    background-repeat: no-repeat;
     background-size: cover;
@@ -706,16 +655,10 @@ background-image: linear-gradient(to left, #007100, #1b7e0c, #2d8b17, #3c9821, #
     }
   }
 
-
-
-
-
-
   /* ----------------------------------------------
        * Generated by Animista on 2018-10-10 23:55:28
        * w: http://animista.net, t: @cssanimista
        * ---------------------------------------------- */
-
 
   /**
        * ----------------------------------------
@@ -824,7 +767,6 @@ li {
 
   font-size:  0.618em;
 
-
 }
 
 .titre-premiertexte>ul>li{
@@ -832,7 +774,6 @@ li {
 font-size: 0.818em;
 
 }
-
 
 h1 {
   font-size: 1em;
@@ -858,7 +799,6 @@ max-width: 38vw;
 max-width: 38vw;
   }
 }
-
 
 @media screen and (min-width: 640px) and (max-width: 1100px) {
 li,p {
@@ -890,6 +830,5 @@ button{
 }
 
 }
-
 
 </style>

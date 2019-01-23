@@ -34,39 +34,22 @@
 </div>
 </template>
 <script>
-/* eslint-disable padded-blocks */
-/* eslint-disable comma-dangle */
-/* eslint-disable space-before-function-paren */
-/* eslint-disable no-multiple-empty-lines */
-/* eslint-disable semi */
-/* eslint-disable indent */
-/* eslint-disable space-in-parens */
-/* jshint esversion: 6 */
-
 
 export default {
   name: 'menue',
-  data() {
+  data () {
     return {
 
-      visible: true,
+      visible: true
 
     }
   },
 
-
-
-
   methods: {
 
-    menu1() {
-
-      this.visible = !this.visible;
-
-
+    menu1 () {
+      this.visible = !this.visible
     }
-
-
 
   }
 }
@@ -133,7 +116,6 @@ margin-left: 1vw;
     color: aliceblue;
   }
 
-
 ul {
    flex: 0 1 auto;
 padding-right: 1vw;
@@ -165,13 +147,11 @@ display:inline-block;
 vertical-align:middle;
  flex: 0 1 auto;
 
-
 }
 .logo {
 
 display: inline-block;
  flex: 0 1 auto;
-
 
   width: 2vw;
     height: 6vh;
@@ -215,7 +195,6 @@ button:active{
 transition: all 0.1s ease;
 background: black;
 
-
 }
 @media only screen and (max-width: 500px) {
 .heade {
@@ -227,8 +206,6 @@ flex-flow: row wrap;
   img{
 width: 5vw;
 min-height:5vh;
-
-
 
 margin:1vw;
 padding: 0;
@@ -260,11 +237,6 @@ width:20vw;
 
  }
 
-
-
-
-
-
 ul {
 position: relative;
    /* padding: 25px 0;*/
@@ -279,7 +251,6 @@ position: relative;
 
  }
 li {
-
 
     padding-right:3vw;
     padding-left: 3vw;
@@ -327,7 +298,6 @@ width:20vw;
 
  }
 
-
 ul {
 
 position: relative;
@@ -341,7 +311,6 @@ position: relative;
  flex-shrink: 0;
 
  }
-
 
 }
 
@@ -384,7 +353,6 @@ flex: 1 0 auto;
 width:40vw;
  }
 
-
 ul {
 
 position: relative;
@@ -402,7 +370,6 @@ li {
  font-size: 1.618em;
 
   }
-
 
 }
 
@@ -451,7 +418,6 @@ flex: 0 1 auto;
     text-align: left;
     list-style-type: none;
 
-
  }
 li {
  font-size: 1.618em;
@@ -493,7 +459,6 @@ button{
 margin:0;
 padding: 0;
 
-
  font-size: 1.618em;
 flex: 1 0 auto;
 width:24vw;
@@ -517,8 +482,6 @@ flex: 0 1 auto;
 }
 
 @media only screen and (min-width: 1100px) {
-
-
 
  button{
  font-size: 1.618em;
@@ -575,11 +538,6 @@ margin-right: 1vw;
 
  }
 
-
-
-
-
-
 }
 @media only screen and (min-width: 1400px) {
 .heade{
@@ -613,12 +571,7 @@ padding: 0;
 margin-left: 2vw;
 }
 
-
-
 }
-
-
-
 
 .expanderSocial{
 transition: all 0.5s ease;
