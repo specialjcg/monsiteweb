@@ -49,7 +49,11 @@
         <router-link to="/blog/">blog</router-link>
       </li>
       <li>
+<<<<<<< HEAD
         <router-link to="/portfolio">Porfolio</router-link>
+=======
+        <router-link to="/Porfolio">Porfolio</router-link>
+>>>>>>> nouvelleversionvuecli3
       </li>
       <li>
         <router-link to="/contact">contact</router-link>
