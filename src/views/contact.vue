@@ -47,12 +47,6 @@
 
 <script>
 const axios = require("axios");
-<<<<<<< HEAD
-=======
-import firebase from "@firebase/app";
-
-import "@firebase/firestore";
->>>>>>> nouvelleversionvuecli3
 
 import boutongoogle from "/home/specialjcg/site web/monsite/src/components/boutongoogle.vue";
 
@@ -72,26 +66,9 @@ export default {
   components: {
     boutongoogle
   },
-<<<<<<< HEAD
   methods: {
     validateEmail(email) {
       var re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-=======
-  mounted() {
-    var config = {
-      apiKey: "AIzaSyBigm08IvDSf4ocKa01HlUIytMHv5YQyVY",
-      authDomain: "jcgwebdeveloper.firebaseapp.com",
-      databaseURL: "https://jcgwebdeveloper.firebaseio.com",
-      projectId: "jcgwebdeveloper",
-      storageBucket: "jcgwebdeveloper.appspot.com",
-      messagingSenderId: "769951896037"
-    };
-    this.db = firebase.initializeApp(config);
-  },
-  methods: {
-    validateEmail(email) {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
->>>>>>> nouvelleversionvuecli3
       return re.test(String(email).toLowerCase());
     },
     getJokes: function() {
