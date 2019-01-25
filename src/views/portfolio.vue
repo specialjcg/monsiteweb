@@ -4,16 +4,14 @@
       <source
         srcset="../assets/trianglify.svg"
         type="image/svg+xml"
-        alt="createur-de-site-internet sur mesure beaujolais oingt"
-      />
+        alt="createur-de-site-internet sur mesure beaujolais oingt"/>
       <img
         class="img1"
         src="../assets/trianglify.png"
         alt="createur-de-site-internet sur mesure beaujolais oingt"
-      />
-    </picture>
-    <div class="container">
-      <h3 class="titre1">
+    /></picture>
+    <div class="container2">
+      <h3 class="titre12">
         Dernieres réalisatons Développement de site internet
       </h3>
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
@@ -25,20 +23,11 @@
         >
           <article @mouseenter="effaceTitre2(0)" @mouseleave="visibleTitre2(0)">
             <figure>
-              <!-- Bind results using a `:` -->
-              <!-- Use a `v-if`/`else` if their is a `featured_image` -->
               <img
                 class="img1"
                 :id="imginfo(0)"
-                v-if="post.featured_image"
-                :src="post.featured_image"
-                alt=""
-              />
-              <img
-                class="img1"
-                v-else
-                src="/home/specialjcg/site web/monsite/src/components/IMG_20180927_190728_382.jpg"
-                alt=""
+                src="https://valorisetonweb.fr/tourdehanoi/tourdehanoi.png"
+                alt="createur-de-site-internet sur mesure beaujolais oingt"
               />
             </figure>
             <div :id="titre2(0)">
@@ -46,7 +35,7 @@
               <hr />
             </div>
             <div class="card-info" :id="cardinfo(0)">
-              <p>{{ this.summary1 }}</p>
+              <p>{{ this.Summary1 }}</p>
             </div>
           </article>
         </a>
@@ -56,7 +45,6 @@
 </template>
 <script>
 export default {
-  name: "Réalisatio",
   data() {
     return {
       datepost: "",
@@ -111,7 +99,7 @@ $card-width: 250px;
 $card-height: 46.97vh;
 $h-color: white;
 $yellow: #fbc831;
-$txt-color: white;
+$txt-color: black;
 
 * {
   box-sizing: border-box;
@@ -138,7 +126,7 @@ $txt-color: white;
   z-index: 0;
 }
 
-.container {
+.container2 {
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
@@ -155,7 +143,7 @@ $txt-color: white;
   z-index: 0;
 }
 
-.titre1 {
+.titre12 {
   position: absolute;
   top: 8vh;
   z-index: 1;
@@ -268,7 +256,12 @@ p {
   top: 0;
   left: 0;
 }
-
+p {
+  color: $h-color;
+}
+h4 {
+  color: $txt-color;
+}
 .img2 {
   position: absolute;
   top: 11vh;
