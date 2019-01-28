@@ -46,7 +46,7 @@
       </li>
       <li><router-link to="/">A propos</router-link></li>
       <li>
-        <router-link to="/blog/">blog</router-link>
+        <a href="https://valorisetonweb.fr/blog">blog</a>
       </li>
       <li>
         <router-link to="/portfolio">Porfolio</router-link>
