@@ -17,13 +17,14 @@
     </a>
     <a
       class="expanderSocial"
-      href="https://www.linkedin.com/in/gouleaujeancharles/"
+      href="https://github.com/specialjcg"
       target="_blank"
       rel="noopener noreferrer nofollow"
     >
       <img
-        src="../components/insta2.png"
+        src="../components/GitHub-Mark-Light-32px.png"
         alt="création de site internet sur mesure"
+        title="mon site GitHub"
       />
     </a>
     <a

@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import jsonkey from "@/views/key.json";
 export default {
   data() {
     return {
@@ -19,15 +20,15 @@ export default {
       auth4: [],
       name: "",
       email: "",
-      message: ""
+      message: "",
+      keyseninblue: jsonkey
     };
   },
 
   mounted() {
     window.gapi.load("auth2", () => {
       const auth2 = window.gapi.auth2.init({
-        client_id:
-          "851397391825-cn5ns9qd64qmq0brh675gg794f244hcc.apps.googleusercontent.com",
+        client_id: this.keyseninblue.google,
         cookiepolicy: "single_host_origin"
       });
 

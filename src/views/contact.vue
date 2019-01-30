@@ -56,7 +56,6 @@ export default {
       auth2: null,
       name: "",
       email: "",
-      password: "essai24",
       message: "",
       jokes: [],
       loading: false,
@@ -99,7 +98,11 @@ export default {
             "Vous êtes enregistré, Merci de vérifier votre validation par mail";
         })
         .catch(error => {
-          this.jokes = "Problême d'enregistrement " + error.request.response;
+          if (error.response.data.message === "Contact already exist") {
+            this.jokes = "Merci , mais vous êtes déjà enregistré";
+          } else {
+            this.jokes = "Problême d'enregistrement";
+          }
         });
     },
     unload() {
@@ -108,18 +111,11 @@ export default {
 
     updateExistingPage() {
       if (this.validateEmail(this.email)) {
-        this.db
-          .firestore()
-          .collection("adresse")
-          .add({
-            adressmail: this.email,
-            nom: this.name,
-            message: this.message
-          });
+        this.getJokes();
       } else {
-        alert("probleme with mail");
+        this.jokes("mail unvalide");
       }
-      this.getJokes();
+
       this.email = "";
       this.name = "";
       this.message = "";
@@ -127,10 +123,10 @@ export default {
 
     onUserLoggedIn(user) {
       const profile = user.getBasicProfile();
-      /* console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead. */
+
       this.name = profile.getName();
 
-      this.email = profile.getEmail(); // This is null if the 'email' scope is not present.} // This is null if the 'email' scope is not present.
+      this.email = profile.getEmail();
       this.updateExistingPage();
     }
   }
