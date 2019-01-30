@@ -47,7 +47,7 @@
 
 <script>
 const axios = require("axios");
-
+import jsonkey from "./key.json";
 import boutongoogle from "/home/specialjcg/site web/monsite/src/components/boutongoogle.vue";
 
 export default {
@@ -60,7 +60,8 @@ export default {
       message: "",
       jokes: [],
       loading: false,
-      db: ""
+      db: "",
+      keyseninblue: jsonkey
     };
   },
   components: {
@@ -76,10 +77,10 @@ export default {
         email: this.email,
         attributes: { FNAME: this.name }
       });
-      let config = {
+
+      var config = {
         headers: {
-          "api-key":
-            "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",
+          "api-key": this.keyseninblue.key,
           "Content-type": "application/json"
         }
       };

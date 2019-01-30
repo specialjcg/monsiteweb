@@ -13,18 +13,6 @@ export default new Router({
       component: missionvision
     },
     {
-      path: "/blog/",
-      name: "blog-home",
-      component: () =>
-        import(/* webpackChunkName: "BlogHome" */ "@/views/BlogHome.vue")
-    },
-    {
-      path: "/blog/:slug",
-      name: "blog-post",
-      component: () =>
-        import(/* webpackChunkName: "BlogPost" */ "@/views/BlogPost.vue")
-    },
-    {
       path: "/portfolio",
       name: "portfolio",
       component: () =>
