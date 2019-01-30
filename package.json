@@ -9,12 +9,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@firebase/app": "^0.3.7",
-    "@firebase/firestore": "^1.0.0",
-    "@firebase/util": "^0.2.5",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
-    "buttercms": "^1.1.4",
     "cache-loader": "^2.0.1",
     "css-loader": "^2.1.0",
     "node-sass": "^4.11.0",
@@ -24,6 +20,7 @@
     "vue-loader": "^15.6.0",
     "vue-loader-options-plugin": "^0.1.1",
     "vue-router": "^3.0.1",
+    "vue-socialmedia-share": "^1.0.1",
     "vue-style-loader": "^4.1.2"
   },
   "devDependencies": {

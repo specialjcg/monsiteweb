@@ -55,6 +55,7 @@
               </li>
 
               <li v-if="this.text1 === 4">
+                <span>développeur Web Freelance: </span>
                 <br />Je suis votre <em>développeur Web Freelance</em>, adepte
                 des projets fait mains, basé en Rhone Alpes au coeur du
                 Beaujolais, je suis disponible pour vos projets dans l’hexagone
