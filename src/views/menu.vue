@@ -28,18 +28,32 @@
       />
     </a>
     <a
-      class="expanderSocial tablette_pc"
+      class="expanderSocial"
       target="_blank"
       rel="noopener noreferrer nofollow"
     >
-      <Facebook url="https://valorisetonweb.fr" scale="3"></Facebook
+      <Facebook
+        class="tablette_pc"
+        url="https://valorisetonweb.fr"
+        scale="3"
+      ></Facebook>
+      <Facebook
+        class="smarphone"
+        url="https://valorisetonweb.fr"
+        scale="2"
+      ></Facebook
     ></a>
-    <a
-      class="expanderSocial smarphone"
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-    >
-      <Facebook url="https://valorisetonweb.fr" scale="2"></Facebook
+    <a>
+      <Twitter
+        class="tablette_pc"
+        url="https://valorisetonweb.fr"
+        scale="3"
+      ></Twitter>
+      <Twitter
+        class="smarphone"
+        url="https://valorisetonweb.fr"
+        scale="2"
+      ></Twitter
     ></a>
     <router-link to="/contact" class="vers contact"
       ><button class="devis">Obtenir votre devis</button></router-link
@@ -62,10 +76,11 @@
   </div>
 </template>
 <script>
-import { Facebook } from "vue-socialmedia-share";
+import { Facebook, Twitter } from "vue-socialmedia-share";
 export default {
   components: {
-    Facebook
+    Facebook,
+    Twitter
   },
   name: "menue",
   data() {

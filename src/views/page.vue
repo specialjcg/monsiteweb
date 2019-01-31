@@ -14,7 +14,11 @@
       </div>
       <div id="imgune" @scroll.self="handleScroll()">
         <transition name="slideinblurredleft">
-          <div id="titre1" class="titre color-primary-1" v-show="img1">
+          <div
+            id="titre1"
+            class="titre color-primary-1 backdrop-blur"
+            v-show="img1"
+          >
             <div v-if="img2" class="text-focus-in">
               <h1>Créons votre site internet <em>sur-mesure</em></h1>
             </div>
@@ -222,12 +226,25 @@ export default {
 
 .color-primary-1 {
   color: #fbc831;
-  background: rgba(103, 229, 252, 0.3);
+
+  /*background: rgba(103, 229, 252, 0.3);
   -webkit-backdrop-filter: contrast(2) blur(20px);
-  backdrop-filter: contrast(2) blur(20px);
+  backdrop-filter: contrast(2) blur(20px);*/
+
   z-index: 3;
 }
-
+.backdrop-blur {
+  background-color: rgba(103, 229, 252, 0.3);
+}
+@supports (
+  (-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))
+) {
+  .backdrop-blur {
+    background-color: rgba(103, 229, 252, 0.3);
+    -webkit-backdrop-filter: contrast(2) blur(20px);
+    backdrop-filter: contrast(2) blur(20px);
+  }
+}
 #cercle {
   position: fixed;
   top: 36vh;
