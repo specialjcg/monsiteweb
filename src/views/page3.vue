@@ -15,13 +15,13 @@
         class="titre rgba-complement-0 slide-in-blurred-left"
       >
         <h1>
-          Nous veillons a ce que la première impression soit la bonne soyez
+          Nous veillons à ce que la première impression soit la bonne : soyez
           visible
         </h1>
       </div>
       <div v-else class="titre rgba-complement-0 slide-in-blurred-left2">
         <h1>
-          Nous veillons a ce que la première impression soit la bonne soyez
+          Nous veillons à ce que la première impression soit la bonne : soyez
           visible
         </h1>
       </div>

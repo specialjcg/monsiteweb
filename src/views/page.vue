@@ -47,7 +47,7 @@
                 autorise l’optimisation par <em>référencement naturel</em>
               </li>
               <li>répond à tous <em>vos besoins</em></li>
-              <li>est <em>totalement personnalisable, et évolutifs</em></li>
+              <li>est <em>totalement personnalisable, et évolutif</em></li>
               <li>
                 apporte des <em>fonctionnalités</em> innovantes à vos clients
               </li>

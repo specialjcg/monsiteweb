@@ -19,7 +19,7 @@
         class="titre rgba-complement-2 slide-in-blurred-left"
       >
         <h1>
-          nous vous promettons des designs inspirés et des services créatifs
+          Nous vous promettons des designs inspirés et des services créatifs
           ayant du style
         </h1>
       </div>

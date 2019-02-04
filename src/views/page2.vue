@@ -127,12 +127,12 @@
       :class="[!this.img2 ? 'essaiBordure2' : '']"
     >
       <h1>
-        Vous Voulez <span class="special">+</span> de <em>prospect</em>
+        Vous Voulez <span class="special">+</span> de <em>prospect </em>
         <span>?</span>
       </h1>
 
       <ul>
-        <li>Faites passer vos clients à l'action</li>
+        <li>Faire passer vos clients à l'action</li>
         <li>Soigner votre proposition de valeur -> penser au design</li>
         <li>Améliorer l'expérience utilisateur de vos futurs clients</li>
       </ul>
@@ -182,7 +182,7 @@
               <span>Proximité: </span><br />Je suis votre intervenant
               particulier pour la <em>création de votre site Web</em>, tout au
               long du processus jusqu’à la mise en ligne, et aussi pour son
-              maintien. Local, proche de vous, joignable.
+              maintien. <br />Local, proche de vous, joignable.
             </p>
             <p v-if="this.text1 === 2">
               <span>Sécurité:</span> utiliser un certificat SSL est un bon moyen
@@ -200,7 +200,7 @@
 
             <p v-if="this.text1 === 4">
               <em>Développeur Web Freelance</em>, basé en Rhone Alpes au Bois
-              d'oingt ,au coeur des Pierre Dorées ,<em>
+              d'oingt ,au coeur des Pierres Dorées ,<em>
                 à l'écoute de vos besoins</em
               >
             </p>
