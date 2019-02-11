@@ -11,9 +11,9 @@
         alt="createur-de-site-internet sur mesure beaujolais oingt"
     /></picture>
     <div class="container2">
-      <h3 class="titre12">
-        Dernieres réalisatons Développement de site internet
-      </h3>
+      <h1 class="titre12">
+        Dernieres réalisations Développement de site internet
+      </h1>
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
       <div class="blog-home">
         <a
@@ -22,14 +22,13 @@
           rel="noopener noreferrer nofollow"
         >
           <article @mouseenter="effaceTitre2(0)" @mouseleave="visibleTitre2(0)">
-            <figure>
-              <img
-                class="img1"
-                :id="imginfo(0)"
-                src="https://valorisetonweb.fr/tourdehanoi/tourdehanoi.png"
-                alt="createur-de-site-internet sur mesure beaujolais oingt"
-              />
-            </figure>
+            <img
+              class="img3"
+              :id="imginfo(0)"
+              src="https://valorisetonweb.fr/tourdehanoi/tourdehanoi.png"
+              alt="createur-de-site-internet sur mesure beaujolais oingt"
+            />
+
             <div :id="titre2(0)">
               <h4>{{ this.title1 }}</h4>
               <hr />
@@ -99,17 +98,11 @@ $card-width: 250px;
 $card-height: 46.97vh;
 $h-color: white;
 $yellow: #fbc831;
-$txt-color: black;
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+$txt-color: white;
 .commentaire {
   top: 40vh;
   position: absolute;
+  color: $txt-color;
 }
 
 .fondecran {
@@ -128,18 +121,15 @@ $txt-color: black;
 
 .container2 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-
-  left: 0;
-  right: 0;
-
-  margin: 0;
-  padding: 0;
-  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60vw;
+  max-height: auto;
   z-index: 0;
 }
 
@@ -148,16 +138,16 @@ $txt-color: black;
   top: 8vh;
   z-index: 1;
   font-family: "Courgette", cursive;
-  font-size: 1.618em;
+  font-size: 2.618em;
 }
 
 .card-info {
   width: 100%;
   position: absolute;
-  bottom: 50vh;
-  left: 0;
+  bottom: 25vh;
+  /*left: 0;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 50px;*/
   color: $txt-color;
   font-family: "Courgette", cursive;
   font-size: 0.8em;
@@ -175,11 +165,10 @@ $txt-color: black;
   top: 20vh;
   left: 2vw;
 
-  overflow: hidden;
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  min-width: auto;
+  min-width: 20vw;
   align-self: flex-start;
   flex: 0 1 auto;
   background: black;
@@ -203,7 +192,18 @@ $txt-color: black;
   transition: opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
   z-index: 0;
 }
-
+.img3 {
+  width: 100%;
+  height: 25vh;
+  background-image: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+  z-index: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 hr {
   position: relative;
   width: 11.08vw;

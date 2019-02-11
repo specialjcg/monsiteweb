@@ -43,7 +43,11 @@
         scale="2"
       ></Facebook
     ></a>
-    <a>
+    <a
+      class="expanderSocial"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
       <Twitter
         class="tablette_pc"
         url="https://valorisetonweb.fr"
@@ -62,7 +66,9 @@
       <li>
         <router-link to="/">Accueil</router-link>
       </li>
-      <li><router-link to="/">A propos</router-link></li>
+      <li>
+        <a href="https://valorisetonweb.fr/blog/1">A propos</a>
+      </li>
       <li>
         <a href="https://valorisetonweb.fr/blog">blog</a>
       </li>
