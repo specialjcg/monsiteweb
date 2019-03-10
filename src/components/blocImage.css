@@ -38,7 +38,8 @@
 
 .blockparallaxgeneral2 {
     position: relative;
-    background-image: linear-gradient(180deg, rgba(162, 227, 222, 1) 0%, rgba(227, 172, 24, 1) 100%);
+   /* background-image: linear-gradient(180deg, rgba(162, 227, 222, 1) 0%, rgba(227, 172, 24, 1) 100%);*/
+   background: white;
     filter: drop-shadow(16px 16px 10px black);
     width: 100vw;
     height: 100vh;

@@ -12,6 +12,7 @@
           />
         </picture>
       </div>
+
       <div id="imgune" @scroll.self="handleScroll()">
         <transition name="slideinblurredleft">
           <div
@@ -227,24 +228,25 @@ export default {
 .color-primary-1 {
   color: #fbc831;
 
-  /*background: rgba(103, 229, 252, 0.3);
+  background: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: contrast(2) blur(20px);
-  backdrop-filter: contrast(2) blur(20px);*/
+  backdrop-filter: contrast(2) blur(20px);
 
   z-index: 3;
 }
 .backdrop-blur {
-  background-color: rgba(103, 229, 252, 0.3);
+  background: rgba(0, 0, 0, 0.8);
 }
 @supports (
   (-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))
 ) {
   .backdrop-blur {
-    background-color: rgba(103, 229, 252, 0.3);
+    background: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }
 }
+
 #cercle {
   position: fixed;
   top: 36vh;
@@ -497,7 +499,7 @@ small,
     -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
-    background: rgba(103, 229, 252, 0.3);
+    background: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }
@@ -522,7 +524,7 @@ small,
     -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
-    background: rgba(103, 229, 252, 0.3);
+    background: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }

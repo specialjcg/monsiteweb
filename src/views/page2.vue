@@ -389,17 +389,18 @@ export default {
 
 .createur-de-site-internet {
   text-align: right;
-  color: #49788c;
+  /*color: #49788c;
+  
   /* poussé de la moitié de hauteur du référent */
-
+  color: black;
   font-family: "Courgette", cursive;
   padding-right: 1vw;
 }
 
 .création-site-web {
   margin-top: -1vh;
-  color: #51225c;
-
+  //  color: #51225c;
+  color: black;
   text-align: left;
   font-family: "Courgette", cursive;
   padding-left: 1vw;
@@ -408,7 +409,8 @@ export default {
 .créer-un-site-web {
   text-align: right;
   font-family: "Courgette", cursive;
-  color: #170f63;
+  //color: #170f63;
+  color: black;
   padding-right: 1vw;
 }
 
