@@ -241,7 +241,7 @@ export default {
   (-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))
 ) {
   .backdrop-blur {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(156, 139, 139, 0.8);
     -webkit-backdrop-filter: contrast(2) blur(20px);
     backdrop-filter: contrast(2) blur(20px);
   }
