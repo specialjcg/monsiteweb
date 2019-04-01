@@ -60,7 +60,7 @@
       ></Twitter
     ></a>
     <router-link to="/contact" class="vers contact"
-      ><button class="devis">Obtenir votre devis</button></router-link
+      ><button class="devis">J'obtiens mon devis</button></router-link
     >
     <ul v-if="this.visible">
       <li>
@@ -176,7 +176,7 @@ ul {
 }
 li a:hover {
   transform: translate3d(20px, 0, 0);
-  color: red;
+  color: #fbc831;
   text-align: center;
   font-family: "Courgette", cursive;
 }

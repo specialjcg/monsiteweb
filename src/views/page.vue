@@ -31,7 +31,7 @@
                 Je vous propose des solutions sur mesure pour répondre au mieux
                 à vos besoins !
               </p>
-              <button @click.prevent="manscrolly()">Découvrir</button>
+              <button @click.prevent="manscrolly()">Je découvre</button>
             </div>
           </div></transition
         >

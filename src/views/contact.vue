@@ -63,6 +63,7 @@ export default {
       keyseninblue: jsonkey
     };
   },
+
   components: {
     boutongoogle
   },
@@ -113,7 +114,9 @@ export default {
       if (this.validateEmail(this.email)) {
         this.getJokes();
       } else {
-        this.jokes("mail unvalide");
+        this.loading = false;
+        this.loading = true;
+        this.jokes = "mail unvalide";
       }
 
       this.email = "";
@@ -141,7 +144,7 @@ export default {
 }
 .fongradient {
   position: absolute;
-  background-image: linear-gradient(135deg, #fdd819 10%, #e80505 100%);
+  background-image: linear-gradient(135deg, #fdd819 10%, #e9ebe6 100%);
 
   overflow: hidden;
   left: 0;
@@ -165,7 +168,7 @@ export default {
 
   border: 0;
 
-  background-color: #d6f49d;
+  background-color: #e9ebe6;
 
   border-radius: 4px;
   text-align: left;
@@ -179,7 +182,7 @@ export default {
   height: 25vh;
   border: 0;
 
-  background-color: #d6f49d;
+  background-color: #e9ebe6;
 }
 
 .email {
@@ -189,7 +192,7 @@ export default {
   border: 0;
   min-width: 13vw;
 
-  background-color: #d6f49d;
+  background-color: #e9ebe6;
 
   border-radius: 4px;
 
@@ -220,7 +223,7 @@ export default {
   height: 40vh;
   width: 68vw;
   z-index: 0;
-  clip-path: inset(0vw 0vw);
+  clip-path: inset(0vw 0vw round 10px);
 }
 
 button {
@@ -295,6 +298,7 @@ textarea {
 }
 
 .kenburns-top {
+  will-change: transform;
   -webkit-animation: kenburns-top 5s ease-out both;
   animation: kenburns-top 10s infinite both;
 }
