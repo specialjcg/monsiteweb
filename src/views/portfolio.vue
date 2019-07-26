@@ -38,6 +38,32 @@
             </div>
           </article>
         </a>
+        
+      </div>
+      <div class="blog-home">
+        <a
+          href="https://valorisetonweb.fr/carvuecli3"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <article @mouseenter="effaceTitre2(1)" @mouseleave="visibleTitre2(1)">
+            <img
+              class="img3"
+              :id="imginfo(1)"
+              src="https://valorisetonweb.fr/carvuecli3/Carroussel.png"
+              alt="createur-de-site-internet sur mesure beaujolais oingt"
+            />
+
+            <div :id="titre2(1)">
+              <h4>{{ this.title2 }}</h4>
+              <hr />
+            </div>
+            <div class="card-info" :id="cardinfo(1)">
+              <p>{{ this.Summary2 }}</p>
+            </div>
+          </article>
+        </a>
+        
       </div>
     </div>
   </div>
@@ -51,7 +77,12 @@ export default {
       posts: [],
       title1: "Tour de Hanoi",
       Summary1:
-        "étude  de drag and drop via vuejs avec mousedown, mouseup,mousemove plutôt que dragstart,dragover,dragend du html5 dans l'idée de modifier l'aspect ,du gohst durant le drag sans utiliser      setdragimage mais de pouvoir agir sur la forme du drag à loisir"
+        "étude  de drag and drop via vuejs avec mousedown, mouseup,mousemove plutôt que dragstart,dragover,dragend du html5 dans l'idée de modifier l'aspect ,du gohst durant le drag sans utiliser      setdragimage mais de pouvoir agir sur la forme du drag à loisir",
+      title2: "carroussel3d",
+      Summary2:
+        "étude de carroussel 3d et citation"
+  
+
     };
   },
   methods: {
