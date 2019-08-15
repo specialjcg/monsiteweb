@@ -325,9 +325,17 @@ h4 {
 
 @media only screen and (min-width: 340px) {
   .blog-home {
-    top: 28vh;
+    top: 30vh;
+     margin: inherit;
+     margin-top: 3vh;
   }
-
+.titre12 {
+  position: absolute;
+  top: 17vh;
+  z-index: 1;
+  font-family: "Courgette", cursive;
+  font-size: 1.218em;
+}
   .titre1 {
     top: 15vh;
   }
@@ -344,6 +352,14 @@ h4 {
   .blog-home {
     top: 23vh;
   }
+
+.titre12 {
+  position: absolute;
+  top: 8vh;
+  z-index: 1;
+  font-family: "Courgette", cursive;
+  font-size: 2.618em;
+}
 
   .titre1 {
     top: 11vh;

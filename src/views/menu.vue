@@ -305,8 +305,14 @@ button:active {
   }
   li {
     padding-right: 3vw;
-    padding-left: 3vw;
+    padding-left: 1vw;
   }
+  li a:hover {
+  transform: translate3d(10px, 0, 0);
+  color: #fbc831;
+  text-align: center;
+  font-family: "Courgette", cursive;
+}
 }
 @media only screen and (min-width: 500px) and (max-width: 640px) {
   .tablette_pc {
