@@ -121,7 +121,7 @@ export default {
   right: 0;
   min-height: auto;
 
-  width: 99.5vw;
+  width: 100vw;
   flex-flow: row wrap;
 
   z-index: 7;

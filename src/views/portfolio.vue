@@ -38,7 +38,6 @@
             </div>
           </article>
         </a>
-        
       </div>
       <div class="blog-home">
         <a
@@ -63,7 +62,54 @@
             </div>
           </article>
         </a>
-        
+      </div>
+      <div class="blog-home">
+        <a
+          href="https://valorisetonweb.fr/helloangular/helloworldangular/"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <article @mouseenter="effaceTitre2(2)" @mouseleave="visibleTitre2(2)">
+            <img
+              class="img3"
+              :id="imginfo(2)"
+              src="https://valorisetonweb.fr/helloangular/helloworldangular/assets/img/angular-heroe.png"
+              alt="createur-de-site-internet sur mesure beaujolais oingt"
+            />
+
+            <div :id="titre2(2)">
+              <h4>{{ this.title3 }}</h4>
+              <hr />
+            </div>
+            <div class="card-info" :id="cardinfo(2)">
+              <p>{{ this.Summary3 }}</p>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="blog-home">
+        <a
+          href="https://valorisetonweb.fr/gestibankfront/Testibank2/manager"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <article @mouseenter="effaceTitre2(3)" @mouseleave="visibleTitre2(3)">
+            <img
+              class="img3"
+              :id="imginfo(3)"
+              src="https://valorisetonweb.fr/gestibankfront/Testibank2/assets/img/cover.jpeg"
+              alt="createur-de-site-internet sur mesure beaujolais oingt"
+            />
+
+            <div :id="titre2(3)">
+              <h4>{{ this.title4 }}</h4>
+              <hr />
+            </div>
+            <div class="card-info" :id="cardinfo(3)">
+              <p>{{ this.Summary4 }}</p>
+            </div>
+          </article>
+        </a>
       </div>
     </div>
   </div>
@@ -79,10 +125,11 @@ export default {
       Summary1:
         "étude  de drag and drop via vuejs avec mousedown, mouseup,mousemove plutôt que dragstart,dragover,dragend du html5 dans l'idée de modifier l'aspect ,du gohst durant le drag sans utiliser      setdragimage mais de pouvoir agir sur la forme du drag à loisir",
       title2: "carroussel3d",
-      Summary2:
-        "étude de carroussel 3d et citation"
-  
-
+      Summary2: "étude de carroussel 3d et citation",
+      title3: "Angular",
+      Summary3: "ou est caché l'intru",
+      title4: "Java GestiBank",
+      Summary: "fake gestion bancaire ,application backend java /front end"
     };
   },
   methods: {
@@ -153,14 +200,15 @@ $txt-color: white;
 .container2 {
   display: flex;
   justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
+  align-content: center;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  max-width: 60vw;
+  max-width: 75vw;
   max-height: auto;
+  justify-content: space-between;
   z-index: 0;
 }
 
@@ -200,10 +248,9 @@ $txt-color: white;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   min-width: 20vw;
-  align-self: flex-start;
-  flex: 0 1 auto;
+
   background: black;
-  margin: 1vw;
+
   transition: 0.4s ease-out;
   z-index: 2;
 }
@@ -326,16 +373,16 @@ h4 {
 @media only screen and (min-width: 340px) {
   .blog-home {
     top: 30vh;
-     margin: inherit;
-     margin-top: 3vh;
+    margin: inherit;
+    margin-top: 3vh;
   }
-.titre12 {
-  position: absolute;
-  top: 17vh;
-  z-index: 1;
-  font-family: "Courgette", cursive;
-  font-size: 1.218em;
-}
+  .titre12 {
+    position: absolute;
+    top: 17vh;
+    z-index: 1;
+    font-family: "Courgette", cursive;
+    font-size: 1.218em;
+  }
   .titre1 {
     top: 15vh;
   }
@@ -353,13 +400,13 @@ h4 {
     top: 23vh;
   }
 
-.titre12 {
-  position: absolute;
-  top: 8vh;
-  z-index: 1;
-  font-family: "Courgette", cursive;
-  font-size: 2.618em;
-}
+  .titre12 {
+    position: absolute;
+    top: 8vh;
+    z-index: 1;
+    font-family: "Courgette", cursive;
+    font-size: 2.618em;
+  }
 
   .titre1 {
     top: 11vh;
