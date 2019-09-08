@@ -97,7 +97,7 @@
             <img
               class="img3"
               :id="imginfo(3)"
-              src="https://valorisetonweb.fr/gestibankfront/Testibank2/assets/img/cover.jpeg"
+              src="https://valorisetonweb.fr/gestibankfront/Testibank2/assets/img/gestionbank.png"
               alt="createur-de-site-internet sur mesure beaujolais oingt"
             />
 
@@ -107,6 +107,30 @@
             </div>
             <div class="card-info" :id="cardinfo(3)">
               <p>{{ this.Summary4 }}</p>
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="blog-home">
+        <a
+          href="https://valorisetonweb.fr/todoPomodoro"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <article @mouseenter="effaceTitre2(4)" @mouseleave="visibleTitre2(4)">
+            <img
+              class="img3"
+              :id="imginfo(4)"
+              src="https://valorisetonweb.fr/todoPomodoro/todopomodoro.png"
+              alt="createur-de-site-internet sur mesure beaujolais oingt"
+            />
+
+            <div :id="titre2(4)">
+              <h4>{{ this.title5 }}</h4>
+              <hr />
+            </div>
+            <div class="card-info" :id="cardinfo(4)">
+              <p>{{ this.Summary5 }}</p>
             </div>
           </article>
         </a>
@@ -129,7 +153,9 @@ export default {
       title3: "Angular",
       Summary3: "ou est caché l'intru",
       title4: "Java GestiBank",
-      Summary: "fake gestion bancaire ,application backend java /front end"
+      Summary4: "fake gestion bancaire ,application backend java /front end",
+      title5: "todoPomodoro",
+      Summary5: "création de taches et pomodoro"
     };
   },
   methods: {
